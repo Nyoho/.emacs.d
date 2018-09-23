@@ -13,7 +13,7 @@
 (depends-on "ob-typescript")
 (depends-on "org-bullets")
 
-;; ac
+;; auto-complete
 (depends-on "auto-complete")
 ;; (depends-on "jedi")
 (depends-on "auto-complete-clang")
@@ -30,7 +30,6 @@
 (depends-on "ac-emoji")
 
 (depends-on "ace-jump-mode")
-(depends-on "anti-zenburn-theme")
 (depends-on "anzu")
 (depends-on "auctex")
 (depends-on "auto-async-byte-compile")
@@ -57,9 +56,16 @@
 (depends-on "dired-k")
 (depends-on "dired-filter")
 (depends-on "dired-hacks-utils")
+(depends-on "dired-narrow")
+(depends-on "dired-subtree")
+(depends-on "dired-details")
 (depends-on "direx")
 (depends-on "dirtree")
+
+;; tree
 (depends-on "neotree")
+(depends-on "speedbar")
+(depends-on "sr-speedbar")
 
 (depends-on "docker")
 (depends-on "dockerfile-mode")
@@ -120,8 +126,14 @@
 (depends-on "import-popwin")
 (depends-on "inf-ruby")
 (depends-on "init-loader")
+
+;; JavaScript
 (depends-on "js2-mode")
+(depends-on "js2-refactor")
+
+;; Julia
 (depends-on "julia-mode")
+
 (depends-on "logito")
 (depends-on "magit")
 (depends-on "migemo")
@@ -153,6 +165,7 @@
 (depends-on "rinari")
 
 (depends-on "robe")
+(depends-on "helm-robe")
 (depends-on "ruby-compilation")
 (depends-on "ruby-end")
 (depends-on "ruby-interpolation")
@@ -167,10 +180,7 @@
 (depends-on "smartparens")
 (depends-on "smartrep")
 (depends-on "smex")
-(depends-on "helm-smex")
 (depends-on "sourcemap")
-(depends-on "speedbar")
-(depends-on "sr-speedbar")
 (depends-on "sudo-ext")
 (depends-on "thingopt")
 (depends-on "undo-tree")
@@ -181,6 +191,7 @@
 (depends-on "wrap-region")
 (depends-on "yascroll")
 (depends-on "yasnippet")
+(depends-on "yasnippet-snippets")
 (depends-on "zeal-at-point")
 (depends-on "zencoding-mode")
 (depends-on "zlc")
@@ -214,6 +225,10 @@
 (depends-on "rust-playground")
 (depends-on "ein") ; for Jupyter Notebook
 
+;; AsciiDoc
+(depends-on "asciidoc")
+(depends-on "ox-asciidoc")
+
 ;; markdown
 (depends-on "markdown-mode")
 (depends-on "markdown-mode+")
@@ -241,6 +256,7 @@
 (depends-on "highlight2clipboard")
 
 ;; themes
+(depends-on "anti-zenburn-theme")
 (depends-on "solarized-theme")
 (depends-on "moe-theme")
 (depends-on "monokai-theme")
@@ -268,7 +284,11 @@
 ;; writing
 (depends-on "academic-phrases")
 
+;; misc
+(depends-on "dimmer")
+
 ;; temp
+
 
 ;; (depends-on "moccur-edit")
 ;; (depends-on "flycheck-typescript-tslint")
