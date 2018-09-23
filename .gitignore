@@ -1,2 +1,17 @@
 .cask
 *~
+.mc-lists.el
+.session
+.trello
+.emacstut
+ac-comphist.dat
+auto-save-list
+eww-bookmarks
+history
+image-dired
+projectile-bookmarks.eld
+recentf*
+smex-items
+tramp
+url
+var
