@@ -2,10 +2,10 @@
 ;;;manual setting
 (source "ELPA" "http://tromey.com/elpa/")
 (source "melpa" "https://melpa.org/packages/")
-(source "marmalade" "https://marmalade-repo.org/packages/")
+;; (source "marmalade" "https://marmalade-repo.org/packages/")
 (source gnu)
 (source melpa)
-(source marmalade)
+;; (source marmalade)
 
 ;; for org-mode
 (source org)
@@ -104,10 +104,8 @@
 (depends-on "ghc")
 (depends-on "ghci-completion")
 (depends-on "gist")
-(depends-on "git-commit")
-(depends-on "git-dwim")
-(depends-on "git-gutter")
-(depends-on "git-gutter-fringe")
+
+
 (depends-on "go-autocomplete")
 (depends-on "go-eldoc")
 (depends-on "golint")
@@ -138,12 +136,29 @@
 ;; JavaScript
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
+(depends-on "prettier-js")
 
 ;; Julia
 (depends-on "julia-mode")
 
-(depends-on "logito")
+;; Ruby
+(depends-on "rinari")
+(depends-on "ruby-compilation")
+(depends-on "ruby-end")
+(depends-on "ruby-interpolation")
+(depends-on "ruby-mode")
+(depends-on "ruby-test-mode")
+(depends-on "ruby-tools")
+(depends-on "ruby-refactor")
+
+;; Git
+(depends-on "git-commit")
+(depends-on "git-dwim")
+(depends-on "git-gutter")
+(depends-on "git-gutter-fringe")
 (depends-on "magit")
+
+(depends-on "logito")
 (depends-on "migemo")
 (depends-on "multiple-cursors")
 (depends-on "nyan-mode")
@@ -162,18 +177,8 @@
 (depends-on "rainbow-mode")
 (depends-on "recentf-ext")
 (depends-on "review-mode")
-(depends-on "rinari")
-
 (depends-on "robe")
 (depends-on "helm-robe")
-(depends-on "ruby-compilation")
-(depends-on "ruby-end")
-(depends-on "ruby-interpolation")
-(depends-on "ruby-mode")
-(depends-on "ruby-test-mode")
-(depends-on "ruby-tools")
-(depends-on "ruby-refactor")
-
 (depends-on "s")
 (depends-on "session")
 (depends-on "slime")
