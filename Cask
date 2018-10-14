@@ -126,6 +126,8 @@
 (depends-on "helm-pydoc")
 (depends-on "helm-swoop")
 (depends-on "helm-qiita")
+(depends-on "helm-google")
+
 (depends-on "hydra")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
