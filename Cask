@@ -254,7 +254,6 @@
 (depends-on "toml-mode")
 
 (depends-on "tide")
-(depends-on "company")
 (depends-on "tss")
 (depends-on "sync-recentf")
 (depends-on "color-moccur")
@@ -263,6 +262,12 @@
 (depends-on "esup")
 (depends-on "noflet")
 (depends-on "highlight2clipboard")
+
+;; Company
+(depends-on "company")
+(depends-on "company-math")
+(depends-on "company-reftex")
+(depends-on "company-web")
 
 ;; themes
 (depends-on "anti-zenburn-theme")
