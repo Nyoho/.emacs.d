@@ -111,6 +111,8 @@
 (depends-on "golint")
 (depends-on "goto-chg")
 (depends-on "guide-key")
+
+;; helm
 (depends-on "helm")
 (depends-on "helm-ag")
 (depends-on "helm-rg")
@@ -142,6 +144,8 @@
 
 ;; Julia
 (depends-on "julia-mode")
+(depends-on "julia-repl")
+(depends-on "flycheck-julia")
 
 ;; Ruby
 (depends-on "rinari")
