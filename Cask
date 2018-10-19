@@ -301,6 +301,7 @@
 
 ;; writing
 (depends-on "academic-phrases")
+(depends-on "sudden-death")
 
 ;; misc
 (depends-on "dimmer")
