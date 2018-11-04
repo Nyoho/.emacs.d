@@ -1,11 +1,11 @@
 ;;;pallet-ignore
 ;;;manual setting
 (source "ELPA" "http://tromey.com/elpa/")
-;; (source "marmalade" "https://marmalade-repo.org/packages/")
 (source "melpa" "https://melpa.org/packages/")
+(source "marmalade" "https://marmalade-repo.org/packages/")
 (source gnu)
-;; (source marmalade)
 (source melpa)
+(source marmalade)
 
 ;; for org-mode
 (source org)
@@ -202,6 +202,8 @@
 (depends-on "fish-mode")
 
 (depends-on "w3m")
+
+(depends-on "keyfreq")
 
 ;; projectile
 (depends-on "projectile")
