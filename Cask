@@ -157,6 +157,11 @@
 (depends-on "ruby-tools")
 (depends-on "ruby-refactor")
 
+;; lsp
+(depends-on "company-lsp")
+(depends-on "lsp-mode")
+(depends-on "eglot")
+
 ;; Git
 (depends-on "git-commit")
 (depends-on "git-dwim")
