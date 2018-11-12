@@ -1,8 +1,9 @@
 ;;;pallet-ignore
 ;;;manual setting
-(source "ELPA" "http://tromey.com/elpa/")
+(source "ELPA" "https://tromey.com/elpa/")
 (source "melpa" "https://melpa.org/packages/")
-;; (source "marmalade" "https://marmalade-repo.org/packages/")
+
+(source "marmalade" "https://marmalade-repo.org/packages/")
 (source gnu)
 (source melpa)
 ;; (source marmalade)
