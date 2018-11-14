@@ -67,7 +67,7 @@
 (depends-on "dired-hacks-utils")
 (depends-on "dired-narrow")
 (depends-on "dired-subtree")
-(depends-on "dired-details")
+;; (depends-on "dired-details")
 (depends-on "direx")
 (depends-on "dirtree")
 
