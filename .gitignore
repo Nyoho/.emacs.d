@@ -16,3 +16,4 @@ tramp
 url
 var
 abbrev_defs
+.lsp-session*
