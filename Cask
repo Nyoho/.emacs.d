@@ -158,6 +158,9 @@
 (depends-on "ruby-tools")
 (depends-on "ruby-refactor")
 
+;; Elixir
+(depends-on "elixir-mode")
+
 ;; lsp
 (depends-on "company-lsp")
 (depends-on "lsp-mode")
