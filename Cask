@@ -142,6 +142,7 @@
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
 (depends-on "prettier-js")
+(depends-on "rjsx-mode")
 
 ;; Julia
 (depends-on "julia-mode")
@@ -240,7 +241,6 @@
 (depends-on "lua-mode")
 (depends-on "go-mode")
 (depends-on "haskell-mode")
-(depends-on "rjsx-mode")
 (depends-on "rust-mode")
 (depends-on "racer")
 (depends-on "flycheck-rust")
