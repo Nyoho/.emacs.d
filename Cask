@@ -166,6 +166,9 @@
 (depends-on "lsp-mode")
 (depends-on "eglot")
 
+;; Lisp
+(depends-on "lispy") ;; https://github.com/abo-abo/lispy
+
 ;; Git
 (depends-on "git-commit")
 (depends-on "git-dwim")
