@@ -316,6 +316,8 @@
 (depends-on "easy-kill")
 (depends-on "emmet-mode")
 
+;; browsing
+(depends-on "navi2ch")
 
 ;; misc
 (depends-on "dimmer")
