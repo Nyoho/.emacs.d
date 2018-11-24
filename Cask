@@ -310,9 +310,12 @@
 (depends-on "reykjavik-theme")
 (depends-on "seoul256-theme")
 
-;; writing
+;; writing, editing
 (depends-on "academic-phrases")
 (depends-on "sudden-death")
+(depends-on "easy-kill")
+(depends-on "emmet-mode")
+
 
 ;; misc
 (depends-on "dimmer")
