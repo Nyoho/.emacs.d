@@ -38,6 +38,7 @@
 (depends-on "ac-emoji")
 
 (depends-on "ace-jump-mode")
+(depends-on "avy")
 (depends-on "anzu")
 (depends-on "auctex")
 (depends-on "auto-async-byte-compile")
