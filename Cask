@@ -322,6 +322,7 @@
 
 ;; misc
 (depends-on "dimmer")
+(depends-on "all-the-icons")
 
 ;; temp
 
