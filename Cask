@@ -165,6 +165,7 @@
 ;; lsp
 (depends-on "company-lsp")
 (depends-on "lsp-mode")
+(depends-on "lsp-ui")
 (depends-on "eglot")
 
 ;; Lisp
