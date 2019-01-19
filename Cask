@@ -325,6 +325,7 @@
 ;; misc
 (depends-on "dimmer")
 (depends-on "all-the-icons")
+(depends-on "all-the-icons-dired")
 
 ;; temp
 
