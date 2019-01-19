@@ -167,6 +167,7 @@
 (depends-on "lsp-mode")
 (depends-on "lsp-ui")
 (depends-on "eglot")
+(depends-on "lsp-haskell")
 
 ;; Lisp
 (depends-on "lispy") ;; https://github.com/abo-abo/lispy
