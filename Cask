@@ -286,6 +286,8 @@
 (depends-on "company-math")
 (depends-on "company-reftex")
 (depends-on "company-web")
+(depends-on "company-box")
+(depends-on "company-auctex")
 
 ;; themes
 (depends-on "anti-zenburn-theme")
