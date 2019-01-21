@@ -238,6 +238,7 @@
 ;; searching
 (depends-on "ag")
 (depends-on "rg")
+(depends-on "find-file-in-project")
 
 ;; programming
 (depends-on "swift-mode")
