@@ -95,9 +95,7 @@
 
 ;; Setting for rbenv and TeX
 (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" "/Library/TeX/texbin:" (getenv "PATH")))
-;; (setenv "PATH" "/usr/local/bin:/Library/TeX/texbin:$PATH" t)
 (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
-;; (setq exec-path (append exec-path '("/Library/TeX/texbin")))
 
 
 ;; Emacs の種類バージョンを判別するための変数を定義
