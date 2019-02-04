@@ -19,3 +19,4 @@ abbrev_defs
 .lsp-session*
 helm-hatena-bookmark
 helm-qiita
+elpa/
