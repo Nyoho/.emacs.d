@@ -282,6 +282,10 @@
 (depends-on "noflet")
 (depends-on "highlight2clipboard")
 
+;; Completion
+(depends-on "ivy")
+(depends-on "counsel")
+
 ;; Company
 (depends-on "company")
 (depends-on "company-math")
