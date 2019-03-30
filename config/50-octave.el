@@ -1,0 +1,1 @@
+(defalias 'oc 'octave-mode)
