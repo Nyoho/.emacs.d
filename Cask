@@ -285,6 +285,9 @@
 (depends-on "noflet")
 (depends-on "highlight2clipboard")
 
+;; Jump
+(depends-on "dumb-jump")
+
 ;; Completion
 (depends-on "ivy")
 (depends-on "counsel")
