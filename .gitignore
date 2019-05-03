@@ -20,3 +20,8 @@ abbrev_defs
 helm-hatena-bookmark
 helm-qiita
 elpa/
+private
+elisp/
+vendor/
+config/disabled
+transient/
