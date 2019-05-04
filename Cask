@@ -255,6 +255,7 @@
 (depends-on "flycheck-rust")
 (depends-on "rust-playground")
 (depends-on "ein") ; for Jupyter Notebook
+(depends-on "sage-shell-mode")
 
 ;; AsciiDoc
 (depends-on "asciidoc")
