@@ -293,6 +293,9 @@
 (depends-on "ivy")
 (depends-on "counsel")
 
+;; ivy extension
+(depends-on "ivy-posframe")
+
 ;; Company
 (depends-on "company")
 (depends-on "company-math")
