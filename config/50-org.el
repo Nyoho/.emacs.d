@@ -245,6 +245,7 @@
 
   ;; TODO: C-c C-e ll では、Emacsで行った標準のTeX設定へ飛んでいるが、'.org' までファイル名が含まれてしまっていて存在しなくなっている。
 
+  (plist-put org-format-latex-options :scale 1.6)
   ;; (setq org-format-latex-options
   ;;       '(:foreground default
   ;;                     :background default
