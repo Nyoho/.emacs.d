@@ -87,10 +87,10 @@
                               (mapcar (lambda (x) (concat dir "/" x))
                                       (directory-files dir nil "^[^.][^.]" t))))
          load-path)))
-(my-add-to-load-path-directory "~/.emacs.d/vendor")
 (defun reload-vendor-directory ()
   (interactive)
-  (my-add-to-load-path-directory "~/.emacs.d/vendor"))
+  (my-add-to-load-path-directory (concat user-emacs-directory "vendor"))
+(reload-vendor-directory)
 
 
 ;; Setting for rbenv and TeX
