@@ -22,6 +22,5 @@ helm-qiita
 elpa/
 private
 elisp/
-vendor/
 config/disabled
 transient/
