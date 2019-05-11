@@ -1,3 +1,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = git@github.com:Nyoho/my-snippets.git
+[submodule "vendor/initchart"]
+	path = vendor/initchart
+	url = https://github.com/yuttie/initchart.git
