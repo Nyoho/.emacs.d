@@ -89,7 +89,7 @@
          load-path)))
 (defun reload-vendor-directory ()
   (interactive)
-  (my-add-to-load-path-directory (concat user-emacs-directory "vendor"))
+  (my-add-to-load-path-directory (concat user-emacs-directory "vendor")))
 (reload-vendor-directory)
 
 
