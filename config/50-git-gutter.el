@@ -35,6 +35,7 @@
     (global-git-gutter-mode +1))
 
   (use-package git-gutter-fringe
+    :if window-system
     :init (global-git-gutter-mode t)
     :custom-face
     (git-gutter-fr:modified ((t (:foreground "#404040" :background "#c0fc7f"))))

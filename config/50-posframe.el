@@ -1,4 +1,5 @@
 (use-package ivy-posframe
+  :if window-system
   :custom
   (ivy-posframe-parameters '((left-fringe . 4) (right-fringe . 4)))
   :config
