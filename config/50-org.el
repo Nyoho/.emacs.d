@@ -33,7 +33,8 @@
 
   (setq org-mobile-inbox-for-pull "~/org/flagged.org")
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-  (setq org-agenda-files (quote ("~/org/test.org"
+  (setq org-agenda-files (quote ("~/org/agenda/inbox.org"
+                                 "~/org/test.org"
                                  "~/org/design.org")
                                 ))
   (setq org-agenda-ndays 7)
@@ -47,6 +48,28 @@
   ;;         ("Todo" ?t "* TODO %^{やること(「〜する」)} %^g\n%?\n  Added: %U" "~/org/gtd.org" "Inbox")
   ;;         ("Note" ?n "\n* %U %^{トピックス} %^g \n%i%?\n %a" "~/org/notes.org")
   ;;         ))
+
+  ;; org-capture 
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file+headline (concat org-directory "/agenda/inbox.org") "Inbox") "* TODO %^{やること(「〜する」)} %^g
+%?
+  Added: %U")
+          ("n" "Note" entry (file+headline "~/org/notes.org" "") "
+* %U %^{トピックス} %^g 
+%i%?
+ %a")
+        ;; ("b" "Nyotes Page draft" entry (file (choose-new-page "~/org/nyotes/"))
+        ;; ("p" "Project Entry" entry (file (choose-project-file))
+        ;;  "* TODO %?\n  %i\n  %a\n\n")
+        ;; "\n* TODO %?\n")
+          ))
+
+
+  ;; '(("t" "Todo" entry (file+headline "c:/Users/AAA/org/remind.org" "■Capture")
+  ;;    "* REMIND %? (wrote on %U)")
+  ;;   ("k" "Knowledge" entry (file+headline "c:/Users/AAA/org/knowledge.org" "TOP")
+  ;;    "* %?\n  # Wrote on %U"))
+  (defalias 'cp 'org-capture)
 
   :config
   (unbind-key "C-," org-mode-map)
@@ -102,7 +125,7 @@
   :hook (org-agenda-mode . hl-line-mode)
   :bind (
          ("C-c a" . org-agenda)
-         ;; ("C-c c" . org-capture)
+         ("C-c c" . org-capture)
          ("C-c l" . org-store-link)
          ("C-c i" . org-mac-grab-link)
          ("C-c k" . org-multiple-keymap-minor-mode)
@@ -118,22 +141,6 @@
   ;; (define-key global-map (kbd "C-c a") 'org-agenda)
   )
 
-
-;; org-capture 
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Inbox") "* TODO %^{やること(「〜する」)} %^g
-%?
-  Added: %U")
-        ("n" "Note" entry (file+headline "~/org/notes.org" "") "
-* %U %^{トピックス} %^g 
-%i%?
- %a")
-        )
-        ;; ("b" "Nyotes Page draft" entry (file (choose-new-page "~/org/nyotes/"))
-        ;; ("p" "Project Entry" entry (file (choose-project-file))
-        ;;  "* TODO %?\n  %i\n  %a\n\n")
-        ;; "\n* TODO %?\n")
-      )
 
 
 ;; (defun choose-new-page (base-path)
@@ -185,19 +192,6 @@
 ;; (global-set-key (kbd "C-c g") 'gtd)
 
 
-
-;; (org-remember-insinuate)
-(setq org-directory "~/org/")
-;; (setq org-default-notes-file (concat org-directory "agenda.org"))
-;; (setq org-remember-templates
-;;       '(("ToDo" ?t "** TODO %?\n   %i\n   %a\n   %t" nil "Inbox")
-;;         ("Bug" ?b "** TODO %?   :bug:\n   %i\n   %a\n   %t" nil "Inbox")
-;;         ("Idea" ?i "** %?\n   %i\n   %a\n   %t" nil "New Ideas")))
-
-;; (key-chord-define-global "gt" 'gtd)
-;; (key-chord-define-global "re" 'remember)
-;; (key-chord-define-global "cp" 'org-capture)
-(defalias 'cp 'org-capture)
 
 
 
