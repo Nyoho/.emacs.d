@@ -85,3 +85,6 @@
   ;; 2 windows が両方 dired のときに copy や rename が楽になる。リモートでも動作するので便利。
   (setq dired-dwim-target t)
   )
+
+(use-package gist
+  :after dired)
