@@ -509,14 +509,13 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;(add-hook 'find-file-hooks 'gpg-after-find-file)
 ;;(autoload 'alpaca-after-find-file "alpaca" nil t)
 ;;(add-hook 'find-file-hooks 'alpaca-after-find-file)
-(with-eval-after-load "postpone"
-  (when (version< "23" emacs-version)
-    ;; (when (>= emacs-major-version 23)
-    (use-package epa-file
-      :config
-      (epa-file-enable)
-      ;; (setq epg-gpg-program "gpg")
-      )))
+(when (version< "23" emacs-version)
+  ;; (when (>= emacs-major-version 23)
+  (use-package epa-file
+    :config
+    (epa-file-enable)
+    ;; (setq epg-gpg-program "gpg")
+    ))
 
 
 
