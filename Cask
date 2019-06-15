@@ -22,7 +22,6 @@
 (depends-on "ox-hugo")
 
 ;; Emacs
-(depends-on "postpone" :git "https://github.com/takaxp/postpone.git")
 
 ;; auto-complete
 (depends-on "auto-complete")

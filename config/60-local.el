@@ -157,7 +157,8 @@
 
 
 (use-package copy-code
-  :bind (("C-c cc" . copy-code-as-rtf)))
+  ;; :bind (("C-c cc" . copy-code-as-rtf))
+  )
 
 
 (fset 'yes-or-no-p 'y-or-n-p)
