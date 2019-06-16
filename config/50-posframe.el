@@ -1,9 +1,25 @@
-(use-package ivy-posframe
-  :if window-system
-  :custom
-  (ivy-posframe-parameters '((left-fringe . 4) (right-fringe . 4)))
+(use-package posframe
+  :when window-system
   :config
-  (push '(counsel-M-x . ivy-posframe-display-at-point) ivy-display-functions-alist)
-  (push '(complete-symbol . ivy-posframe-display-at-point) ivy-display-functions-alist)
-  (push '(swiper . ivy-posframe-display-at-point) ivy-display-functions-alist)
-  (ivy-posframe-enable))
+  (use-package ivy-posframe
+    :if window-system
+    :custom
+    (ivy-display-function #'ivy-posframe-display-at-frame-center)
+    (ivy-posframe-parameters '((left-fringe . 4)
+                               (right-fringe . 4)
+                               (internal-border-width . 8)
+                               (internal-border-color . "white")))
+    (ivy-posframe-display-functions-alist
+     '((swiper          . nil)
+       (complete-symbol . ivy-posframe-display-at-point)
+       ;; (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
+       (counsel-M-x     . ivy-posframe-display-at-window-center)
+       (t               . ivy-posframe-display)))
+    :custom-face
+    (ivy-posframe ((t (:background "#4a2a36"))))
+    (ivy-posframe-border ((t (:background "#7272a4"))))
+    (ivy-posframe-cursor ((t (:background "#a0bfff"))))
+    :hook
+    (ivy-mode . ivy-posframe-enable)
+    :config
+    (ivy-posframe-mode)))
