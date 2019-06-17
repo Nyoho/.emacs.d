@@ -3,3 +3,18 @@
 This is my =~/.emacs.d=.
 
 I would like to rewrite this repository using Org Mode. <2018-11-27 Tue>
+
+First, clone this repository.
+
+#+begin_src 
+cd ~
+git clone [this-repository]
+cd .emacs.d
+#+end_src
+
+After cloning, do the following.
+
+#+begin_src sh
+git submodule update --init --recursive
+cask
+#+end_src
