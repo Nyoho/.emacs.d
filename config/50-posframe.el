@@ -16,7 +16,7 @@
        (counsel-M-x     . ivy-posframe-display-at-window-center)
        (t               . ivy-posframe-display)))
     :custom-face
-    (ivy-posframe ((t (:background "#4a2a36"))))
+    (ivy-posframe ((t (:background "#2B5B7A"))))
     (ivy-posframe-border ((t (:background "#7272a4"))))
     (ivy-posframe-cursor ((t (:background "#a0bfff"))))
     :hook
