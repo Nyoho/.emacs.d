@@ -47,7 +47,6 @@
 ;; (global-set-key (kbd "C-x C-a") 'helm-ls-git)
 (global-set-key (kbd "M-m") 'my-helm)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "M-s") 'helm-swoop)
 
 ;; (global-set-key [remap execute-extended-command] #'helm-smex)
 ;; (global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
