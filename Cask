@@ -148,6 +148,7 @@
 (depends-on "js2-refactor")
 (depends-on "prettier-js")
 (depends-on "rjsx-mode")
+(depends-on "js-comint")
 
 ;; Julia
 (depends-on "julia-mode")
