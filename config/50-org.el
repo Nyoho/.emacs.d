@@ -15,6 +15,9 @@
 (use-package org
   :defer t
   :mode (("\\.org$" . org-mode) ("\\.txt$" . org-mode) ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
+  :custom
+  (org-html-htmlize-output-type 'css)
+  (org-html-htmlize-font-prefix "org-")
   :init
   (setq org-startup-truncated nil)
   ;; (setq org-startup-folded nil)
