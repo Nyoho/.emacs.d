@@ -21,5 +21,5 @@
     (ivy-posframe-cursor ((t (:background "#a0bfff"))))
     :hook
     (ivy-mode . ivy-posframe-enable)
-    :config
+    :init
     (ivy-posframe-mode)))
