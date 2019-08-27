@@ -183,7 +183,7 @@ Otherwise goto the end of minibuffer."
 
   (define-key helm-map (kbd "C-e")        'helm-select-2nd-action-or-end-of-line)
   (define-key helm-map (kbd "C-j")        'helm-select-3rd-action)
-
+  (define-key helm-map (kbd "C-z") 'helm-execute-persistent-action)
   )
 
 (defun my-helm ()
