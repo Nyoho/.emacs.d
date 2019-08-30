@@ -8,7 +8,8 @@
 ;; jaunte から avy に乗り換えてみた。2019年3月10日
 
 (use-package avy
-  :bind (("C-;" . avy-goto-word-0)))
+  :bind (("C-;" . avy-goto-word-0)
+         ("C-M-;" . avy-goto-line)))
 
 ;;
 ;; dumb-jump
@@ -22,4 +23,5 @@
          ("M-g x" . dumb-jump-go-prefer-external)
          ("M-g z" . dumb-jump-go-prefer-external-other-window))
   :config (setq dumb-jump-selector 'ivy) ;; (setq dumb-jump-selector 'helm)
+  (dumb-jump-mode)
   :ensure)
