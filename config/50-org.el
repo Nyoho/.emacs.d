@@ -54,13 +54,14 @@
 
   ;; org-capture 
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline (concat org-directory "/agenda/inbox.org") "Inbox") "* TODO %^{やること(「〜する」)} %^g
+        '(("t" "Todo" entry
+           (file+headline (lambda () (concat org-directory "agenda/inbox.org")) "Inbox")
+           "* TODO %^{やること(「〜する」)} %^g
 %?
-  Added: %U")
-          ("n" "Note" entry (file+headline "~/org/notes.org" "") "
-* %U %^{トピックス} %^g 
-%i%?
- %a")
+  Added: %n")
+          ("U" "Note" entry
+           (file+headline (lambda () (concat org-directory "notes.org" "")) "")
+           "* %U %^{トピックス} %^g %i%? %a")
         ;; ("b" "Nyotes Page draft" entry (file (choose-new-page "~/org/nyotes/"))
         ;; ("p" "Project Entry" entry (file (choose-project-file))
         ;;  "* TODO %?\n  %i\n  %a\n\n")
