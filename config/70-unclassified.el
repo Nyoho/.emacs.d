@@ -649,8 +649,12 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;
 ;; for tramp
 ;;
-(setq tramp-default-method "sshx")
-(setq tramp-remort-sh "/bin/ksh")
+(use-package tramp
+  :config
+  ;; (tramp-default-method "sshx")
+  ;; (tramp-remort-sh "/bin/ksh")
+  ;; (tramp-remort-sh "/bin/bash")
+  )
 
 
 ;;
