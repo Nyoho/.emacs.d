@@ -982,12 +982,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
     ))
 
 
-;;
-;; dumb-jump-mode
-;;
-(dumb-jump-mode)
-
-
 ;; takaxp's mouse click to show the face
 (defun my-quickcheck-face-at-point (&optional _)
   (interactive "e")
