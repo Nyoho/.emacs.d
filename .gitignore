@@ -24,3 +24,5 @@ private
 elisp/
 config/disabled
 transient/
+.AppleDouble
+.org-id-locations
