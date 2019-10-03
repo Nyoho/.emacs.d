@@ -18,8 +18,8 @@
 ;; )
 
 
-(with-eval-after-load "LaTeX"
-  (define-key LaTeX-mode-map (kbd "/") 'sesame-slash-dwim))
+;; (with-eval-after-load "LaTeX"
+;;   (define-key LaTeX-mode-map (kbd "//") 'sesame-slash-dwim))
 (defun sesame-slash-dwim (arg)
   "Insert the character you type.
 With ARG, insert LaTeX fraction code.  This is supposed to bind
