@@ -39,8 +39,9 @@
 
 ;; helm
 (global-set-key (kbd "C-c C-a") 'helm-browse-project)
-(global-set-key (kbd "C-x C-a") 'find-file-in-project)
-(global-set-key (kbd "C-x C-g") 'helm-git-grep)
+;; (global-set-key (kbd "C-x C-a") 'find-file-in-project)
+(global-set-key (kbd "C-x C-a") 'counsel-git)
+(global-set-key (kbd "C-x C-g") 'counsel-git-grep)
 ;; (global-set-key (kbd "C-x C-g") 'helm-git-grep-at-point)
 
 ;; (require 'helm-ls-git)
