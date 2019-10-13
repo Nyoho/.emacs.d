@@ -34,6 +34,8 @@
 ;; C-c C-w   	js2-mode-toggle-warnings-and-errors
 
 
+(add-to-list 'magic-mode-alist '("^import React" . rjsx-mode))
+
 ;; From http://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
 (use-package js2-refactor
   :defer t
