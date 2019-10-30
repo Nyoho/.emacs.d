@@ -46,8 +46,10 @@
 
 ;; (require 'helm-ls-git)
 ;; (global-set-key (kbd "C-x C-a") 'helm-ls-git)
-(global-set-key (kbd "M-m") 'my-helm)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
+;; Move from helm to ivy
+;; (global-set-key (kbd "M-m") 'my-helm)
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
 ;; (global-set-key [remap execute-extended-command] #'helm-smex)
 ;; (global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
@@ -83,7 +85,7 @@
 
 (define-key my/ctrl-q-map (kbd "C-s") 'goto-scratch-buffer)
 (define-key my/ctrl-q-map (kbd "C-b") 'browse-url)
-(define-key my/ctrl-q-map (kbd "C-o") 'helm-ag-org)
+(define-key my/ctrl-q-map (kbd "C-o") 'counsel-ag-org)
 (define-key my/ctrl-q-map (kbd "m") 'my-toggle-mode-line)
 
 (define-key my/ctrl-q-map (kbd "C-n") 'neotree-toggle)
