@@ -8,3 +8,9 @@
 
 (use-package swiper
   :bind (("M-s" . swiper)))
+
+
+(defun counsel-ag-org ()
+  "org/以下を検索"
+  (interactive)
+  (counsel-ag "" "~/org/"))
