@@ -192,6 +192,7 @@
 (depends-on "open-junk-file")
 (depends-on "pabbrev")
 (depends-on "package")
+(depends-on "leaf")
 (depends-on "pallet")
 (depends-on "paredit")
 (depends-on "pcache")
