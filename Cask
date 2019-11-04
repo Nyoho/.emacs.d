@@ -296,6 +296,7 @@
 ;; Completion
 (depends-on "ivy")
 (depends-on "counsel")
+(depends-on "counsel-dash")
 
 ;; ivy extension
 (depends-on "ivy-posframe")

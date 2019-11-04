@@ -81,12 +81,21 @@
 ;;
 ;; dash-at-point.el
 ;;
-(use-package dash-at-point
-  :defer t
-  :config
-  (global-set-key "\C-cd" 'dash-at-point))
+;; (leaf dash-at-point
+;;   :bind
+;;   (("C-c d" . dash-at-point)))
 
-
+;; TODO: なんか候補は出るけどアクションの結果が出ない
+(leaf counsel-dash
+  :bind
+  (("C-c d" . counsel-dash-at-point))
+  :custom ((counsel-dash-docsets-path . "~/Library/Application Support/Dash/DocSets/")
+           (counsel-dash-common-docsets . '("Javascript" "Rust" "Python_3")))
+  :hook ((emacs-lisp-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Emacs_Lisp"))))
+         (ruby-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Ruby_2"))))
+         (rust-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Rust"))))
+         (python-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Python_3")))))
+  )
 
 ;;
 ;; popwin.el
