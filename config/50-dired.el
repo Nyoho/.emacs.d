@@ -91,7 +91,8 @@
 
 
 (use-package dired
-  :hook (dired-mode . dired-hide-details-mode)
+  :hook ((dired-mode . dired-hide-details-mode)
+         (dired-mode . all-the-icons-dired-mode))
   :bind (:map dired-mode-map
          ("(" . (lambda () (interactive) (dired-hide-details-mode -1)))
          )
