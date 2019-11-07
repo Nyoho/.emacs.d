@@ -261,6 +261,9 @@
 (depends-on "ein") ; for Jupyter Notebook
 (depends-on "sage-shell-mode")
 
+;; programming support
+(depends-on "origami")
+
 ;; AsciiDoc
 (depends-on "asciidoc")
 (depends-on "ox-asciidoc")

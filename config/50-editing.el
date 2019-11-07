@@ -43,3 +43,7 @@
             (use-package outline-magic)
             (define-key outline-minor-mode-map [(f10)] 'outline-cycle)))
 
+(leaf origami
+    :ensure t
+    :custom ((global-origami-mode . t)))
+
