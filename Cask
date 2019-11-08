@@ -1,19 +1,19 @@
 ;;;pallet-ignore
 ;;;manual setting
 (source "ELPA" "https://tromey.com/elpa/")
-;; (source marmalade)
-(source org)
+(source "org" "https://orgmode.org/elpa/")
+;;(source org)
 (source gnu)
 (source melpa)
 ;; (source marmalade)
+;; (source marmalade)
 
 ;; for org-mode
-(source org)
+(depends-on "org-plus-contrib")
 (depends-on "ob-swift")
 (depends-on "ob-typescript")
 (depends-on "org-bullets")
 (depends-on "org-multiple-keymap")
-(depends-on "org-plus-contrib")
 (depends-on "org-trello")
 (depends-on "org-seek")
 ;; (depends-on "org-mac-link")
