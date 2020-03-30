@@ -2,6 +2,7 @@
 ;; yasnippet
 ;;
 (use-package yasnippet
+  :ensure t
   :defer t
   :custom
   (yas-key-syntaxes '(yas-longest-key-from-whitespace "w_.()" "w_." "w_" "w"))
