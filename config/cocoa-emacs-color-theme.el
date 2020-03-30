@@ -1,4 +1,27 @@
-(when window-system
+;; themes
+(leaf themes
+  :when window-system
+  :ensure (anti-zenburn-theme
+           solarized-theme
+           moe-theme
+           monokai-theme
+           zenburn-theme
+           reverse-theme
+           waher-theme
+           heroku-theme
+           abyss-theme
+           ahungry-theme
+           blackboard-theme
+           anti-zenburn-theme
+           hc-zenburn-theme
+           apropospriate-theme
+           rebecca-theme
+           railscasts-theme
+           railscasts-reloaded-theme
+           reykjavik-theme
+           seoul256-theme)
+  :config
+  (load-theme 'hc-zenburn t)
   ;; Themes
   ;;
   ;; To reset the currently applied theme, evaluate the following line.
@@ -8,7 +31,6 @@
   ;; (load-theme 'rebecca t)
   ;; (load-theme 'apropospriate-dark t)
   ;; (load-theme 'anti-zenburn t)
-  (load-theme 'hc-zenburn t)
   ;; (load-theme 'leuven t)
 
   ;; (load-theme 'sanityinc-solarized-light t)
