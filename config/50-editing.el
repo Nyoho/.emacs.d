@@ -1,12 +1,14 @@
 ;;; editing
 
 (use-package expand-region
+  :ensure t
   :config
   (global-set-key (kbd "C-,") 'er/expand-region)
   (global-set-key (kbd "C-M-,") 'er/contract-region))
 
 (use-package multiple-cursors :defer t)
 (use-package smartrep
+  :ensure t
   :config
   (smartrep-define-key
       global-map "C-." '(("C-n" . 'mc/mark-next-like-this)
@@ -31,8 +33,12 @@
 ;; let b = 2
 ;; let c = 3
 
-(use-package outline)
-(use-package outline-magic) ;; org-modeのように折り畳みができる。
+(leaf outline
+  :ensure t)
+
+;; org-modeのように折り畳みができる。
+(leaf outline-magic
+  :ensure t)
 
 (add-hook 'outline-mode-hook
           (lambda ()

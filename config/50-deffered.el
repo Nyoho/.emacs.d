@@ -1,1 +1,3 @@
-(require 'deferred)
+(leaf deferred
+  :ensure t)
+

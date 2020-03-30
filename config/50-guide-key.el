@@ -1,4 +1,5 @@
 (use-package guide-key
+  :ensure t
   :config
 
   (setq guide-key/guide-key-sequence

@@ -3,6 +3,7 @@
 ;;
 ;; (if (equal (call-process-shell-command "which cmigemo" nil t) 0)
 (use-package migemo
+  :ensure t
   :when (executable-find "cmigemo")
   
   ;; (setq migemo-use-pattern-alist t)
@@ -22,6 +23,7 @@
   (migemo-init)
 
   (use-package avy-migemo
+    :disabled
     :after swiper
     :config
     ;; (avy-migemo-mode 1) ;; Emacs headだと動くらしい2019年6月26日(水) https://github.com/abo-abo/swiper/issues/1961

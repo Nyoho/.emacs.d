@@ -2,11 +2,18 @@
 ;; Thanks, abo-abo. https://github.com/abo-abo/swiper/
 
 (use-package counsel
+  :ensure t
   :diminish ivy-mode counsel-mode
-  :bind (("M-m" . counsel-buffer-or-recentf))
+  :bind (("M-m" . counsel-buffer-or-recentf)
+         ("C-x b" . counsel-switch-buffer))
   )
 
+(leaf ivy
+  :ensure t
+  :require t)
+
 (use-package swiper
+  :ensure t
   :bind (("M-s" . swiper)))
 
 

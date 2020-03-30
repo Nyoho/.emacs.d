@@ -20,6 +20,7 @@
 ;;   :diminish (git-gutter+-mode . "gg"))
 
 (use-package git-gutter
+  :ensure t
   :init
   :custom
   (git-gutter:modified-sign "~")
@@ -33,6 +34,7 @@
   (global-git-gutter-mode +1))
 
 (use-package git-gutter-fringe
+  :ensure t
   :if window-system
   :init (global-git-gutter-mode t)
   :custom-face

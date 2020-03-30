@@ -1,6 +1,9 @@
 ;;
 ;; for dired
 ;;
+(leaf dired-filter
+      :ensure t)
+
 (use-package dired-x
   :after dired
   :defer t
@@ -67,6 +70,7 @@
 ;; http://emacs.rubikitch.com/dired-subtree/
 ;;
 (use-package dired-subtree
+  :ensure t
   :after dired
   :config
   (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
@@ -87,8 +91,12 @@
   )
 
 (use-package gist
+  :ensure t
   :after dired)
 
+(leaf all-the-icons-dired
+  :ensure t
+  :hook (dired-mode-hook . all-the-icons-dired-mode))
 
 (use-package dired
   :hook ((dired-mode . dired-hide-details-mode)

@@ -2,6 +2,7 @@
 ;; session.el -- カーソル位置とか kill-ring とか覚えておいてくれて便利
 ;;
 (use-package session
+  :ensure t
   :config
   (add-hook 'after-init-hook 'session-initialize)
   (setq session-save-print-spec '(t nil 40000))

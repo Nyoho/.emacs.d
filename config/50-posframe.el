@@ -1,7 +1,9 @@
 (use-package posframe
+  :ensure t
   :when window-system
   :config
   (use-package ivy-posframe
+    :ensure t
     :if window-system
     :custom
     (ivy-display-function #'ivy-posframe-display-at-frame-center)

@@ -1,5 +1,6 @@
 ;; 検索置換が簡単になる
 (use-package anzu
+  :ensure t
   :init
   (global-anzu-mode +1)
   (setq anzu-use-migemo t)

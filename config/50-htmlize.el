@@ -3,6 +3,9 @@
 ;;
 ;; For example, we can paste a code snippet into a Keynote slide with emacs's look.
 
+(leaf htmlize
+  :ensure t)
+
 (defun htmlize-and-browse ()
   (interactive)
   (defcustom

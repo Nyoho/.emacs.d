@@ -1,6 +1,7 @@
 ;; https://github.com/sagemath/sage-shell-mode
 
 (use-package sage-shell-mode
+  :ensure t
   :config
   (setq sage-shell:use-prompt-toolkit nil)
   (setq sage-shell:sage-root "/Applications/SageMath-8.6.app")

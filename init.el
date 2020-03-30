@@ -31,8 +31,23 @@
 ;;
 ;; path, directories, ...
 ;;
+(when load-file-name
+  (setq user-emacs-directory
+        (expand-file-name (file-name-directory load-file-name))))
+
 (unless (boundp 'user-emacs-directory)
   (defvar user-emacs-directory (expand-file-name "~/.emacs.d/")))
+
+(prog1 "prepare leaf"
+  (prog1 "package"
+    (custom-set-variables
+     '(package-archives '(("org"   . "https://orgmode.org/elpa/")
+                          ("melpa" . "https://melpa.org/packages/")
+                          ("gnu"   . "https://elpa.gnu.org/packages/"))))
+    (package-initialize)
+    (unless (package-installed-p 'leaf)
+      (package-refresh-contents)
+      (package-install 'leaf))))
 
 (dolist (dir (list
               "/usr/local/bin"
@@ -180,8 +195,70 @@
 ;; (load "config/init" t)
 ;; init-loader に置き換えた
 
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
+(leaf leaf
+  :config
+  (leaf leaf-keywords
+    :ensure t
+    :init
+    (leaf package
+      :config
+      (leaf *elpa-workaround
+        :emacs>= 26.1
+        :emacs<= 26.2
+        :custom ((gnutls-algorithm-priority . "NORMAL:-VERS-TLS1.3"))))
+
+    (leaf el-get
+      :doc "Manage the external elisp bits and pieces you depend upon"
+      :tag "emacs" "package" "elisp" "install" "elpa" "git" "git-svn" "bzr" "cvs" "svn" "darcs" "hg" "apt-get" "fink" "pacman" "http" "http-tar" "emacswiki"
+      :url "http://www.emacswiki.org/emacs/el-get"
+      :ensure t
+      :init (unless (executable-find "git")
+              (warn "'git' couldn't found. el-get can't download any packages")))
+
+    (leaf feather
+      :doc "Parallel thread modern package manager"
+      :req "emacs-26.3" "async-await-1.0" "ppp-1.0" "page-break-lines-0.1"
+      :tag "convenience" "package" "emacs>=26.3"
+      :url "https://github.com/conao3/feather.el"
+      :emacs>= 26.3
+      :ensure t
+      ;; :after ppp page-break-lines
+      )
+
+    (leaf diminish
+      :doc "Diminished modes are minor modes with no modeline display"
+      :req "emacs-24.3"
+      :tag "extensions" "diminish" "minor" "codeprose" "emacs>=24.3"
+      :url "https://github.com/myrjola/diminish.el"
+      :emacs>= 24.3
+      :ensure t)
+
+    (leaf transient
+      :doc "Transient commands"
+      :req "emacs-25.1"
+      :tag "bindings" "emacs>=25.1"
+      :url "https://github.com/magit/transient"
+      :emacs>= 25.1
+      :ensure t)
+    :config
+    (leaf-keywords-init)))
+
+;; (require 'cask "~/.cask/cask.el")
+;; (cask-initialize)
+
+(leaf use-package
+  :doc "A configuration macro for simplifying your .emacs"
+  :req "emacs-24.3" "bind-key-2.4"
+  :tag "dotemacs" "startup" "speed" "config" "package" "emacs>=24.3"
+  :url "https://github.com/jwiegley/use-package"
+  :added "2020-03-24"
+  :emacs>= 24.3
+  :ensure t
+  :require t)
+
+(leaf init-loader
+  :ensure t
+  :require t)
 
 (use-package init-loader
   ;; :custom
@@ -190,14 +267,16 @@
   (init-loader-load (concat user-emacs-directory "config")))
 
 ;; esup: the Emacs StartUp Profiler
-(require 'esup)
-(require 'noflet)
+(leaf esup
+  :ensure t)
+(leaf noflet
+  :ensure t)
 (defun esup-init-loader ()
   (interactive)
   (let ((files)
         (esup-user-init-file "/tmp/esup-init.el"))
     (noflet ((load (file &rest _) (push (locate-library file) files)))
-      (init-loader-load (concat user-emacs-directory "config")))
+            (init-loader-load (concat user-emacs-directory "config")))
     (with-current-buffer (find-file-noselect esup-user-init-file)
       (erase-buffer)
       (dolist (file (reverse files))
@@ -227,3 +306,4 @@
                         (float-time (time-subtract
                                      after-init-time
                                      before-init-time))))))
+;; the end of init.el

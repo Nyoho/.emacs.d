@@ -1,5 +1,6 @@
 
 (use-package company
+  :ensure t
   :init
   (global-company-mode +1)
   :custom
@@ -17,6 +18,7 @@
   )
 
 (use-package company-box
+  :ensure t
   :after company
   :hook (company-mode . company-box-mode)
   :config

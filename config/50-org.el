@@ -7,10 +7,15 @@
   )
 
 (use-package org-multiple-keymap
+  :ensure t
   :after org
   :config
   ;; (setq org-multiple-keymap-minor-mode t)
   )
+
+(leaf org-plus-contrib
+  :ensure t
+  :after org)
 
 (use-package org
   :defer t
@@ -103,12 +108,12 @@
   ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp" t)
 
   ;; These lines only if org-mode is not part of the X/Emacs distribution.
-  (autoload 'org-mode "org" "Org mode" t)
-  (autoload 'org-diary "org" "Diary entries from Org mode")
-  (autoload 'org-agenda "org" "Multi-file agenda from Org mode" t)
-  (autoload 'org-store-link "org" "Store a link to the current location" t)
-  (autoload 'orgtbl-mode "org" "Org tables as a minor mode" t)
-  (autoload 'turn-on-orgtbl "org" "Org tables as a minor mode")
+  ;; (autoload 'org-mode "org" "Org mode" t)
+  ;; (autoload 'org-diary "org" "Diary entries from Org mode")
+  ;; (autoload 'org-agenda "org" "Multi-file agenda from Org mode" t)
+  ;; (autoload 'org-store-link "org" "Store a link to the current location" t)
+  ;; (autoload 'orgtbl-mode "org" "Org tables as a minor mode" t)
+  ;; (autoload 'turn-on-orgtbl "org" "Org tables as a minor mode")
 
   ;; http://rubikitch.com/2014/10/10/org-sparse-tree-indirect-buffer/
   (defun org-sparse-tree-indirect-buffer (arg)
@@ -323,6 +328,7 @@
 
 ;; http://www.howardism.org/Technical/Emacs/orgmode-wordprocessor.html
 (use-package org-bullets
+  :ensure t
   :after org
   :if (memq window-system '(mac ns))
   :config
@@ -381,8 +387,8 @@
   )
 
 
-(use-package ox-gfm :after ox)
-(use-package ox-qmd :after ox)
+(use-package ox-gfm :after ox :ensure t)
+(use-package ox-qmd :after ox :ensure t)
 
 (use-package org-seek
   :after org

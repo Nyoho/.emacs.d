@@ -1,4 +1,5 @@
-(use-package hydra)
+(leaf hydra
+      :ensure t)
 
 (defhydra hydra/move ()
   "move"

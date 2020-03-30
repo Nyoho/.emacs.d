@@ -1,4 +1,5 @@
 (use-package magit
+  :ensure t
   ;; :mode (("COMMIT_EDITMSG$" . magit-mode))
 
   ;; :after vc

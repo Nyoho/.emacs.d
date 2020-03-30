@@ -2,6 +2,7 @@
 ;; https://github.com/syohex/dot_files/blob/master/emacs/init_loader/99_global-keys.el
 
 (global-set-key (kbd "M-g .") 'helm-ag)
+(global-set-key (kbd "M-g .") 'counsel-ag)
 (global-set-key (kbd "M-g ,") 'helm-ag-pop-stack)
 (global-set-key (kbd "C-M-s") 'helm-ag-this-file)
 ;; (global-set-key (kbd "M-s") 'helm-occur)
