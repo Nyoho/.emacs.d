@@ -204,7 +204,7 @@
 
 
 
-(setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2018.8/libexec/plantuml.jar")
+(setq org-plantuml-jar-path (car (file-expand-wildcards "/usr/local/Cellar/plantuml/*/libexec/plantuml.jar")))
 
 (use-package ox-latex
   :after org
