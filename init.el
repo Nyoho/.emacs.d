@@ -260,11 +260,10 @@
   :ensure t
   :require t)
 
-(use-package init-loader
-  ;; :custom
-  ;; (init-loader-show-log-after-init 'error-only)
-  :init
-  (init-loader-load (concat user-emacs-directory "config")))
+(leaf init-loader
+  :init (init-loader-load (concat user-emacs-directory "config"))
+  :custom ((init-loader-show-log-after-init quote error-only))
+  :require t)
 
 ;; esup: the Emacs StartUp Profiler
 (leaf esup
