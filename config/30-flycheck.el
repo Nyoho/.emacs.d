@@ -1,5 +1,6 @@
-(use-package flycheck
-  :defer t
+(leaf flycheck
+  :ensure t
+  :custom ((flycheck-pos-tip-timeout . 30))
   :config
   ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -15,8 +16,9 @@
   ;;              '((option-list "-I" flycheck-d-custom-import-paths s-prepend))))
 
   ;; flycheck-pos-tip
-  (flycheck-pos-tip-mode)
-  (setq flycheck-pos-tip-timeout 30))
+  ;; (flycheck-pos-tip-mode)
+  ;; (setq flycheck-pos-tip-timeout 30)
+  )
 
 ;; Local Variables:
 ;; flycheck-disabled-checkers: (emacs-lisp-checkdoc)
