@@ -21,3 +21,7 @@
   "org/以下を検索"
   (interactive)
   (counsel-ag "" "~/org/"))
+
+(leaf visual-regexp
+  :ensure t
+  :bind (("M-%" . vr/query-replace)))

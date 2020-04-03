@@ -114,9 +114,6 @@
 (global-set-key (kbd "C-x C-S-d") 'e2wm:dp-array)
 
 
-;; visual-regexp.el
-(global-set-key (kbd "M-%") 'vr/query-replace)
-
 (global-set-key (kbd "C-x j") 'open-junk-file)
 
 
