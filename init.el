@@ -258,9 +258,6 @@
 
 (leaf init-loader
   :ensure t
-  :require t)
-
-(leaf init-loader
   :init (init-loader-load (concat user-emacs-directory "config"))
   :custom ((init-loader-show-log-after-init quote error-only))
   :require t)
