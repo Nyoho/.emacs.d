@@ -1,7 +1,9 @@
 ;;
 ;; https://www.emacswiki.org/emacs/NeoTree
 
-(use-package neotree
+(leaf neotree
+  :ensure t
+  :commands neotree-toggle
   :bind (([f8] . neotree-toggle))
   :config
   (setq neo-show-hidden-files nil)
