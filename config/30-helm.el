@@ -1,19 +1,13 @@
 ;;
 ;; helm
 ;;
-(use-package migemo)
-
-(use-package helm-files
-  :hook (find-file-hook))
-
-(use-package helm
-  :defer t
+(leaf helm
+  :ensure t
   :config
-  (use-package helm-net)
-  (use-package helm-config)
-  (use-package helm-descbinds)
-  ;; (use-packagehelm-migemo)
-  (use-package helm-ag)
+  ;; (leaf helm-net :ensure t)
+  ;; (leaf helm-config :ensure t)
+  (leaf helm-descbinds :ensure t)
+  (leaf helm-ag :ensure t)
   ;; (add-to-list 'helm-compile-source-functions 'helm-compile-source--migemo t)
   (setq helm-compile-source-functions nil)
 
