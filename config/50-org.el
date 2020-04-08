@@ -326,6 +326,11 @@
 
 (use-package org-tempo :after org)
 
+(leaf org-superstar
+  :ensure t
+  :disabled t
+  :after org)
+
 ;; http://www.howardism.org/Technical/Emacs/orgmode-wordprocessor.html
 (use-package org-bullets
   :ensure t
