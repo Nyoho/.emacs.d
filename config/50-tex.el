@@ -40,6 +40,8 @@ to [/]."
 ;;
 ;; AUCTeX
 ;;
+(leaf auctex
+  :ensure t)
 ;; (load "auctex.el" nil t t)
 ;; (load "preview-latex.el" nil t t)
 ;; 日本語 TeX 用の設定
@@ -234,8 +236,8 @@ to [/]."
 (setq reftex-plug-into-AUCTeX t)
 
 
-(use-package tex
-  :defer t
+(leaf tex
+  :after t
   :config
   (TeX-add-style-hook
    "latex"
@@ -347,13 +349,12 @@ to [/]."
 
 ;; outline-magic
 (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
-(use-package outline
+(leaf outline
+  :bind ((outline-minor-mode-map ("<C-tab>" . outline-cycle)))
+  :require t outline-magic
   :config
-  (require 'outline-magic)
   (add-hook 'LaTeX-mode-hook
             (lambda ()
               (setq outline-promotion-headings
                     '("\\chapter" "\\section" "\\subsection"
-                      "\\subsubsection" "\\paragraph" "\\subparagraph"))))
-  (define-key outline-minor-mode-map (kbd "<C-tab>") 'outline-cycle)
-  )
+                      "\\subsubsection" "\\paragraph" "\\subparagraph")))))
