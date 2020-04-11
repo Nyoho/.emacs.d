@@ -1,28 +1,24 @@
 ;;
 ;; for js2-mode (javascript)
 ;;
-(use-package js2-mode
-  :defer t
-  ;; :hook (js2-mode . prettier-js-mode)
+(leaf js2-mode
+  :ensure t
+  :commands js2-mode js2-jsx-mode
   :mode (("\\.js\\'" . js2-mode)
          ("\\.jsx\\'" . js2-jsx-mode)
          ("components\\/.*\\.js\\'" . js2-jsx-mode))
-  :custom
-  (js2-strict-missing-semi-warning nil)
+  ;; :hook (js2-mode . prettier-js-mode)
+  :custom ((js2-strict-missing-semi-warning . nil)
+           (js2-basic-offset . 2)
+           (js2-bounce-indent-p . t))
+  :hook ((js2-jsx-mode-hook . flycheck-mode))
+  :bind ((:js-mode-map ("M-." . nil)) ;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so unbind it.
+         )
   :config
-  ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
-  ;; (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
-
   ;; (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
   ;; (add-to-list 'flycheck-checkers 'js2-jsx)
-  ;; (add-hook 'js2-jsx-mode-hook 'flycheck-mode)
-  (custom-set-variables  
-   '(js2-basic-offset 2)  
-   '(js2-bounce-indent-p t))
+  )
 
-  ;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so
-  ;; unbind it.
-  (define-key js-mode-map (kbd "M-.") nil))
 
 ;; 便利メモ
 ;; C-c C-a   	js2-mode-show-all
