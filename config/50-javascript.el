@@ -29,28 +29,25 @@
 ;; C-c C-t   	js2-mode-toggle-hide-comments
 ;; C-c C-w   	js2-mode-toggle-warnings-and-errors
 
-
-(add-to-list 'magic-mode-alist '("^import React" . rjsx-mode))
+(leaf rjsx-mode
+  :ensure t
+  :magic ("^import React" . rjsx-mode))
 
 ;; From http://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
-(use-package js2-refactor
-  :defer t
-  :config
-  (add-hook 'js2-mode-hook #'js2-refactor-mode)
-  (js2r-add-keybindings-with-prefix "C-c C-r")
-  (define-key js2-mode-map (kbd "C-k") #'js2r-kill))
+(leaf js2-refactor
+  :after t
+  :bind ((js2-mode-map ("C-k" . js2r-kill)))
+  :hook ((js2-mode-hook . js2-refactor-mode))
+  :config (js2r-add-keybindings-with-prefix "C-c C-r"))
 
-(use-package xref-js2
-  :defer t
-  :config
-  (add-hook 'js2-mode-hook (lambda ()
-                             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
-
+(leaf xref-js2
+  :after js2
+  :hook (js2-mode-hook . (lambda ()
+                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 ;;
 ;; CoffeeScript
 ;;
-(use-package coffee-mode
-  :defer t
-  :config
-  (setq coffee-args-compile '("-c" "-m"))
-  (add-hook 'coffee-after-compile-hook 'sourcemap-goto-corresponding-point))
+(leaf coffee-mode
+  :after t
+  :hook ((coffee-after-compile-hook . sourcemap-goto-corresponding-point))
+  :setq ((coffee-args-compile quote ("-c" "-m"))))
