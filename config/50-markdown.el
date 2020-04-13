@@ -42,7 +42,7 @@
 (setq markdown-command-needs-filename nil)
 
 
-(add-hook 'markdown-mode-hook 'ac-emoji-setup)
+;; (add-hook 'markdown-mode-hook 'ac-emoji-setup)
 
 ;; markdown-preview-mode がすごく便利。なんと live reload 付き。
 (use-package markdown-preview-mode :defer t)
