@@ -1,24 +1,21 @@
 ;;
 ;; markdown-mode
 ;;
-(use-package markdown-mode
-  :defer t
+(leaf markdown-mode
+  :ensure t
+  :commands markdown-mode
   :mode (("\\.text" . markdown-mode))
-  :init
-  (custom-set-faces
-   '(markdown-header-face-2 ((t (:inherit org-level-2))))
-   '(markdown-header-face-3 ((t (:inherit org-level-3))))
-   '(markdown-header-face-4 ((t (:inherit org-level-4))))
-   '(markdown-header-face-5 ((t (:inherit org-level-5))))
-   '(markdown-header-face-6 ((t (:inherit org-level-6))))
-   )
-
-  :config
-  (add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
-;; brew install multimarkdown
-(setq markdown-command "multimarkdown")
-;; '(markdown-command "markdown_py" t)
-
+  :custom-face
+  ((markdown-header-face-2 quote ((t (:inherit org-level-2))))
+   (markdown-header-face-3 quote ((t (:inherit org-level-3))))
+   (markdown-header-face-4 quote ((t (:inherit org-level-4))))
+   (markdown-header-face-5 quote ((t (:inherit org-level-5))))
+   (markdown-header-face-6 quote ((t (:inherit org-level-6)))))
+  :hook (markdown-mode . '(markdown-custom))
+  :setq
+  (markdown-command . "multimarkdown")
+  ;; brew install multimarkdown
+  ;; or "markdown_py"
   )
 
 (defun markdown-custom ()
