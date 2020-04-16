@@ -11,7 +11,7 @@
    (markdown-header-face-4 quote ((t (:inherit org-level-4))))
    (markdown-header-face-5 quote ((t (:inherit org-level-5))))
    (markdown-header-face-6 quote ((t (:inherit org-level-6)))))
-  :hook (markdown-mode . '(markdown-custom))
+  :hook (markdown-mode-hook . markdown-custom)
   :setq
   (markdown-command . "multimarkdown")
   ;; brew install multimarkdown
