@@ -1,4 +1,5 @@
-(use-package dockerfile-mode
-  :defer t
+(leaf dockerfile-mode
+  :ensure t
+  :commands dockerfile-mode
   :mode (("Dockerfile$" . dockerfile-mode))
   )
