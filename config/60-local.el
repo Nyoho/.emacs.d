@@ -57,10 +57,10 @@
 ;;
 ;; yaml-mode
 ;;
-(use-package yaml-mode
-  :defer t
-  :mode ("\\.ya?ml$" . yaml-mode))
-
+(leaf yaml-mode
+  :ensure t
+  :commands yaml-mode
+  :mode (("\\.ya?ml$" . yaml-mode)))
 
 ;;
 ;; Zen Coding Mode
