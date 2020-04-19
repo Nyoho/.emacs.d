@@ -1,5 +1,5 @@
-(use-package helm-hatena-bookmark
-  :defer t
+(leaf helm-hatena-bookmark
+  :ensure t
   :config
   (defun hatena-bookmark-get-dump ()
     "Get Hatena::Bookmark dump file."
@@ -12,8 +12,8 @@
         (lambda ()
           (message "Starts updating Hatena bookmark datebase... done!")))
       ))
-
-  (setq helm-hatena-bookmark-username "Nyoho")
-  (setq helm-hatena-bookmark-candidate-number-limit 100000)
-  (setq helm-hatena-bookmark-interval (* 4 60 60))
-  (helm-hatena-bookmark-initialize))
+  (helm-hatena-bookmark-initialize)
+  :pre-setq `((helm-hatena-bookmark-username . "Nyoho")
+              (helm-hatena-bookmark-candidate-number-limit . 100000)
+              (helm-hatena-bookmark-interval . ,(* 4 60 60))))
+;; (* 4 60 60)
