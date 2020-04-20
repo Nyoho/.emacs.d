@@ -23,12 +23,14 @@
 ;;
 ;; hotentry.el
 ;;
-(use-package hotentry
-  :defer t
-  :config
-  (setq hotentry:favorites '("math" "機械学習" "emacs" "ruby" "python"))
-  (setq hotentry:default-threshold 2) ;; defaultは 3
-)
+(leaf hotentry
+  :after t
+  :disabled
+  :el-get syohex/hotentry.el
+  :setq
+  ((hotentry:favorites quote ("math" "機械学習" "emacs" "ruby" "python"))
+   (hotentry:default-threshold . 2) ;; defaultは 3
+   ))
 
 ;;
 ;; 最小の e2wm 設定例
