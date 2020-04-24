@@ -240,6 +240,10 @@
       :url "https://github.com/magit/transient"
       :emacs>= 25.1
       :ensure t)
+
+    (leaf leaf-tree
+      :ensure t)
+
     :config
     (leaf-keywords-init)))
 
