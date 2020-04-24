@@ -181,10 +181,10 @@ to [/]."
                                      ;; /usr/local/texlive/texmf-local/fonts/map/dvipdfm/hiragino-embed
                                      TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX and dvipdfmx"))
                       (add-to-list 'TeX-command-list
-                                   '("Nonstop-pdfpLaTeX" "platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || SayKana エラーですけど"
+                                   '("Nonstop-pdfpLaTeX" "platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || say エラーですけど"
                                      TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX and dvipdfmx"))
                       (add-to-list 'TeX-command-list
-                                   '("PythonTeX-dvipdfmx" "pythontex %t && platex -synctex=1 -interaction=nonstopmode %t pythontex %t && platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || SayKana エラーですよ"
+                                   '("PythonTeX-dvipdfmx" "pythontex %t && platex -synctex=1 -interaction=nonstopmode %t pythontex %t && platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || say エラーですよ"
                                      TeX-run-TeX nil (latex-mode) :help "Run pLaTeX, pythontex, platex, and dvipdfmx"))
                       (add-to-list 'TeX-command-list
                                    '("only-PythonTeX" "pythontex %t"
