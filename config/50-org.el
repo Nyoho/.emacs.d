@@ -385,8 +385,8 @@
   
   :config
   (setq org-trello-files
-        '((concat (getenv "HOME") "/org/trello.org")
-          (concat (getenv "HOME") "/org/trello2.org")))
+        '((expand-file-name "~/org/trello.org")
+          (expand-file-name "~/org/trello2.org")))
 
   (setq org-trello-current-prefix-keybinding "C-c o")
   )

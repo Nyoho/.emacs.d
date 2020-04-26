@@ -26,7 +26,7 @@
 
 
 
-;; (setq markdown-preview-stylesheets (list (concat (getenv "HOME") "/Dropbox/Web/css/github.css")))
+;; (setq markdown-preview-stylesheets (list (expand-file-name "~/Dropbox/Web/css/github.css")))
 (setq markdown-preview-stylesheets (list "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"))
 ;; (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
 
