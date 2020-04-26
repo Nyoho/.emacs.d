@@ -110,11 +110,12 @@
 
 ;; Setting for rbenv and TeX
 (setenv "PATH"
-        (concat (getenv "HOME") "/.rbenv/shims:"
-                (getenv "HOME") "/.rbenv/bin:"
+        (concat (expand-file-name "~/.rbenv/shims:")
+                (expand-file-name "~/.rbenv/bin:")
                 "/Library/TeX/texbin:"
                 (getenv "PATH")))
-(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+(add-to-list 'exec-path (expand-file-name "~/.rbenv/shims"))
+(add-to-list 'exec-path (expand-file-name "~/.rbenv/bin"))
 
 
 ;; Emacs の種類バージョンを判別するための変数を定義
