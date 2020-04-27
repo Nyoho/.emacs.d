@@ -2,12 +2,12 @@
 ;; helm
 ;;
 (leaf helm
+  :disabled
   :ensure t
   :config
   ;; (leaf helm-net :ensure t)
   ;; (leaf helm-config :ensure t)
-  (leaf helm-descbinds :ensure t)
-  (leaf helm-ag :ensure t)
+  ;; (leaf helm-descbinds :ensure t)
   ;; (add-to-list 'helm-compile-source-functions 'helm-compile-source--migemo t)
   (setq helm-compile-source-functions nil)
 
@@ -32,7 +32,6 @@
   ;; (setq helm-migemize-command-idle-delay helm-idle-delay)
   ;; (setq helm-migemize-command-idle-delay 0.01)
   ;; (helm-migemize-command helm-for-files)
-  ;; (helm-migemize-command helm-ag)
   ;; (helm-migemize-command helm-hatena-bookmark)
   ;; (helm-migemize-command helm-firefox-bookmarks)
 
@@ -64,11 +63,6 @@
   ;; (setq helm-ag-base-command "ag --nocolor --nogroup")
   (setq helm-ag-base-command "rg --vimgrep --no-heading --ignore-case")
   ;; (setq helm-ag-insert-at-point 'symbol)
-
-  (defun helm-ag-org ()
-    "org/以下を検索"
-    (interactive)
-    (helm-ag "~/org/"))
 
   ;; おもしろ helm
   ;; from A Package in a league of its own: Helm - http://tuhdo.github.io/helm-intro.html
