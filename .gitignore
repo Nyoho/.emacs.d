@@ -27,3 +27,4 @@ transient/
 .AppleDouble
 .org-id-locations
 custom.el
+el-get/
