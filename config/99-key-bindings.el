@@ -111,8 +111,6 @@
 (global-set-key (kbd "C-x C-S-d") 'e2wm:dp-array)
 
 
-(global-set-key (kbd "C-x j") 'open-junk-file)
-
 
 (global-set-key (kbd "C-x C-c") 'helm-M-x)
 (defalias 'exit 'save-buffers-kill-emacs)
