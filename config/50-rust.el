@@ -2,7 +2,8 @@
 ;; rustup component add rust-src しておく
 ;; rustup default nightly
 
-(leaf rust
+(leaf rust-mode
+  :ensure t
   :hook ((rust-mode-hook . (lambda ()
                              (racer-mode)
                              (flycheck-rust-setup)))
@@ -24,6 +25,13 @@
   (defun run-rust-test nil
     (interactive)
     (rust-test))
+
+  (leaf racer :ensure t)
+  ;; cargo +nightly install racer
+
+  (leaf flycheck-rust
+    :ensure t
+    :after flycheck rust)
 
   :bind (("C-c C-c" . run-rust-test)))
 
