@@ -172,59 +172,46 @@ to [/]."
 
 (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
-(add-hook 'LaTeX-mode-hook
-          (function (lambda ()
-                      (add-to-list 'TeX-command-list
-                                   '("pdfpLaTeX" "platex -synctex=1 %t && dvipdfmx %d"
-                                     ;; '("pdfpLaTeX" "platex -synctex=1 %t && dvipdfmx -f ~/tex/texinputs/hiragino-embed %d"
-                                     ;; '("pdfpLaTeX" "platex -kanji=sjis -synctex=1 %t && dvipdfmx -f ~/tex/texinputs/hiragino-embed %d"
-                                     ;; /usr/local/texlive/texmf-local/fonts/map/dvipdfm/hiragino-embed
-                                     TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX and dvipdfmx"))
-                      (add-to-list 'TeX-command-list
-                                   '("Nonstop-pdfpLaTeX" "platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || say エラーですけど"
-                                     TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX and dvipdfmx"))
-                      (add-to-list 'TeX-command-list
-                                   '("PythonTeX-dvipdfmx" "pythontex %t && platex -synctex=1 -interaction=nonstopmode %t pythontex %t && platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || say エラーですよ"
-                                     TeX-run-TeX nil (latex-mode) :help "Run pLaTeX, pythontex, platex, and dvipdfmx"))
-                      (add-to-list 'TeX-command-list
-                                   '("only-PythonTeX" "pythontex %t"
-                                     TeX-run-TeX nil (latex-mode) :help "Run pLaTeX, pythontex, platex, and dvipdfmx"))
-                      (add-to-list 'TeX-command-list
-                                   '("pdfpLaTeX2" "platex -synctex=1 %t && dvips -Ppdf -t a4 -z -f %d | convbkmk -g > %f && /usr/local/bin/ps2pdf %f"
-                                     TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX, dvips, and ps2pdf"))
-                      (add-to-list 'TeX-command-list
-                                   '("pdfupLaTeX" "uplatex -synctex=1 %t && dvipdfmx %d"
-                                     TeX-run-TeX nil (latex-mode) :help "Run e-upLaTeX and dvipdfmx"))
-                      (add-to-list 'TeX-command-list
-                                   '("pdfupLaTeX2" "uplatex -synctex=1 %t && dvips -Ppdf -t a4 -z -f %d | convbkmk -u > %f && /usr/local/bin/ps2pdf %f"
-                                     TeX-run-TeX nil (latex-mode) :help "Run e-upLaTeX, dvips, and ps2pdf"))
-                      (add-to-list 'TeX-command-list
-                                   '("XeLaTeX" "xelatex -synctex=1 %t"
-                                     TeX-run-TeX nil (latex-mode) :help "Run XeLaTeX"))
-                      (add-to-list 'TeX-command-list
-                                   '("pBibTeX" "pbibtex %s"
-                                     TeX-run-BibTeX nil t :help "Run pBibTeX"))
-                      (add-to-list 'TeX-command-list
-                                   '("upBibTeX" "upbibtex %s"
-                                     TeX-run-BibTeX nil t :help "Run upBibTeX"))
-                      (add-to-list 'TeX-command-list
-                                   '("Mendex" "mendex %s"
-                                     TeX-run-command nil t :help "Create index file with mendex"))
-                      (add-to-list 'TeX-command-list
-                                   '("Preview" "/usr/bin/open -a Preview.app %s.pdf"
-                                     TeX-run-discard-or-function t t :help "Run Preview"))
-                      (add-to-list 'TeX-command-list
-                                   '("TeXShop" "/usr/bin/open -a TeXShop.app %s.pdf"
-                                     TeX-run-discard-or-function t t :help "Run TeXShop"))
-                      (add-to-list 'TeX-command-list
-                                   '("TeXworks" "/usr/bin/open -a TeXworks.app %s.pdf"
-                                     TeX-run-discard-or-function t t :help "Run TeXworks"))
-                      (add-to-list 'TeX-command-list
-                                   '("View" "/Applications/Skim.app/Contents/SharedSupport/displayline %n %s.pdf %b"
-                                     TeX-run-discard-or-function t t :help "Forward search with Skim"))
-                      (add-to-list 'TeX-command-list
-                                   '("pdfopen" "/usr/bin/open -a \"Adobe Reader.app\" %s.pdf"
-                                     TeX-run-discard-or-function t t :help "Run Adobe Reader")))))
+(add-hook 'LaTeX-mode-hook 'my-TeX-command-list-adder)
+(defun my-TeX-command-list-adder ()
+  (dolist (item
+           '(("pdfpLaTeX" "platex -synctex=1 %t && dvipdfmx %d"
+              ;; '("pdfpLaTeX" "platex -synctex=1 %t && dvipdfmx -f ~/tex/texinputs/hiragino-embed %d"
+              ;; '("pdfpLaTeX" "platex -kanji=sjis -synctex=1 %t && dvipdfmx -f ~/tex/texinputs/hiragino-embed %d"
+              ;; /usr/local/texlive/texmf-local/fonts/map/dvipdfm/hiragino-embed
+              TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX and dvipdfmx")
+             ("Nonstop-pdfpLaTeX" "platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || say エラーですけど"
+              TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX and dvipdfmx")
+             ("PythonTeX-dvipdfmx" "pythontex %t && platex -synctex=1 -interaction=nonstopmode %t pythontex %t && platex -synctex=1 -interaction=nonstopmode %t && dvipdfmx %d || say エラーですよ"
+              TeX-run-TeX nil (latex-mode) :help "Run pLaTeX, pythontex, platex, and dvipdfmx")
+             ("only-PythonTeX" "pythontex %t"
+              TeX-run-TeX nil (latex-mode) :help "Run pLaTeX, pythontex, platex, and dvipdfmx")
+             ("pdfpLaTeX2" "platex -synctex=1 %t && dvips -Ppdf -t a4 -z -f %d | convbkmk -g > %f && /usr/local/bin/ps2pdf %f"
+              TeX-run-TeX nil (latex-mode) :help "Run e-pLaTeX, dvips, and ps2pdf")
+             ("pdfupLaTeX" "uplatex -synctex=1 %t && dvipdfmx %d"
+              TeX-run-TeX nil (latex-mode) :help "Run e-upLaTeX and dvipdfmx")
+             ("pdfupLaTeX2" "uplatex -synctex=1 %t && dvips -Ppdf -t a4 -z -f %d | convbkmk -u > %f && /usr/local/bin/ps2pdf %f"
+              TeX-run-TeX nil (latex-mode) :help "Run e-upLaTeX, dvips, and ps2pdf")
+             ("XeLaTeX" "xelatex -synctex=1 %t"
+              TeX-run-TeX nil (latex-mode) :help "Run XeLaTeX")
+             ("pBibTeX" "pbibtex %s"
+              TeX-run-BibTeX nil t :help "Run pBibTeX")
+             ("upBibTeX" "upbibtex %s"
+              TeX-run-BibTeX nil t :help "Run upBibTeX")
+             ("Mendex" "mendex %s"
+              TeX-run-command nil t :help "Create index file with mendex")
+             ("Preview" "/usr/bin/open -a Preview.app %s.pdf"
+              TeX-run-discard-or-function t t :help "Run Preview")
+             ("TeXShop" "/usr/bin/open -a TeXShop.app %s.pdf"
+              TeX-run-discard-or-function t t :help "Run TeXShop")
+             ("TeXworks" "/usr/bin/open -a TeXworks.app %s.pdf"
+              TeX-run-discard-or-function t t :help "Run TeXworks")
+             ("View" "/Applications/Skim.app/Contents/SharedSupport/displayline %n %s.pdf %b"
+              TeX-run-discard-or-function t t :help "Forward search with Skim")
+             ("pdfopen" "/usr/bin/open -a \"Adobe Reader.app\" %s.pdf"
+              TeX-run-discard-or-function t t :help "Run Adobe Reader")
+             ))
+    (add-to-list 'TeX-command-list item)))
 
 ;; (setq TeX-parse-self t)
 ;; (setq TeX-auto-save t)
