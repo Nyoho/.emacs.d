@@ -2,7 +2,9 @@
 ;; Set faces
 ;;
 
-(when window-system
+(leaf modeline-customization
+  :when window-system
+  :config
   ;; '(ns-marked-text-face ((t (:background "DeepPink4" :underline t))))
   ;; '(ns-working-text-face ((((background dark)) (:underline "gray80"))))
   
