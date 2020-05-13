@@ -1,0 +1,4 @@
+
+
+(leaf jupyter
+  :ensure t)
