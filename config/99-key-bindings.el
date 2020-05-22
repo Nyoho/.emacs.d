@@ -1,7 +1,6 @@
 ;; ここを参考にして実験中
 ;; https://github.com/syohex/dot_files/blob/master/emacs/init_loader/99_global-keys.el
 
-(global-set-key (kbd "M-g .") 'counsel-ag)
 ;; (global-set-key (kbd "M-s") 'helm-occur)
 
 
