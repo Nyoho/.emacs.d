@@ -95,3 +95,10 @@
 (leaf visual-regexp
   :ensure t
   :bind (("M-%" . vr/query-replace)))
+
+(leaf smex
+  :doc "コマンドの使用履歴を保存してcounselなどで優先してくれる"
+  :ensure t
+  :setq ((smex-history-length . 50)
+         (smex-completion-method . 'ivy)))
+
