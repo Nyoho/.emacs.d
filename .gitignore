@@ -28,3 +28,4 @@ transient/
 .org-id-locations
 custom.el
 el-get/
+prescient-save.el
