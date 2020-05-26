@@ -28,4 +28,5 @@ transient/
 .org-id-locations
 custom.el
 el-get/
+org-recent-headings
 prescient-save.el

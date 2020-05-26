@@ -403,3 +403,8 @@
   :config
   (setq org-seek-search-tool 'ripgrep)
   )
+
+(leaf org-recent-headings
+  :ensure t
+  :after ivy
+  :bind ("C-c f r" . org-recent-headings-ivy))
