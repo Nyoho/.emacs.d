@@ -59,11 +59,10 @@
 ;;
 ;; for wdired
 ;;
-(use-package wdired
+(leaf wdired
   :after dired
-  :config
-  (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
-  )
+  :require t
+  :bind ((dired-mode-map ("r" . wdired-change-to-wdired-mode))))
 
 ;;
 ;; dired-subreee
