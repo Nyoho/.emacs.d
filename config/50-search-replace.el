@@ -7,7 +7,7 @@
   :commands counsel-buffer-or-recentf counsel-switch-buffer
   :bind (("M-m" . counsel-buffer-or-recentf)
          ("C-x b" . counsel-switch-buffer)
-         ("M-g ." . counsel-ag))))
+         ("M-g ." . counsel-ag)))
 
 (leaf ivy
   :ensure t
