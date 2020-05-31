@@ -100,16 +100,17 @@
   :ensure t)
   ;; :hook (dired-mode-hook . all-the-icons-dired-mode))
 
-(use-package dired
+(leaf dired
   :hook ((dired-mode . dired-hide-details-mode)
-         (dired-mode . all-the-icons-dired-mode))
-  :bind (:map dired-mode-map
-         ("(" . (lambda () (interactive) (dired-hide-details-mode -1)))
+         ;; (dired-mode . all-the-icons-dired-mode)
+         (dired-after-readin-hook . dired-hide-details-mode)
          )
+  :bind
+  (:dired-mode-map
+   ("(" . dired-hide-details-mode))
   :config
   ;; Colourful columns.
-  (add-hook 'dired-after-readin-hook 'dired-hide-details-mode)
-  (use-package diredfl
+  (leaf diredfl
     :ensure t
     :config
     (diredfl-global-mode 1)))
