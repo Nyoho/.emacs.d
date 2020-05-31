@@ -72,10 +72,10 @@
   :ensure t
   :after dired
   :config
-  (define-key dired-mode-map (kbd "i") 'dired-subtree-insert)
+  (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
   ;; org-modeのように
-  (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-remove)
-  (define-key dired-mode-map (kbd "C-x n n") 'dired-subtree-narrow)
+  ;; (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-remove)
+  ;; (define-key dired-mode-map (kbd "C-x n n") 'dired-subtree-narrow)
 
 ;;; [2014-12-30 Tue]^をdired-subtreeに対応させる
   (defun dired-subtree-up-dwim (&optional arg)
