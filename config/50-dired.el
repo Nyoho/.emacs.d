@@ -93,9 +93,12 @@
   :ensure t
   :after dired)
 
+(leaf all-the-icons
+  :ensure t)
+
 (leaf all-the-icons-dired
-  :ensure t
-  :hook (dired-mode-hook . all-the-icons-dired-mode))
+  :ensure t)
+  ;; :hook (dired-mode-hook . all-the-icons-dired-mode))
 
 (use-package dired
   :hook ((dired-mode . dired-hide-details-mode)
