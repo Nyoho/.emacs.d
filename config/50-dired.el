@@ -112,8 +112,15 @@
   ;; Colourful columns.
   (leaf diredfl
     :ensure t
+    :require t
     :config
-    (diredfl-global-mode 1)))
+    (diredfl-global-mode 1)
+    :custom-face
+    (diredfl-file-name . '((((background dark)) (:foreground "turquoise"))
+                           (t                   (:foreground "Blue"))))
+    (diredfl-dir-heading . '((((background dark)) (:foreground "turquoise"))
+                             (t                   (:foreground "Blue"))))
+    )
 
 (use-package dired-git-info
   :after dired
