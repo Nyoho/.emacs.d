@@ -119,11 +119,9 @@
     (diredfl-file-name . '((((background dark)) (:foreground "turquoise"))
                            (t                   (:foreground "Blue"))))
     (diredfl-dir-heading . '((((background dark)) (:foreground "turquoise"))
-                             (t                   (:foreground "Blue"))))
-    )
-
-(use-package dired-git-info
-  :after dired
-  :ensure t
-  :bind (:map dired-mode-map
-              (")" . dired-git-info-mode)))
+                             (t                   (:foreground "Blue")))))
+  (leaf dired-git-info
+    :after dired
+    :ensure t
+    :bind (:dired-mode-map
+           (")" . dired-git-info-mode))))
