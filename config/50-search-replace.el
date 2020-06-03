@@ -71,9 +71,12 @@
 
 (leaf swiper
   :ensure t
+  :after dash s
   :commands swiper swiper-all
   :bind (("M-s" . swiper)
          ("C-M-s" . swiper-all-thing-at-point))
+  :custom ((ivy-re-builders-alist . '((t . ivy--regex-plus)
+                                      (swiper . ytn-ivy-migemo-re-builder))))
   :config
   (defun ad:swiper-all-thing-at-point ()
     "`swiper-all' with `ivy-thing-at-point'."
@@ -84,6 +87,17 @@
       (when (use-region-p)
         (deactivate-mark))
       (swiper-all thing)))
+
+  ;; https://www.yewton.net/2020/05/21/migemo-ivy/
+  (defun ytn-ivy-migemo-re-builder (str)
+    (let* ((sep " \\|\\^\\|\\.\\|\\*")
+           (splitted (--map (s-join "" it)
+                            (--partition-by (s-matches-p " \\|\\^\\|\\.\\|\\*" it)
+                                            (s-split "" str t)))))
+      (s-join "" (--map (cond ((s-equals? it " ") ".*?")
+                              ((s-matches? sep it) it)
+                              (t (migemo-get-pattern it)))
+                        splitted))))
   :advice ((:override swiper-all-thing-at-point ad:swiper-all-thing-at-point)))
 
 
