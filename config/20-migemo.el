@@ -15,7 +15,7 @@
   ((migemo-command . "cmigemo")
    (migemo-user-dictionary . nil)
    (migemo-regex-dictionary . nil)
-   (migemo-options . '("-q" "--emacs"))
+   (migemo-options . '("--quiet" "--nonewline" "--emacs"))
    (migemo-dictionary . "/usr/local/share/migemo/utf-8/migemo-dict")
    (migemo-coding-system . 'utf-8-unix))
   :config

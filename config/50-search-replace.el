@@ -7,7 +7,7 @@
   :commands counsel-buffer-or-recentf counsel-switch-buffer
   :bind (("M-m" . counsel-buffer-or-recentf)
          ("C-x b" . counsel-switch-buffer)
-         ("M-g ." . counsel-ag)))
+         ("M-g ." . counsel-rg)))
 
 (leaf ivy
   :ensure t
@@ -76,6 +76,7 @@
   :bind (("M-s" . swiper)
          ("C-M-s" . swiper-all-thing-at-point))
   :custom ((ivy-re-builders-alist . '((t . ivy--regex-plus)
+                                      (counsel-rg . ytn-ivy-migemo-re-builder)
                                       (swiper . ytn-ivy-migemo-re-builder))))
   :config
   (defun ad:swiper-all-thing-at-point ()
@@ -101,10 +102,10 @@
   :advice ((:override swiper-all-thing-at-point ad:swiper-all-thing-at-point)))
 
 
-(defun counsel-ag-org ()
+(defun counsel-rg-org ()
   "~/org/以下を検索"
   (interactive)
-  (counsel-ag "" "~/org/"))
+  (counsel-rg "" "~/org/"))
 
 (leaf visual-regexp
   :ensure t
@@ -130,3 +131,6 @@
   :require t
   :config
   (ivy-prescient-mode 0))
+
+(leaf rg
+  :ensure t)
