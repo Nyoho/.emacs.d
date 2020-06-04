@@ -134,3 +134,19 @@
 
 (leaf rg
   :ensure t)
+
+(leaf avy
+  :url "https://www.yewton.net/2020/05/31/avy-migemo/"
+  :bind (("C-M-'" . avy-goto-migemo-timer))
+  :after migemo
+  :config
+  (defun avy-goto-migemo-timer (&optional arg)
+    (interactive "P")
+    (let ((avy-all-windows (if arg
+                               (not avy-all-windows)
+                             avy-all-windows)))
+      (avy-with avy-goto-migemo-timer
+        (setq avy--old-cands (avy--read-candidates #'migemo-get-pattern))
+        (avy-process avy--old-cands))))
+  (add-to-list 'avy-styles-alist
+               '(avy-goto-migemo-timer . pre)))
