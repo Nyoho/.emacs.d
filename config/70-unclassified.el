@@ -914,7 +914,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (interactive)
   (let* ((str (string-word-or-region)))
     (browse-url
-     (concat "http://google.com/search?q=\"" str "\""))))
+     (concat "https://google.com/search?q=\"" str "\""))))
 
   ;;; Search marked region by google scholar
 (defun osxws-search-googlescholar()
@@ -922,7 +922,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (interactive)
   (let* ((str (string-word-or-region)))
     (browse-url
-     (concat "http://scholar.google.com/scholar?q=\"" str "\""))))
+     (concat "https://scholar.google.com/scholar?q=\"" str "\""))))
 
   ;;; "Look up the word by Dictionary.app of Mac OS X"
   ;;; http://sakito.jp/mac/dictionary.html
