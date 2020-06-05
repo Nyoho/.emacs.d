@@ -401,9 +401,8 @@
   )
 
 
-(use-package ox-gfm :after ox :ensure t)
-(use-package ox-qmd :after ox :ensure t)
-
+(leaf ox-gfm :after ox :ensure t)
+(leaf ox-qmd :after ox :ensure t)
 
 (leaf org-recent-headings
   :ensure t
