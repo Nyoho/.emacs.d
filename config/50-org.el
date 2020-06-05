@@ -17,6 +17,10 @@
   :ensure t
   :after org)
 
+(leaf ob-async
+  :ensure t
+  :setq (ob-async-no-async-languages-alist . '("jupyter-python" "jupyter-julia")))
+
 (use-package org
   :defer t
   :mode (("\\.org$" . org-mode) ("\\.txt$" . org-mode) ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
@@ -86,6 +90,8 @@
 
   (delq 'org-gnus org-modules)
 
+  (setq inferior-julia-program-name (car (file-expand-wildcards "/Applications/Julia-*.app/Contents/Resources/julia/bin/julia")))
+
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(
@@ -95,6 +101,7 @@
      (latex . t)
      (ruby . t)
      (haskell . t)
+     (julia . t)
      (python . t)
      (perl . t)
      (screen . t)
