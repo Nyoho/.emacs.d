@@ -404,14 +404,6 @@
 (use-package ox-gfm :after ox :ensure t)
 (use-package ox-qmd :after ox :ensure t)
 
-(use-package org-seek
-  :after org
-  :defer t
-  :ensure t
-  :commands (org-seek-string org-seek-regexp org-seek-headlines)
-  :config
-  (setq org-seek-search-tool 'ripgrep)
-  )
 
 (leaf org-recent-headings
   :ensure t
