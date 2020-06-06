@@ -21,7 +21,17 @@
            reykjavik-theme
            seoul256-theme)
   :config
-  (load-theme 'hc-zenburn t)
+  ;; (load-theme 'hc-zenburn t)
+  ;; (load-theme 'solarized-gruvbox-light t)
+  ;; (load-theme 'solarized-gruvbox-dark t)
+  ;; (load-theme 'solarized-light-high-contrast t)
+  (load-theme 'solarized-iceberg-dark t)
+
+  (leaf iceberg-theme
+    :ensure t
+    :config
+    (iceberg-theme-create-theme-file))
+  
   ;; Themes
   ;;
   ;; To reset the currently applied theme, evaluate the following line.
