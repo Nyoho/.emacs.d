@@ -22,14 +22,14 @@
 ;;; ミニバッファの履歴を保存する
 (savehist-mode 1)
 
-(use-package recentf-ext
+(leaf recentf-ext
+  :ensure t
   :after recentf
-  :config
-
-  ;; http://stackoverflow.com/questions/22738559/ignore-elpa-files-in-recentf
-  (setq recentf-exclude '("/auto-install/" ".recentf" "/repos/" "/elpa/"
-                          "\\.mime-example" "\\.ido.last" "COMMIT_EDITMSG"))
-  )
+  :require t
+  :setq ((recentf-exclude
+          '("/auto-install/" ".recentf" "/repos/" "/elpa/"
+            "\\.mime-example" "\\.ido.last" "COMMIT_EDITMSG"))))
+;; http://stackoverflow.com/questions/22738559/ignore-elpa-files-in-recentf
 
 ;; sync-recentf
 ;; -> やってない。recentfにホスト名をつけることにした。
