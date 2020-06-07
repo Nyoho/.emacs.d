@@ -2,20 +2,19 @@
 ;; recentf
 ;;
 
-(use-package recentf
-  :defer t
+(leaf recentf
+  :after t
+  :setq ((recentf-max-saved-items . 65536)
+         (recentf-exclude '(".recentf"))
+         (recentf-auto-cleanup . 120))
   :config
   (setq hostname (system-name))
-  (if (null hostname)
-      (setq hostname "no_host"))
+  (when (null hostname)
+    (setq hostname "no_host"))
   (setq recentf-save-file (locate-user-emacs-file (concat "recentf" "-" hostname)))
-  (setq recentf-max-saved-items 65536) ;;; 最近開いたファイルを保存する数を増やす
-  (setq recentf-exclude '(".recentf"))
-  (setq recentf-auto-cleanup 120)
   (setq recentf-auto-save-timer
         (run-with-idle-timer 30 t 'recentf-save-list))
-  (recentf-mode 1)
-  )
+  (recentf-mode 1))
 
 ;; (run-at-time (current-time) 300 'recentf-save-list)
 ;; でも5分タイマにできる。
