@@ -2,7 +2,7 @@
 ;; helm
 ;;
 (leaf helm
-  :disabled
+  :disabled t
   :ensure t
   :config
   ;; (leaf helm-net :ensure t)
