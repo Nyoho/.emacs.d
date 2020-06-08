@@ -23,7 +23,7 @@
   (migemo-init)
 
   (leaf avy-migemo
-    :disabled
+    :disabled t
     :after swiper
     :config
     ;; (avy-migemo-mode 1) ;; Emacs headだと動くらしい2019年6月26日(水) https://github.com/abo-abo/swiper/issues/1961
