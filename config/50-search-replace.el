@@ -62,10 +62,12 @@
 
   (leaf all-the-icons-ivy-rich
     :ensure t
+    :when window-system
     :init (all-the-icons-ivy-rich-mode 1))
 
   (leaf ivy-rich
     :ensure t
+    :when window-system
     :init (ivy-rich-mode 1))
   )
 
