@@ -1,4 +1,7 @@
-(when window-system
+(leaf font-setting
+  :disabled nil
+  :when window-system
+  :config
   ;; 使えるフォント一覧
   ;; (insert (prin1-to-string (x-list-fonts "*")))
   ;; or
