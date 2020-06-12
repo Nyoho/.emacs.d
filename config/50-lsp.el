@@ -16,12 +16,15 @@
             (lsp-prefer-flymake . 'flymake)
             (lsp-enable-completion-at-point)
             )
-  :hook ((ruby-mode-hook . lsp)
-         (go-mode-hook . lsp)
-         (elixir-mode-hook . lsp))
+  :hook ((LaTeX-mode-hook  . lsp)
+         (ruby-mode-hook   . lsp)
+         (rust-mode-hook   . lsp)
+         (elixir-mode-hook . lsp)
+         (go-mode-hook     . lsp))
   :bind ((lsp-mode-map ("C-c r" . lsp-rename)))
   :init
   (add-to-list 'exec-path (expand-file-name "~/ghq/github.com/elixir-lsp/elixir-ls/release"))
+  (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
   :config
   (require 'lsp-clients)
   ;; LSP UI tools
