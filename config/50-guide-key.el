@@ -1,5 +1,6 @@
 (use-package guide-key
   :ensure t
+  :disabled t
   :config
 
   (setq guide-key/guide-key-sequence
@@ -14,9 +15,10 @@
   (setq guide-key/text-scale-amount -1)
   (guide-key-mode 1))
 
-;; which-key も入れてみた。-> けど外してみた
-;; (use-package which-key
-;;   :diminish which-key-mode
-;;   :init
-;;   (which-key-setup-side-window-right-bottom) ;; 画面幅によって右端または下部に表示
-;;   (which-key-mode t))
+;; which-key も入れてみた。-> けど外してみた -> また有効にした。
+(leaf which-key
+  :ensure t
+  :diminish which-key-mode
+  :init
+  (which-key-setup-side-window-right-bottom) ;; 画面幅によって右端または下部に表示
+  (which-key-mode t))
