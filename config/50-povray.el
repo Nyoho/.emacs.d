@@ -30,7 +30,11 @@
 ;;     (if (string= A "y") (save-buffer)
 ;;       (if (string= A "n") () (pov-ask-save-buffer)))))
 
-(if (file-directory-p "/Applications/POV-Ray3_7_Mac_Unofficial/Insert Menu/")
-    (setq pov-insertmenu-location "/Applications/POV-Ray3_7_Mac_Unofficial/Insert Menu/"))
+(leaf pov-mode
+  :ensure t
+  :config
+  (if (file-directory-p "/Applications/POV-Ray3_7_Mac_Unofficial/Insert Menu/")
+      (setq pov-insertmenu-location "/Applications/POV-Ray3_7_Mac_Unofficial/Insert Menu/"))
+  )
 
 
