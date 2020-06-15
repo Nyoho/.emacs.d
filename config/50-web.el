@@ -83,3 +83,6 @@
   :ensure t
   :commands haml-mode
   :mode (("\\.haml$" . haml-mode)))
+
+
+(leaf php-mode :ensure t)
