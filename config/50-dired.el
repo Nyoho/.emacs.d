@@ -78,12 +78,13 @@
   ;; (define-key dired-mode-map (kbd "C-x n n") 'dired-subtree-narrow)
 
 ;;; [2014-12-30 Tue]^をdired-subtreeに対応させる
+;;; [2020-06-19] hに変更した。(treemacsと同じに)
   (defun dired-subtree-up-dwim (&optional arg)
     "subtreeの親ディレクトリに移動。そうでなければ親ディレクトリを開く(^の挙動)。"
     (interactive "p")
     (or (dired-subtree-up arg)
         (dired-up-directory)))
-  (define-key dired-mode-map (kbd "^") 'dired-subtree-up-dwim)
+  (define-key dired-mode-map (kbd "h") 'dired-subtree-up-dwim)
 
   ;; 2 windows が両方 dired のときに copy や rename が楽になる。リモートでも動作するので便利。
   (setq dired-dwim-target t)
