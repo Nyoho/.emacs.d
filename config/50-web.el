@@ -3,7 +3,6 @@
 ;;
 (leaf web-mode
   :ensure t
-  :after flycheck
   :commands web-mode
   :mode ("\\.[sp]?html\\'"
          "\\.tpl\\.php\\'"
@@ -13,7 +12,18 @@
          "\\.tsx\\'")
   :bind (("C-c C-v" . browse-url-of-buffer))
   :config
-  (flycheck-add-mode 'typescript-tslint 'web-mode)
+  (with-eval-after-load "flycheck"
+    (flycheck-add-mode 'typescript-tslint 'web-mode))
+  (leaf company-web
+    :ensure t
+    :after web-mode
+    :config
+    :bind ((web-mode-map ("C-'" . company-web-html)))
+    :hook (web-mode-hook .(lambda ()
+                            (set (make-local-variable 'company-backends)
+                                 '(company-web-html company-files company-web-jade company-web-slim))
+                            (company-mode t)))
+    )
   :hook (web-mode-hook . (lambda ()
                            (when (string-equal "tsx" (file-name-extension buffer-file-name))
                              (setup-tide-mode)))))
@@ -60,6 +70,7 @@
 ;; sass-mode
 ;;
 (leaf sass-mode
+  :ensure t
   :commands sass-mode
   :mode (("\\.sass$" . sass-mode)))
 
@@ -67,6 +78,7 @@
 ;; scss-mode
 ;;
 (leaf scss-mode
+  :ensure t
   :commands scss-mode
   :mode (("\\.scss\\'" . scss-mode))
   :config
