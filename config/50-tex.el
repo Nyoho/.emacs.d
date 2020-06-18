@@ -41,27 +41,27 @@ to [/]."
 ;; AUCTeX
 ;;
 (leaf auctex
-  :ensure t)
-;; (load "auctex.el" nil t t)
-;; (load "preview-latex.el" nil t t)
-;; 日本語 TeX 用の設定
-(setq TeX-default-mode 'japanese-latex-mode)
+  :ensure t
+  :custom ((TeX-default-mode . 'japanese-latex-mode)
+           (japanese-LaTeX-default-style . "jsarticle")
+           ;; (japanese-TeX-command-default . "pTeX")
+           (japanese-LaTeX-command-default . "pLaTeX")
+           (japanese-LaTeX-command-default . "pdfpLaTeX")
+           (preview-image-type . 'dvipng) ;; preview-latex で dvipng を使う
+           (TeX-output-view-style . '()) ;; View open hogehoge.pdf 
+           )
+  :config
+  (leaf preview-latex)
+  (leaf company-auctex
+    :ensure t
+    :after auctex
+    :init (company-auctex-init))
+  (leaf company-reftex :ensure t)
+  (add-to-list 'TeX-output-view-style
+               '("^dvi$" "." "open %s.pdf"))
+  )
 
-(setq japanese-LaTeX-default-style "jsarticle")
-(setq japanese-LaTeX-default-style "jsarticle")
-;; (setq japanese-TeX-command-default "jTeX")
-(setq japanese-TeX-command-default "pTeX")
-;; (setq japanese-LaTeX-command-default "pLaTeX")
-(setq japanese-LaTeX-command-default "pdfpLaTeX")
 
-;; preview-latex で dvipng を使う
-(setq preview-image-type 'dvipng)
-
-
-;; View open hogehoge.pdf 
-(setq TeX-output-view-style '())
-(add-to-list 'TeX-output-view-style
-             '("^dvi$" "." "open %s.pdf"))
 ;; View は、dvipdfmx で、pdf file を作って、Adobe Reader で閲覧
 ;;'("^dvi$" "." "dvipdfmx %dS %d && open %s.pdf"))
 
@@ -106,15 +106,6 @@ to [/]."
 ;; ;	       )
 ;; ;	      TeX-command-list))
 
-;; (add-hook 'TeX-mode-hook
-;; 	  (function
-;; 	   (lambda ()
-;; 	     (setq TeX-command-default "pLaTeX")
-;; 	     (setq japanese-TeX-command-default "pTeX")
-;;      (setq japanese-LaTeX-command-default "pLaTeX")
-;; 	     )))
-;; (setq japanese-LaTeX-default-style "jarticle")
-;; (setq kinsoku-limit 10)
 
 ;; ;(setq TeX-view-style
 ;; ;      '(
@@ -146,7 +137,6 @@ to [/]."
                               ("pdfopen" "/usr/bin/open -a \"Adobe Reader.app\" %o")))
 (setq TeX-view-program-selection '((output-dvi "pxdvi")
                                    (output-pdf "Preview")))
-(setq preview-image-type 'dvipng)
 
 (defun platex-kanji-option ()
   (cond ((eq buffer-file-coding-system 'utf-8-unix) "utf8")
@@ -166,7 +156,6 @@ to [/]."
    '("proposition" LaTeX-env-label)))
 (add-hook 'LaTeX-mode-hook 'add-my-latex-environments)
 
-(setq preview-image-type 'dvipng)
 (setq TeX-source-correlate-method 'synctex)
 (setq TeX-source-correlate-start-server t)
 
