@@ -17,11 +17,6 @@
    (emacs-lisp-mode-map ("C-M-i" . company-complete)))
   :require t
   :config
-  (leaf company-auctex
-    :ensure t
-    :after auctex
-    :init (company-auctex-init))
-
   (leaf company-math
     :ensure t
     :after auctex org)
