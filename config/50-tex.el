@@ -274,16 +274,6 @@ to [/]."
       (add-hook 'after-save-hook 'my-autotex t t) ;; set the local flag to t
     (remove-hook 'after-save-hook 'my-autotex t)
     ))
-;; Adds it to hooks
-(add-hook 'TeX-mode-hook
-          (lambda ()
-            (my-autotex-mode 1)
-            ))
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (my-autotex-mode 1)
-            ))
-
 
 
 (leaf latex-math-preview.el
