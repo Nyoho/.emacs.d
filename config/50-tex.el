@@ -321,3 +321,7 @@ to [/]."
               (setq outline-promotion-headings
                     '("\\chapter" "\\section" "\\subsection"
                       "\\subsubsection" "\\paragraph" "\\subparagraph")))))
+
+
+(leaf cdlatex
+  :ensure t)
