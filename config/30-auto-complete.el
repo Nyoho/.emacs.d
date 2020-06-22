@@ -14,6 +14,7 @@
 
 (use-package auto-complete
   :defer t
+  :disabled t
   :config
   (setq ac-auto-show-menu 0.01)
   ;; (global-auto-complete-mode t)
@@ -29,6 +30,7 @@
 
 (use-package auto-complete-latex :after auto-complete
   :defer t
+  :disabled t
   :config
   ;; (setq ac-l-dict-directory "~/.emacs.d/el-get/auto-complete-latex/ac-l-dict/")
   (setq ac-l-dict-directory "~/.emacs.d/vendor/auto-complete-latex/ac-l-dict/")
@@ -40,6 +42,7 @@
 ;; ac-math.el for mathematical symbols for auto-complete
 (use-package ac-math
   :after auto-complete
+  :disabled t
   :defer t
   :config
   (add-to-list 'ac-modes 'latex-mode)
@@ -52,15 +55,20 @@
   )
 
 (use-package ac-emoji
+  :disabled t
   :defer t
   :init
-  (add-hook 'markdown-mode-hook 'ac-emoji-setup)
-  (add-hook 'git-commit-mode-hook 'ac-emoji-setup)
+  ;; (add-hook 'markdown-mode-hook 'ac-emoji-setup)
+  ;; (add-hook 'git-commit-mode-hook 'ac-emoji-setup)
   :config
   )
 
-(use-package ac-octave :after auto-complete :defer t)
+(use-package ac-octave
+  :disabled t
+  :after auto-complete :defer t)
+
 (use-package auto-complete-config
+  :disabled t
   :after auto-complete
   :defer t
   :config
