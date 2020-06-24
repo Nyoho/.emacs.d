@@ -6,11 +6,6 @@
 
 (global-set-key (kbd "C-t") 'switch-to-last-buffer-or-other-window)
 
-;; moving easily between windows
-(global-set-key [S-left] 'windmove-left)
-(global-set-key [S-up] 'windmove-up)
-(global-set-key [S-right] 'windmove-right)
-(global-set-key [S-down] 'windmove-down)
 ;;  (global-set-key [?\e ?\[ ?d] 'windmove-left)
 ;;  (global-set-key [?\e ?\[ ?a] 'windmove-up)
 ;;  (global-set-key [?\e ?\[ ?c] 'windmove-right)
