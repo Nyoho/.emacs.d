@@ -48,5 +48,3 @@
 ;;   (buffer-substring-no-properties (car bounds) (cdr bounds)))
 ;; (bounds-of-thing-at-point 'symbol)
 
-;; snippet-mode for *.yasnippet files
-(add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
