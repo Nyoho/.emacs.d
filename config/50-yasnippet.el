@@ -31,6 +31,10 @@
   ;; (yas-global-mode t)
   )
 
+(leaf ivy-yasnippet
+  :ensure t
+  :after yasnippet)
+
 (defun my-get-boundary-and-thing ()
   "example of using `bounds-of-thing-at-point'"
   (interactive)
