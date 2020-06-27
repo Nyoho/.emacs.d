@@ -6,3 +6,4 @@
           :package elisp-mode
           ("C-u C-j" . scratch-comment-eval-sexp))))
 
+(leaf lispy :ensure t)
