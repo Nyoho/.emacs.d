@@ -4,7 +4,6 @@
 (leaf counsel
   :ensure t
   :diminish ivy-mode counsel-mode
-  :commands counsel-buffer-or-recentf counsel-switch-buffer
   :bind (("M-m" . counsel-buffer-or-recentf)
          ("C-x b" . counsel-switch-buffer)
          ("M-g ." . counsel-rg)))
