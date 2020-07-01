@@ -16,7 +16,7 @@
             (lsp-prefer-flymake . 'flymake)
             (lsp-enable-completion-at-point)
             )
-  :hook ((LaTeX-mode-hook  . lsp)
+  :hook (;;(LaTeX-mode-hook  . lsp)
          (ruby-mode-hook   . lsp)
          (rust-mode-hook   . lsp)
          (elixir-mode-hook . lsp)
@@ -90,3 +90,5 @@
 ;;   :custom (ccls-executable "/usr/local/bin/ccls")
 ;;   :hook ((c-mode c++-mode objc-mode) .
 ;;          (lambda () (require 'ccls) (lsp))))
+
+(leaf lsp-latex :ensure t)
