@@ -113,8 +113,5 @@
 
 (global-set-key (kbd "C-x m") 'magit-status)
 
-(global-set-key (kbd "C-c t") 'dired-filter-group-mode)
-
-
 ;; https://www.youtube.com/watch?v=Iqh50fgbIVk
 (global-set-key (kbd "\e\ei") (lambda () (interactive) (find-file "~/org/index.org")))

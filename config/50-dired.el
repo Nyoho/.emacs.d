@@ -2,7 +2,9 @@
 ;; for dired
 ;;
 (leaf dired-filter
-      :ensure t)
+  :ensure t
+  :after dired
+  :bind (dired-mode-map ("C-c t" . dired-filter-group-mode)))
 
 (use-package dired-x
   :after dired
