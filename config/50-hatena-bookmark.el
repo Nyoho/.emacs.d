@@ -1,5 +1,5 @@
 (leaf helm-hatena-bookmark
-  :ensure t
+  :disabled t
   :config
   (defun hatena-bookmark-get-dump ()
     "Get Hatena::Bookmark dump file."
