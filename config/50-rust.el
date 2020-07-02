@@ -33,7 +33,7 @@
     :ensure t
     :after flycheck rust)
 
-  :bind (("C-c C-c" . run-rust-test)))
+  :bind (rust-mode-map ("C-c C-c" . run-rust-test)))
 
 ;;   :hook ((c-mode c++-mode objc-mode) .
 ;;          (lambda () (require 'ccls) (lsp))))
