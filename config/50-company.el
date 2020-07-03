@@ -7,6 +7,7 @@
   (completion-ignore-case . t)
   (company-idle-delay . 0)
   (company-selection-wrap-around . t)
+  (company-minimum-prefix-length . 2)
   :bind
   ((company-active-map ("C-n" . company-select-next))
    (company-active-map ("C-p" . company-select-previous))
