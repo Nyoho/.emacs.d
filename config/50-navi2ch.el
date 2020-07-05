@@ -1,14 +1,13 @@
 ;;
 ;; navi2ch
 ;;
-(use-package navi2ch
-  :defer t
-  ;; :commands navi2ch
+(leaf navi2ch
+  :ensure t
+  :after t
+  :bind ((navi2ch-global-map ([f8] . boss-ga-kita)))
+  :setq ((browse-url-browser-function . 'browse-url-generic)
+         (browse-url-generic-program . "open"))
   :config
-
-  (setq browse-url-browser-function 'browse-url-generic)
-  (setq browse-url-generic-program "open")
-
   (defun buffers-with-visited-file ()
     (delq nil
           (mapcar (lambda (buffer)
