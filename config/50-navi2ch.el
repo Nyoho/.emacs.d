@@ -18,6 +18,4 @@
     (interactive)
     (delete-other-windows)
     (switch-to-buffer (or (car (buffers-with-visited-file))
-                          (get-buffer-create "*scratch*"))))
-  (define-key navi2ch-global-map [f8] 'boss-ga-kita)
-  )
+                          (get-buffer-create "*scratch*")))))
