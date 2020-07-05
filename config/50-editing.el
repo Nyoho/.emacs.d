@@ -1,10 +1,10 @@
 ;;; editing
 
-(use-package expand-region
+(leaf expand-region
   :ensure t
-  :config
-  (global-set-key (kbd "C-,") 'er/expand-region)
-  (global-set-key (kbd "C-M-,") 'er/contract-region))
+  :bind (("C-," . er/expand-region) ("C-M-," . er/contract-region))
+  :require t)
+
 
 (use-package multiple-cursors :defer t)
 (use-package smartrep
@@ -19,8 +19,6 @@
 ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(global-set-key (kbd "<C-M-return>") 'mc/edit-lines)
 
 ;; region を作って M-x mc/mark-all-like-this すると同時編集
 ;; ここで練習してみる↓
