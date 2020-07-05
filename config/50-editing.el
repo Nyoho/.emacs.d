@@ -5,15 +5,18 @@
   :bind (("C-," . er/expand-region) ("C-M-," . er/contract-region))
   :require t)
 
-
-(use-package multiple-cursors :defer t)
-(use-package smartrep
+(leaf multiple-cursors
   :ensure t
+  :bind (("<C-M-return>" . mc/edit-lines)))
+
+(leaf smartrep
+  :ensure t
+  :require t
   :config
-  (smartrep-define-key
-      global-map "C-." '(("C-n" . 'mc/mark-next-like-this)
-                         ("C-p" . 'mc/mark-previous-like-this)
-                         ("*"   . 'mc/mark-all-like-this))))
+  (smartrep-define-key global-map "C-."
+    '(("C-n" . 'mc/mark-next-like-this)
+      ("C-p" . 'mc/mark-previous-like-this)
+      ("*"   . 'mc/mark-all-like-this))))
 
 ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -51,3 +54,5 @@
     :ensure t
     :custom ((global-origami-mode . t)))
 
+(leaf smartparens
+  :ensure t)
