@@ -235,7 +235,7 @@ to [/]."
 
 ;; automatically run background TeX process
 ;; AUCTeX の設定と便利な機能 | Amrta
-;; http://skalldan.wordpress.com/2011/07/20/auctex-%25E3%2581%25AE%25E8%25A8%25AD%25E5%25AE%259A%25E3%2581%25A8%25E4%25BE%25BF%25E5%2588%25A9%25E3%2581%25AA%25E6%25A9%259F%25E8%2583%25BD/#sec-6
+;; https://skalldan.wordpress.com/2011/07/20/auctex-%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%a8%e4%be%bf%e5%88%a9%e3%81%aa%e6%a9%9f%e8%83%bd/
 (defun my-autotex ()
   (interactive)
   (when (string-match "\\.tex$" (buffer-file-name))
