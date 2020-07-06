@@ -238,7 +238,9 @@ to [/]."
 ;; https://skalldan.wordpress.com/2011/07/20/auctex-%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%a8%e4%be%bf%e5%88%a9%e3%81%aa%e6%a9%9f%e8%83%bd/
 (defun my-autotex ()
   (interactive)
-  (when (string-match "\\.tex$" (buffer-file-name))
+  (cond
+   ((string-match "\\.tex$" (buffer-file-name))
+    (progn
     (let ((buf (get-buffer "*Background TeX proccess*")))
       (if (bufferp buf) (kill-buffer buf)) ) ;; flush previous log
     (deferred:$
@@ -265,6 +267,34 @@ to [/]."
     ;;    (smart-compile-string "latexmk %f || growlnotify -a Emacs.app -t \"Oops!\" -m \"エラーが起こりました。\"") ; pTeX
     ;;    )
     ))
+   ((string-match "\\.org$" (buffer-file-name))
+    (progn
+      (deferred:$
+        (deferred:next
+          (lambda () (message "Starts auto-TeXing...")))
+        (deferred:nextc it
+          (lambda ()
+            ;; TODO: Select beamer or usual latex automatically
+            (org-beamer-export-to-latex)
+            ))
+        (deferred:nextc it
+          (lambda ()
+            (let* ((file-name (file-name-sans-extension buffer-file-name)))
+              (leaf smart-compile :ensure t :require t)
+              (start-process-shell-command
+               "Background TeX" "*Background TeX proccess*"
+               (smart-compile-string (format "uplatex -shell-escape %s && dvipdfmx %s" file-name file-name))
+               )
+               )
+            ))
+        (deferred:nextc it
+          (lambda ()
+            (message "Starts auto-TeXing... done!")))
+        (deferred:error it
+          (lambda (err)
+            (message "Starts auto-TeXing... An error occured.")))
+      ))
+   )))
 ;; wrapper
 (define-minor-mode my-autotex-mode
   "My autotex mode."
