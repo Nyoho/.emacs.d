@@ -54,7 +54,7 @@ to [/]."
   (leaf preview-latex)
   (leaf company-auctex
     :ensure t
-    :after auctex
+    :after tex-mode
     :init (company-auctex-init))
   (leaf company-reftex :ensure t)
   (add-to-list 'TeX-output-view-style
