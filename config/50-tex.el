@@ -233,6 +233,9 @@ to [/]."
 ;; AUCTeX auto-compile
 ;;
 
+;; Emacs Lisp TIPS by Prof. Seiji Zenitani
+;; https://sci.nao.ac.jp/MEMBER/zenitani/elisp-j.html#auto-tex
+;;
 ;; automatically run background TeX process
 ;; AUCTeX の設定と便利な機能 | Amrta
 ;; https://skalldan.wordpress.com/2011/07/20/auctex-%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%a8%e4%be%bf%e5%88%a9%e3%81%aa%e6%a9%9f%e8%83%bd/
