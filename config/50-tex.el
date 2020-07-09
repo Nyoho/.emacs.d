@@ -309,8 +309,7 @@ to [/]."
     ))
 
 
-(leaf latex-math-preview.el
-  :commands latex-math-preview-expression latex-math-preview-insert-symbol latex-math-preview-save-image-file latex-math-preview-beamer-frame)
+(leaf latex-math-preview :ensure t)
 
 ;;
 ;; anything-math-symbols
