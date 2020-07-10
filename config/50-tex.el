@@ -181,6 +181,8 @@ to [/]."
               TeX-run-TeX nil (latex-mode) :help "Run e-upLaTeX and dvipdfmx")
              ("pdfupLaTeX2" "uplatex -synctex=1 %t && dvips -Ppdf -t a4 -z -f %d | convbkmk -u > %f && /usr/local/bin/ps2pdf %f"
               TeX-run-TeX nil (latex-mode) :help "Run e-upLaTeX, dvips, and ps2pdf")
+             ("Latexmk" "latexmk -pdf %s"
+              TeX-run-command nil t :help "Run Latexmk on file")
              ("XeLaTeX" "xelatex -synctex=1 %t"
               TeX-run-TeX nil (latex-mode) :help "Run XeLaTeX")
              ("pBibTeX" "pbibtex %s"
