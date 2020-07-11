@@ -2,9 +2,9 @@
 ;; org-mode
 ;;
 
-(use-package org-compat
+(leaf org-compat
   :after org
-  )
+  :require t)
 
 (use-package org-multiple-keymap
   :ensure t
