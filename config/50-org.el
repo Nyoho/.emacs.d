@@ -48,7 +48,7 @@
   (setq org-mobile-inbox-for-pull "~/org/flagged.org")
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   (setq org-agenda-files (quote ("~/org/agenda/inbox.org"
-                                 "~/org/test.org"
+                                 "~/org/test/test.org"
                                  "~/org/design.org")
                                 ))
   (setq org-agenda-ndays 7)
