@@ -62,7 +62,7 @@
   ;;         ("Todo" ?t "* TODO %^{やること(「〜する」)} %^g\n%?\n  Added: %U" "~/org/gtd.org" "Inbox")
   ;;         ("Note" ?n "\n* %U %^{トピックス} %^g \n%i%?\n %a" "~/org/notes.org")
   ;;         ))
-
+  (setq org-preview-latex-default-process 'dvisvgm)
   ;; org-capture 
   (setq org-capture-templates
         '(("t" "Todo" entry
