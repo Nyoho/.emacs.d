@@ -66,10 +66,9 @@
   ;; org-capture 
   (setq org-capture-templates
         '(("t" "Todo" entry
-           (file+headline (lambda () (concat org-directory "agenda/inbox.org")) "Inbox")
-           "* TODO %^{やること(「〜する」)} %^g
-%?
-  Added: %n")
+           ;; (file+headline (lambda () (concat org-directory "agenda/inbox.org")) "Inbox")
+           (file (lambda () (concat org-directory "agenda/inbox.org")))
+           "* TODO %^{やること(「〜する」)} %^g\n%?\n  Added: %n")
           ("U" "Note" entry
            (file+headline (lambda () (concat org-directory "notes.org" "")) "")
            "* %U %^{トピックス} %^g %i%? %a")
