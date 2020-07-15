@@ -24,12 +24,6 @@
 (autoload 'robe-ac-setup "robe-ac" "robe auto-complete" nil nil)
 (add-hook 'robe-mode-hook 'robe-ac-setup)
 
-(use-package helm-robe
-  :defer t
-  :config
-  (custom-set-variables '(robe-completing-read-func 'helm-robe-completing-read))
-  )
-
 ;; enhanced(enh)-ruby-mode
 (use-package enh-ruby-mode
   :defer t
