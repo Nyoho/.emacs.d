@@ -48,9 +48,6 @@
  '(org-time-stamp-rounding-minutes (quote (0 5)))
  '(org-use-fast-todo-selection t)
  '(org-use-tag-inheritance nil)
- '(package-selected-packages
-   (quote
-    (asciidoc ox-asciidoc dired-subtree dired-narrow js2-refactor xref-js2 dimmer react-snippets web-mode tle sourcemap slim-mode s pov-mode magit-popup js2-mode helm-migemo helm-gtags helm-ag gtags git-gutter-fringe gist ghci-completion ghc flymake-easy ess-smart-underscore ess-R-object-popup ess-R-data-view color-theme-solarized color-theme-github color-theme-cobalt cmake-mode)))
  '(robe-completing-read-func (quote helm-robe-completing-read))
  '(session-globals-regexp "-\\(ring\\|history\\|COMMIT_EDITMSG\\)\\'")
  '(session-use-package t nil (session))
