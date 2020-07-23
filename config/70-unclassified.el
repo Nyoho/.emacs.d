@@ -510,7 +510,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   :require t
   :config
   ;; (setq epg-gpg-program "gpg")
-  (epa-file-enable)))
+  (epa-file-enable))
 
 
 
