@@ -4,6 +4,6 @@
   :ensure t
   :bind ((lisp-interaction-mode-map
           :package elisp-mode
-          ("C-u C-j" . scratch-comment-eval-sexp))))
+          ("C-c C-j" . scratch-comment-eval-sexp))))
 
 (leaf lispy :ensure t)
