@@ -110,7 +110,10 @@
          )
   :bind
   (:dired-mode-map
-   ("(" . dired-hide-details-mode))
+   ("(" . dired-hide-details-mode)
+   ("C-t" . nil)
+   ;; ("C-t" . *********)
+   )
   :config
   ;; Colourful columns.
   (leaf diredfl
