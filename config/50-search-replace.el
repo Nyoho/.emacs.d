@@ -78,7 +78,9 @@
          ("C-M-s" . swiper-all-thing-at-point))
   :custom ((ivy-re-builders-alist . '((t . ivy--regex-plus)
                                       (counsel-rg . ytn-ivy-migemo-re-builder)
-                                      (swiper . ytn-ivy-migemo-re-builder))))
+                                      (swiper . ytn-ivy-migemo-re-builder)
+                                      (org-recent-headings . ytn-ivy-migemo-re-builder)
+                                      )))
   :config
   (defun ad:swiper-all-thing-at-point ()
     "`swiper-all' with `ivy-thing-at-point'."
