@@ -5,8 +5,6 @@
 (leaf modeline-customization
   :when window-system
   :config
-  ;; '(ns-marked-text-face ((t (:background "DeepPink4" :underline t))))
-  ;; '(ns-working-text-face ((((background dark)) (:underline "gray80"))))
   
   ;; (set-face-attribute 'mode-line nil :family "Optima" :height 0.95)
   (set-face-attribute 'mode-line nil :family "DIN Condensed" :height 1.0)
