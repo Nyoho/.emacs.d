@@ -34,8 +34,10 @@
   
   ;; Themes
   ;;
-  ;; To reset the currently applied theme, evaluate the following line.
-  ;; (mapc 'disable-theme custom-enabled-themes)
+  (defun reset-current-theme ()
+    "Reset the currently applied theme."
+    (interactive)
+    (mapc 'disable-theme custom-enabled-themes))
 
   ;; (load-theme 'heroku t)
   ;; (load-theme 'rebecca t)
