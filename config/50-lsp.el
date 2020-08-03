@@ -14,8 +14,7 @@
             (lsp-document-sync-method . 'incremental) ;; always send incremental document
             (lsp-response-timeout . 5)
             (lsp-prefer-flymake . 'flymake)
-            (lsp-enable-completion-at-point)
-            )
+            (lsp-enable-completion-at-point))
   :hook (;;(LaTeX-mode-hook  . lsp)
          (ruby-mode-hook   . lsp)
          (rust-mode-hook   . lsp)
@@ -56,8 +55,8 @@
              (lsp-ui-peek-enable . t)
              (lsp-ui-peek-peek-height . 20)
              (lsp-ui-peek-list-width . 50)
-             (lsp-ui-peek-fontify quote on-demand) ;; never, on-demand, or always
-             ) 
+             (lsp-ui-peek-fontify quote on-demand)) ;; never, on-demand, or always
+              
 
     :config
     (defun ladicle/toggle-lsp-ui-doc ()
