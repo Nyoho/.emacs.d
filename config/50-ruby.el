@@ -82,3 +82,8 @@
 ;; in ~/.pryrc
 ;; Pry.config.editor = "emacsclient"
 
+
+(leaf feature-mode
+  :doc "cucumber.el"
+  :url "https://github.com/michaelklishin/cucumber.el"
+  :ensure t)
