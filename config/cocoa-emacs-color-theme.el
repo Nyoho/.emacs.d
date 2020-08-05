@@ -19,7 +19,8 @@
            railscasts-theme
            railscasts-reloaded-theme
            reykjavik-theme
-           seoul256-theme)
+           seoul256-theme
+           doom-themes)
   :config
   ;; (load-theme 'hc-zenburn t)
   ;; (load-theme 'solarized-gruvbox-light t)
