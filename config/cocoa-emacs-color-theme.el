@@ -26,13 +26,18 @@
   ;; (load-theme 'solarized-gruvbox-light t)
   ;; (load-theme 'solarized-gruvbox-dark t)
   ;; (load-theme 'solarized-light-high-contrast t)
-  (load-theme 'solarized-iceberg-dark t)
-
+  
   (leaf iceberg-theme
     :ensure t
+    :disabled t
     :config
-    (iceberg-theme-create-theme-file))
+    (iceberg-theme-create-theme-file)
+    (load-theme 'solarized-iceberg-dark t))
   
+  ;; (load-theme 'doom-dracula)
+  ;; (load-theme 'doom-one)
+  (load-theme 'doom-challenger-deep)
+
   ;; Themes
   ;;
   (defun reset-current-theme ()
