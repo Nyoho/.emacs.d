@@ -6,12 +6,9 @@
   :after org
   :require t)
 
-(use-package org-multiple-keymap
+(leaf org-multiple-keymap
   :ensure t
-  :after org
-  :config
-  ;; (setq org-multiple-keymap-minor-mode t)
-  )
+  :after org)
 
 (leaf org-plus-contrib
   :ensure t
