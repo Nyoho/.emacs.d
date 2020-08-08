@@ -136,6 +136,12 @@
                            ("C-p" . (lambda ()
                                       (outline-previous-visible-heading 1)))))
   
+  ;; speed-commands
+  ;; headlineの先頭でone key
+  (setq org-use-speed-commands t)
+  (add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
+
+
   :hook (org-agenda-mode . hl-line-mode)
   :bind (
          ("C-c a" . org-agenda)
