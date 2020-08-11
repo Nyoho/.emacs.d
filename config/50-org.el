@@ -142,6 +142,46 @@
   (add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
 
 
+  ;; Insert an image from clipboard
+  ;; Thanks: https://ladicle.com/post/20200617_130952/
+  (defun org-insert-clipboard-image ()
+    "Generate png file from a clipboard image and insert a link with caption and org-download tag to current buffer."
+    (interactive)
+    (let* ((filename
+            (concat (file-name-nondirectory (buffer-file-name))
+                    "_imgs/"
+                    (format-time-string "%Y%m%d_%H%M%S")
+                    ".png")))
+      (unless (file-exists-p (file-name-directory filename))
+        (make-directory (file-name-directory filename)))
+      (let* ((output-buffer (generate-new-buffer "*Async Image Generator*"))
+             (proc (progn
+                     (async-shell-command (concat "pngpastet " filename) output-buffer)
+                     (get-buffer-process output-buffer))))
+        (if (process-live-p proc)
+            (set-process-sentinel proc #'org-display-inline-images)))
+      (insert (concat
+               ;; DOWNLOADED tag allows you to delete an image by org-download-delete command.
+               "#+DOWNLOADED: clipboard @ "
+               (format-time-string "%Y-%m-%d %H:%M:%S\n#+CAPTION: \n")
+               "[[file:" filename "]]"))))
+
+  ;; Do not pop-up async-image-generator buffer because it's annoying.
+  (add-to-list 'display-buffer-alist '("^*Async Image Generator*" . (display-buffer-no-window)))
+
+  (define-key org-mode-map (kbd "C-M-y") 'org-insert-clipboard-image)
+
+  (defun org-image-open-in-finder()
+    (interactive)
+    (let* ((linkp (bounds-of-thing-at-point 'sentence))
+           (link (buffer-substring-no-properties (car linkp) (cdr linkp)))
+           (filename (replace-regexp-in-string "\\[\\[\\([^:]*:\\)?\\([^]]+\\)\\].*" "\\2" link)))
+      (shell-command (concat "open " (file-name-directory filename)))))
+
+  (define-key org-mode-map (kbd "C-M-l") 'org-image-open-in-finder)
+
+
+
   :hook (org-agenda-mode . hl-line-mode)
   :bind (
          ("C-c a" . org-agenda)
