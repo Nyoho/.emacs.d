@@ -309,9 +309,8 @@
 
 (setq org-plantuml-jar-path (car (file-expand-wildcards "/usr/local/Cellar/plantuml/*/libexec/plantuml.jar")))
 
-(use-package ox-latex
+(leaf ox-latex
   :after org
-  :defer t
   :config
   (setq org-latex-default-class "jsarticle")
   (setq org-latex-classes '(("jsarticle"
