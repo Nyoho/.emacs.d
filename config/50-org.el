@@ -312,6 +312,7 @@
 (leaf ox-latex
   :after org
   :config
+  (require 'ox-beamer)
   (setq org-latex-default-class "jsarticle")
   (setq org-latex-classes '(("jsarticle"
                              "\\documentclass{jsarticle}
