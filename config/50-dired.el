@@ -131,3 +131,9 @@
     :ensure t
     :bind (:dired-mode-map
            (")" . dired-git-info-mode))))
+
+(leaf dired-posframe
+  :ensure t
+  :bind ((dired-mode-map
+          ("C-t" . nil)
+          ("C-t" . dired-posframe-show))))
