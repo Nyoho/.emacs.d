@@ -76,14 +76,6 @@
 
     :hook ((lsp-mode-hook . lsp-ui-mode)))
   ;; Lsp completion
-  (leaf company-lsp
-    :ensure t
-    :custom ((company-lsp-cache-candidates . t) ;; always using cache
-             (company-lsp-async . t)
-             (company-lsp-enable-recompletion))
-    :config
-    (push 'company-lsp company-backends)
-    :require t))
 
 ;; (use-package ccls
 ;;   :custom (ccls-executable "/usr/local/bin/ccls")
