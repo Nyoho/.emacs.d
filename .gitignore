@@ -32,3 +32,4 @@ org-recent-headings
 prescient-save.el
 /.cache/treemacs-persist
 /themes
+/parinfer-rust

@@ -10,3 +10,7 @@
           ("C-c C-j" . scratch-comment-eval-sexp))))
 
 (leaf lispy :ensure t)
+
+(leaf parinfer-rust-mode
+  :ensure t
+  :hook emacs-lisp-mode)
