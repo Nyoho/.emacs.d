@@ -18,14 +18,13 @@
   :ensure t
   :setq (ob-async-no-async-languages-alist . '("jupyter-python" "jupyter-julia")))
 
-(use-package org
-  :defer t
+(leaf org
   :mode (("\\.org$" . org-mode)
          ("\\.txt$" . org-mode)
          ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
   :custom
-  (org-html-htmlize-output-type 'css)
-  (org-html-htmlize-font-prefix "org-")
+  (org-html-htmlize-output-type . 'css)
+  (org-html-htmlize-font-prefix . "org-")
   :init
   (setq org-startup-truncated nil)
   ;; (setq org-startup-folded nil)
