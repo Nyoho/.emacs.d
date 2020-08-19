@@ -370,8 +370,8 @@
 ;;
 ;; org-mode publish
 ;;
-(use-package ox :after org)
-(use-package ox-publish :after ox
+(leaf ox :after org)
+(leaf ox-publish :after ox
   :config
   (setq org-publish-project-alist
         '(
