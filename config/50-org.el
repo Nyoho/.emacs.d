@@ -398,7 +398,7 @@
            :publishing-function org-podcast-publish-to-txt
            :recursive t)
           ))
-  (use-package ox-podcast :after ox)
+  (leaf ox-podcast :after ox)
   ;; :publishing-function org-html-publish-to-html 
   ;; org-publish-org-to-html
   (setq org-html-doctype "html5")
