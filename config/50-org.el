@@ -403,7 +403,7 @@
   ;; org-publish-org-to-html
   (setq org-html-doctype "html5")
   )
-(use-package ox-html :after ox)
+(leaf ox-html :after ox)
 
 ;;
 ;;
