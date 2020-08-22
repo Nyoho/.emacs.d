@@ -424,7 +424,7 @@
 ;; M-x omlg-grab-link でいろいろできます。
 ;; (global-set-key (kbd "C-c ol") 'omlg-grab-link)
 
-(use-package org-mac-link :after org)
+(leaf org-mac-link :after org)
 
 (use-package org-tempo :after org)
 
