@@ -426,7 +426,7 @@
 
 (leaf org-mac-link :after org)
 
-(use-package org-tempo :after org)
+(leaf org-tempo :after org)
 
 (leaf org-superstar
   :ensure t
