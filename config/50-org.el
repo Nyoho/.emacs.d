@@ -480,9 +480,8 @@
 ;;
 ;; org-trello
 ;;
-(use-package org-trello
+(leaf org-trello
   :after org
-  :defer t
   :init
   
   :config
