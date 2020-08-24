@@ -434,7 +434,7 @@
   :after org)
 
 ;; http://www.howardism.org/Technical/Emacs/orgmode-wordprocessor.html
-(use-package org-bullets
+(leaf org-bullets
   :ensure t
   :after org
   :if (memq window-system '(mac ns))
