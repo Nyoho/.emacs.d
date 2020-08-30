@@ -328,6 +328,14 @@
                              ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                              ("\\paragraph{%s}" . "\\paragraph*{%s}")
                              ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+                            ("beamer"
+                             "\\documentclass[presentation]{beamer}
+[PACKAGES]
+[EXTRA]
+\\usefonttheme{professionalfonts}"
+                             ("\\section{%s}" . "\\section*{%s}")
+                             ("\\subsection{%s}" . "\\subsection*{%s}")
+                             ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
                             ("jsbook"
                              "\\documentclass{jsbook}
 \\usepackage[dvipdfmx]{graphicx}
@@ -367,6 +375,48 @@
         )
   )
 
+  ;; Beamer presentations using the new export engine
+  ;; https://orgmode.org/worg/exporters/beamer/ox-beamer.html#export-filters
+  (defun my-beamer-bold (contents backend info)
+    (when (eq backend 'beamer)
+      (replace-regexp-in-string "\\`\\\\[A-Za-z0-9]+" "\\\\textbf" contents)))
+  (add-to-list 'org-export-filter-bold-functions 'my-beamer-bold)
+
+  ) ;; end of ox-latex
+
+(defun my-yas-activate-extra-mode-latex ()
+  "Activate latex-mode yasnippet"
+  (interactive)
+  (yas-minor-mode)
+  (yas-activate-extra-mode 'latex-mode))
+
+(defun my-company-auctex-prefix (regexp)
+  "Returns the prefix for matching given REGEXP not only in latex-mode."
+  (when (looking-back regexp)
+    (match-string-no-properties 1)))
+
+(defun my-init-company-auctex ()
+  "Append LaTeX company backends"
+  (interactive)
+  (advice-add #'company-auctex-prefix :override #'my-company-auctex-prefix)
+  (company-auctex-init))
+
+  ;; or
+  ;; (setq-local company-backends
+  ;;             (append '((company-auctex-macros
+  ;;                        company-auctex-symbols
+  ;;                        company-auctex-environments)
+  ;;                       company-auctex-bibs
+  ;;                       company-auctex-labels)
+  ;;                     company-backends)))
+
+(defun setup-my-auto-org-tex ()
+  "Start `my-yas-activate-extra-mode-latex', `my-init-company-auctex' and `my-autotex-mode'"
+  (interactive)
+  (my-yas-activate-extra-mode-latex)
+  (my-init-company-auctex)
+  (my-autotex-mode))
+  
 ;;
 ;; org-mode publish
 ;;
