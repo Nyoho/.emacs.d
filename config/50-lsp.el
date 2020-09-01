@@ -75,6 +75,7 @@
                          ("C-c d"   . ladicle/toggle-lsp-ui-doc)))
 
     :hook ((lsp-mode-hook . lsp-ui-mode)))
+  )
   ;; Lsp completion
 
 ;; (use-package ccls
