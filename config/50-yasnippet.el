@@ -1,35 +1,30 @@
 ;;
 ;; yasnippet
 ;;
-(use-package yasnippet
+(leaf yasnippet
   :ensure t
-  :defer t
   :custom
-  (yas-key-syntaxes '(yas-longest-key-from-whitespace "w_.()" "w_." "w_" "w"))
-  :init
-  ;; (setq yas-trigger-key "TAB")
-  (add-hook 'emacs-lisp-mode-hook 'yas-minor-mode)
-  (add-hook 'ruby-mode-hook 'yas-minor-mode)
-  (add-hook 'enh-ruby-mode-hook 'yas-minor-mode)
-  (add-hook 'web-mode-hook 'yas-minor-mode)
-  (add-hook 'css-mode-hook 'yas-minor-mode)
-  (add-hook 'tex-mode-hook 'yas-minor-mode)
-  (add-hook 'latex-mode-hook 'yas-minor-mode)
-  (add-hook 'text-mode-hook 'yas-minor-mode)
-  (add-hook 'js2-mode-hook 'yas-minor-mode)
-  (add-hook 'sgml-mode-hook 'yas-minor-mode)
+  (yas-key-syntaxes . '(yas-longest-key-from-whitespace "w_.()" "w_." "w_" "w"))
+  :hook ((emacs-lisp-mode-hook . yas-minor-mode)
+         (ruby-mode-hook . yas-minor-mode)
+         (enh-ruby-mode-hook . yas-minor-mode)
+         (web-mode-hook . yas-minor-mode)
+         (css-mode-hook . yas-minor-mode)
+         (tex-mode-hook . yas-minor-mode)
+         (latex-mode-hook . yas-minor-mode)
+         (text-mode-hook . yas-minor-mode)
+         (js2-mode-hook . yas-minor-mode)
+         (sgml-mode-hook . yas-minor-mode))
+  :bind (:yas-minor-mode-map
+         ("C-c C-v" . nil)
+         ("M-i"     . yas-expand))
+  ;; (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
   :config
   ;; (setq yas-snippet-dirs
   ;;       '("~/.emacs.d/snippets" ;; my snippets
   ;;         "~/.emacs.d/el-get/yasnippet/snippets" ;; default snippets
   ;;         ))
-
-  ;; (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
-  (define-key yas-minor-mode-map (kbd "C-c C-v") nil)
-  (define-key yas-minor-mode-map (kbd "M-i") 'yas-expand)
-  (yas-reload-all)
-  ;; (yas-global-mode t)
-  )
+  (yas-reload-all))
 
 (leaf ivy-yasnippet
   :ensure t
