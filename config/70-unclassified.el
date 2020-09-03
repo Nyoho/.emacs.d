@@ -817,7 +817,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;; See http://d.hatena.ne.jp/rubikitch/20101018/sudoext
 ;; M-x sudoedit
 ;; C-x # (to exit)
-(use-package sudo-ext :defer)
+(leaf sudo-ext)
 
 
 
