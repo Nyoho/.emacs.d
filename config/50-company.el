@@ -9,13 +9,17 @@
   (company-selection-wrap-around . t)
   (company-minimum-prefix-length . 2)
   :bind
-  ((company-active-map ("C-n" . company-select-next))
-   (company-active-map ("C-p" . company-select-previous))
-   (company-search-map ("C-n" . company-select-next))
-   (company-search-map ("C-p" . company-select-previous))
-   (company-active-map ("C-s" . company-filter-candidates))
-   (company-active-map ("C-i" . company-complete-selection))
-   (emacs-lisp-mode-map ("C-M-i" . company-complete)))
+  ((company-active-map
+    ("C-n" . company-select-next)
+    ("C-p" . company-select-previous)
+    ("C-s" . company-filter-candidates)
+    ("C-i" . company-complete-selection)
+    ("<tab>" . company-complete-selection))
+   (company-search-map
+    ("C-n" . company-select-next)
+    ("C-p" . company-select-previous))
+   (emacs-lisp-mode-map
+    ("C-M-i" . company-complete)))
   :require t
   :config
   (leaf company-math
