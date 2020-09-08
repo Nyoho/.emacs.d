@@ -10,7 +10,6 @@
 
 (leaf ivy
   :ensure t
-  :require t
   :custom
   (ivy-use-virtual-buffers . t)
   (ivy-pre-prompt-function . #'my-pre-prompt-function)
@@ -131,7 +130,6 @@
 
 (leaf ivy-prescient
   :ensure t
-  :require t
   :config
   (ivy-prescient-mode 0))
 
