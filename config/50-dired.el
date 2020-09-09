@@ -59,14 +59,6 @@
 
 
 ;;
-;; for wdired
-;;
-(leaf wdired
-  :after dired
-  :require t
-  :bind ((dired-mode-map ("r" . wdired-change-to-wdired-mode))))
-
-;;
 ;; dired-subreee
 ;; http://emacs.rubikitch.com/dired-subtree/
 ;;
@@ -115,6 +107,10 @@
    ;; ("C-t" . *********)
    )
   :config
+  (leaf wdired
+    :require t
+    :bind ((:dired-mode-map ("r" . wdired-change-to-wdired-mode))))
+  
   ;; Colourful columns.
   (leaf diredfl
     :ensure t
@@ -127,7 +123,7 @@
     (diredfl-dir-heading . '((((background dark)) (:foreground "turquoise"))
                              (t                   (:foreground "Blue")))))
   (leaf dired-git-info
-    :after dired
+    :require t
     :ensure t
     :bind (:dired-mode-map
            (")" . dired-git-info-mode))))
