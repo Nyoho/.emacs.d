@@ -6,9 +6,8 @@
   :after dired
   :bind (dired-mode-map ("C-c t" . dired-filter-group-mode)))
 
-(use-package dired-x
+(leaf dired-x
   :after dired
-  :defer t
   :init
   (defface my-face-f-2 '((t (:foreground "yellow"))) nil)
   (defvar my-face-f-2 'my-face-f-2)
@@ -62,7 +61,7 @@
 ;; dired-subreee
 ;; http://emacs.rubikitch.com/dired-subtree/
 ;;
-(use-package dired-subtree
+(leaf dired-subtree
   :ensure t
   :after dired
   :config
