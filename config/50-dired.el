@@ -83,7 +83,7 @@
   (setq dired-dwim-target t)
   )
 
-(use-package gist
+(leaf gist
   :ensure t
   :after dired)
 
