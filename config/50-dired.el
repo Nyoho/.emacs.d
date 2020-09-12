@@ -105,6 +105,8 @@
    ("C-t" . nil)
    ;; ("C-t" . *********)
    )
+  :custom
+  (dired-use-ls-dired . nil)
   :config
   (leaf wdired
     :require t
