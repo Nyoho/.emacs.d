@@ -21,9 +21,10 @@
 
   ;; 3000-303F CJKの記号及び句読点
   ;; https://ja.wikipedia.org/wiki/CJK%E3%81%AE%E8%A8%98%E5%8F%B7%E5%8F%8A%E3%81%B3%E5%8F%A5%E8%AA%AD%E7%82%B9
-  ;; 〝
+  ;; 〝〞〟〃《》「」『』〰〽
   ;; (set-fontset-font nil '(#x3000 . #x303f) (font-spec :family "September"))
-  (set-fontset-font nil '(#x3000 . #x303f) (font-spec :family "Osaka"))
+  ;; (set-fontset-font nil '(#x3000 . #x303f) (font-spec :family "Osaka"))
+  ;; (set-fontset-font nil '(#x3000 . #x303f) (font-spec :family "Hiragino Sans"))
 
   ;; 3040-309f 全角ひらがな, 30a0-30ff 全角カタカナ
   ;; https://ja.wikipedia.org/wiki/%E5%B9%B3%E4%BB%AE%E5%90%8D_(Unicode%E3%81%AE%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF)
