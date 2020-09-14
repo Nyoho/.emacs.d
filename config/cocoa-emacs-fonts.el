@@ -7,17 +7,25 @@
   ;; or
   ;; (with-output-to-temp-buffer "*Font family list*" (dolist (font (font-family-list))  (princ (format "%s\n" font))))
 
-  (set-face-attribute 'default nil :family "Ricty Diminished Discord" :height 160)
+  (set-face-attribute 'default nil :family "Ricty Diminished Discord" :height 180)
+  ;; (set-face-attribute 'default nil :family "SF Mono Square" :height 180)
   ;; (set-face-attribute 'default nil :family "Cica" :height 160)
-
-  ;; (setq face-font-rescale-alist
-  ;;       '(("Hiragino Maru Gothic ProN" . 1.2)
-  ;;         ("Hiragino Kaku Gothic ProN" . 1.2)))
-
+  
+  ;; > ASCII
+  ;; (set-fontset-font nil '(#x0080 . #x024F) (font-spec :family "Menlo"))
+  ;; (set-fontset-font nil 'ascii (font-spec :family "Menlo"))
+  ;; (set-fontset-font nil 'ascii (font-spec :family "Menlo" :size 16))
+  (set-fontset-font nil '(#x0000 . #x0080) (font-spec :family "Menlo" :size 14))
+  ;; (set-fontset-font nil 'ascii (font-spec :family "Inconsolata" :size 16))
+  
   ;; (set-fontset-font nil 'mule-unicode-0100-24ff '("monaco" . "iso10646-1"))
   ;; (set-fontset-font nil '(#x00 . #xff) (font-spec :family "Monaco" :size 14 :baseline 0))
+  ;; (set-fontset-font nil 'japanese-jisx0208  (font-spec :family "Hiragino Maru Gothic ProN"))
   (set-fontset-font nil 'japanese-jisx0208  (font-spec :family "Hiragino Kaku Gothic ProN"))
   (set-fontset-font nil 'greek-iso8859-7 (font-spec :family "New Athena Unicode"))
+  (set-fontset-font nil 'greek (font-spec :family "New Athena Unicode"))
+  ;; (set-fontset-font nil '(#x2220 . #x2270) (font-spec :family "New Athena Unicode"))
+
 
   ;; 3000-303F CJKの記号及び句読点
   ;; https://ja.wikipedia.org/wiki/CJK%E3%81%AE%E8%A8%98%E5%8F%B7%E5%8F%8A%E3%81%B3%E5%8F%A5%E8%AA%AD%E7%82%B9
