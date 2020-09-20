@@ -64,6 +64,14 @@
   
   ;; East Asian Ambiguous Width ○×α
   (use-cjk-char-width-table 'ja_JP)
+
+  (dolist (elt '(("Hiragino Maru Gothic ProN" . 1.2)
+                 ("Hiragino Kaku Gothic ProN" . 1.2)
+                 ("Capanito"                  . 1.2)
+                 ("Kozuka Gothic Pr6N"        . 1.0)
+                 ("Apple Color Emoji"         . 0.91)
+                 ))
+    (add-to-list 'face-font-rescale-alist elt))
   )
 
 ;; Test text from
