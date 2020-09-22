@@ -57,6 +57,8 @@
   ;; japanese-jisx0213.2004-1 (JISX0213.2004 Plane1 (Japanese))
   ;; 北䑓, 川﨑
   ;; (set-fontset-font nil 'japanese-jisx0213.2004-1 (font-spec :family "Hiragino Kaku Gothic ProN"))
+  (set-fontset-font nil '(#x4400 . #x7E00) (font-spec :family "Hiragino Kaku Gothic ProN"))
+  (set-fontset-font nil '(#xfa00 . #xfb00) (font-spec :family "Hiragino Kaku Gothic ProN"))
 
   ;; emoji
   ;; (set-fontset-font nil '(#xde00 . #xdeff) (font-spec :family "Hiragino Kaku Gothic ProN"))
