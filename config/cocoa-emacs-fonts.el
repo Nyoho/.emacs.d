@@ -63,7 +63,8 @@
   ;; emoji
   ;; (set-fontset-font nil '(#xde00 . #xdeff) (font-spec :family "Hiragino Kaku Gothic ProN"))
   ;; (set-fontset-font nil '(#xde00 . #xdeff) (font-spec :family "Symbola"))
-  
+  (set-fontset-font nil '(#x1f000 . #x1fa00) (font-spec :family "Apple Color Emoji") nil 'prepend)
+
   ;; East Asian Ambiguous Width ○×α
   (use-cjk-char-width-table 'ja_JP)
 
