@@ -54,6 +54,9 @@
   ;; (set-fontset-font nil '(#x2500 . #x25ff) (font-spec :family "Consolas"))
   ;; (set-fontset-font nil '(#x2501 . #x257f) (font-spec :family "Hiragino Kaku Gothic ProN"))
 
+  ;; ∩∪∞≤≥∏
+  ;; (set-fontset-font nil '(#x2200 . #x22ff) (font-spec :family "Hiragino Maru Gothic Pro"))
+
   ;; japanese-jisx0213.2004-1 (JISX0213.2004 Plane1 (Japanese))
   ;; 北䑓, 川﨑
   ;; (set-fontset-font nil 'japanese-jisx0213.2004-1 (font-spec :family "Hiragino Kaku Gothic ProN"))
