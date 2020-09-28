@@ -247,10 +247,8 @@
          ;; (local-set-key (kbd "C-c C-f") 'org-shiftright)
          ;; (local-set-key (kbd "C-c C-p") 'org-shiftup)
          ;; (local-set-key (kbd "C-c C-n") 'org-shiftdown)
-   )
-  ;; (define-key global-map (kbd "C-c l") 'org-store-link)
-  ;; (define-key global-map (kbd "C-c a") 'org-agenda)
-  )
+         ))
+;; end of leaf org
 
 
 
