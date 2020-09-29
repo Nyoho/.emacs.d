@@ -21,7 +21,13 @@
                               (format "[h/%s]" (substring branch 18)))
                              (t
                               (format "[%s]" (substring branch 11))))
-                          "[Not Repo]")))
+                          "-")))
     (propertize mode-line-str
-                'face '((:foreground "Dark green" :weight bold)))))
+                'face 'my/git-repository-face)))
 
+(defface my/git-repository-face
+  '((((class color) (background dark)) :foreground "spring green")
+    (((class color) (background light)) :foreground "dark green")
+    (t :weight bold))
+  "Git mode-line face"
+  :group 'my/git-mode-line-faces)
