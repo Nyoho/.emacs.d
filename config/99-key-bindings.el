@@ -96,8 +96,6 @@
 
 ;; (global-set-key (kbd "C-c b") 'helm-descbinds) ;; C-h b でできるので外した。
 
-(global-set-key (kbd "C-c h") 'helm-hatena-bookmark)
-(global-set-key (kbd "C-c uh") 'hatena-bookmark-get-dump)
 
 
 ;; e2wm
