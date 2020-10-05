@@ -264,7 +264,10 @@
   :added "2020-03-24"
   :emacs>= 24.3
   :ensure t
-  :require t)
+  :require t
+  :custom
+  (use-package-compute-statistics . t)
+  )
 
 (leaf init-loader
   :ensure t
