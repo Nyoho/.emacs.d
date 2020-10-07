@@ -216,15 +216,15 @@
       :init (unless (executable-find "git")
               (warn "'git' couldn't found. el-get can't download any packages")))
 
-    (leaf feather
-      :doc "Parallel thread modern package manager"
-      :req "emacs-26.3" "async-await-1.0" "ppp-1.0" "page-break-lines-0.1"
-      :tag "convenience" "package" "emacs>=26.3"
-      :url "https://github.com/conao3/feather.el"
-      :emacs>= 26.3
-      :ensure t
-      ;; :after ppp page-break-lines
-      )
+    ;; (leaf feather
+    ;;   :doc "Parallel thread modern package manager"
+    ;;   :req "emacs-26.3" "async-await-1.0" "ppp-1.0" "page-break-lines-0.1"
+    ;;   :tag "convenience" "package" "emacs>=26.3"
+    ;;   :url "https://github.com/conao3/feather.el"
+    ;;   :emacs>= 26.3
+    ;;   :ensure t
+    ;;   ;; :after ppp page-break-lines
+    ;;   )
 
     (leaf diminish
       :doc "Diminished modes are minor modes with no modeline display"
