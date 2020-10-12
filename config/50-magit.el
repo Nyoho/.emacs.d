@@ -18,3 +18,7 @@
   ;; (eval-after-load "vc"
   ;;   '(remove-hook 'find-file-hooks 'vc-find-file-hook))
   )
+
+(leaf forge
+  :ensure t
+  :after magit)
