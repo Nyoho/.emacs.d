@@ -18,6 +18,18 @@
   :ensure t
   :setq (ob-async-no-async-languages-alist . '("jupyter-python" "jupyter-julia")))
 
+(leaf ob-jupyter
+  :preface
+  (defun my/ob-jupyter-auto-start-check ()
+      (re-search-forward "#\\+begin_src jupyter-julia" magic-mode-regexp-match-limit t))
+  (defun my/ob-jupyter-require ()
+    (save-excursion
+      (goto-char (point-min))
+      (when (re-search-forward "#\\+begin_src *jupyter-julia" nil t)
+        (require 'ob-jupyter))))
+  :after org
+  :hook ((find-file-hook . my/ob-jupyter-require)))
+
 (leaf org
   :mode (("\\.org$" . org-mode)
          ("\\.txt$" . org-mode)
