@@ -59,7 +59,7 @@
                                  "~/org/test/test.org"
                                  "~/org/design.org")
                                 ))
-  (setq org-agenda-ndays 7)
+  (setq org-agenda-span 'week)
   (setq org-hide-leading-stars t)
   ;; (setq org-odd-levels-only t) ;; indent 用途にはなしのほうがいい?
   (setq org-startup-indented t)
