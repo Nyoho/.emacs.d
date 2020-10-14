@@ -562,3 +562,7 @@
   :bind ("C-c f r" . org-recent-headings-ivy)
   :config (org-recent-headings-mode))
 
+(leaf org-tree-slide
+  :ensure t
+  :setq
+  (org-tree-slide-slide-in-effect . nil))
