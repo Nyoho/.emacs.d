@@ -364,7 +364,8 @@
                              ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
                             ))
   (setq org-latex-pdf-process
-        '("pdflatex %f" "pdflatex %f" "pdflatex %f"))
+        '("uplatex -shell-escape %f"
+          "dvipdfmx %b.dvi"))
 
   ;; TODO: C-c C-e ll では、Emacsで行った標準のTeX設定へ飛んでいるが、'.org' までファイル名が含まれてしまっていて存在しなくなっている。
 
