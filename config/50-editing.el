@@ -56,3 +56,13 @@
 
 (leaf smartparens
   :ensure t)
+
+;;
+;; moccur 関連
+;;
+(leaf color-moccur
+  :ensure t
+  :config
+  ;; (require 'moccur-edit)
+  )
+(defalias 'mg 'moccur-grep-find)
