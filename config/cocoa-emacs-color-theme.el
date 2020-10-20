@@ -34,9 +34,9 @@
     (iceberg-theme-create-theme-file)
     (load-theme 'solarized-iceberg-dark t))
   
-  ;; (load-theme 'doom-dracula)
+  (load-theme 'doom-dracula)
   ;; (load-theme 'doom-one)
-  (load-theme 'doom-challenger-deep)
+  ;; (load-theme 'doom-challenger-deep)
 
   ;; Themes
   ;;
