@@ -82,7 +82,7 @@
   (tool-bar-mode 0)
   (setq ns-pop-up-frames nil)
 
-  (setq dnd-open-file-other-window t)
+  (setq dnd-open-file-other-window nil)
 
   (setq
    ;; ホイールでスクロールする行数を設定
