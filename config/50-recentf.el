@@ -25,7 +25,6 @@
 (leaf recentf-ext
   :ensure t
   :after recentf
-  :require t
   :setq ((recentf-exclude
           '("/auto-install/" ".recentf" "/repos/" "/elpa/"
             "\\.mime-example" "\\.ido.last" "COMMIT_EDITMSG"))))
