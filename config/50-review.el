@@ -1,3 +1,3 @@
 (leaf review-mode
-  :ensure t)
+ :require t)
 
