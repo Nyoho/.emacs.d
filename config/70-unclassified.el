@@ -860,12 +860,13 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;; (require 'elscreen)
 ;; (elscreen-start)
 
-(use-package zoom-window
-  :defer t
+(leaf zoom-window
+  :ensure t
+  :after t
+  :bind (("C-x C-z" . zoom-window-zoom))
   :config
   ;; (setq zoom-window-use-elscreen t) ;; zoom-window-setupの前に設定する必要がある
-  (zoom-window-setup)
-  (global-set-key (kbd "C-x C-z") 'zoom-window-zoom))
+  (zoom-window-setup))
 
 
 ;; From: http://d.hatena.ne.jp/kaz_yos/20140202/1391362618
