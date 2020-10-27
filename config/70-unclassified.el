@@ -546,15 +546,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;   (autoload 'hiki-index "hiki-mode" nil t))
 
 
-;;
-;; moccur 関連
-;;
-(use-package color-moccur
-  :defer t
-  :config
-  ;; (require 'moccur-edit)
-  )
-(defalias 'mg 'moccur-grep-find)
 
 
 ;;
