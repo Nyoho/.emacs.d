@@ -572,7 +572,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;
 ;; for tramp
 ;;
-(use-package tramp
+(leaf tramp
   :config
   ;; (tramp-default-method "sshx")
   ;; (tramp-remort-sh "/bin/ksh")
