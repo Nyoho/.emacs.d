@@ -561,12 +561,11 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 
 
-(use-package lacarte
-  :defer t
-  :config
-  (global-set-key [?\e ?\M-x] 'lacarte-execute-command)
-  (global-set-key [?\M-`]     'lacarte-execute-menu-command)
-  (global-set-key [f10]       'lacarte-execute-menu-command))
+(leaf lacarte
+  :require t
+  :bind (("M-ESC x" . lacarte-execute-command)
+         ("M-`" . lacarte-execute-menu-command)
+         ("<f10>" . lacarte-execute-menu-command)))
 
 
 ;;
