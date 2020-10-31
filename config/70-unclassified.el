@@ -444,7 +444,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;
 (leaf epa-file
   :when (version< "23" emacs-version)
-  :require t
   :config
   ;; (setq epg-gpg-program "gpg")
   (epa-file-enable))
