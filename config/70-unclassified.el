@@ -97,11 +97,12 @@ redrawが non-nilの場合は、Windowを再描画します。"
 ;;
 ;; uniquify.el
 ;; ファイル名が重複していたらバッファ名にディレクトリ名を追加する。
-(use-package uniquify
-  :config
+(leaf uniquify
+  :require t
+  :custom
   ;; filename<dir> 形式
-  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-  (setq uniquify-ignore-buffers-re "*[^*]+*"))
+  (uniquify-buffer-name-style . 'post-forward-angle-brackets)
+  (uniquify-ignore-buffers-re . "*[^*]+*"))
 
 
 ;;
