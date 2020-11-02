@@ -44,3 +44,9 @@
   :config
   (setq company-box-icons-alist 'company-box-icons-all-the-icons)
   )
+
+(leaf company-quickhelp
+  :ensure t
+  :after company
+  :config
+  (company-quickhelp-mode))
