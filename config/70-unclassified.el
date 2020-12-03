@@ -562,6 +562,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 
 (leaf lacarte
+  :when (featurep 'lacarte)
   :require t
   :bind (("M-ESC x" . lacarte-execute-command)
          ("M-`" . lacarte-execute-menu-command)
