@@ -9,6 +9,7 @@
 (setq user-full-name "nyoho")
 (setq user-mail-address "algebraicallyClosedField@gmail.com")
 
+(setq byte-compile-warnings '(not cl-functions obsolete))
 (require 'cl)
 
 (cd "~")
