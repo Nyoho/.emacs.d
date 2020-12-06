@@ -7,6 +7,9 @@
   :ensure t)
 
 (defun htmlize-and-browse ()
+  "htmlizeして見た目そのままにソースコードをブラウザで開く。
+Keynoteなどでコードハイライトしたまま文字列を貼り付けるのに便利。"
+  
   (interactive)
   (defcustom
     htmlize-and-browse-directory-path temporary-file-directory
