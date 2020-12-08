@@ -15,12 +15,12 @@
                                  (right-fringe . 4)
                                  (internal-border-width . 8)
                                  (internal-border-color . "white")))
-    (ivy-posframe-display-functions-alist
-     '((swiper          . nil)
-       (complete-symbol . ivy-posframe-display-at-point)
-       ;; (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
-       (counsel-M-x     . ivy-posframe-display-at-window-center)
-       (t               . ivy-posframe-display)))
+    ;; (ivy-posframe-display-functions-alist .
+    ;;  '((swiper          . nil)
+    ;;    (complete-symbol . ivy-posframe-display-at-point)
+    ;;    ;; (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
+    ;;    (counsel-M-x     . ivy-posframe-display-at-window-center)
+    ;;    (t               . ivy-posframe-display)))
     :custom-face
     (ivy-posframe        . '((t (:background "#2B5B7A"))))
     (ivy-posframe-border . '((t (:background "#7272a4"))))
