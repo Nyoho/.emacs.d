@@ -6,6 +6,9 @@
   ;; (insert (prin1-to-string (x-list-fonts "*")))
   ;; or
   ;; (with-output-to-temp-buffer "*Font family list*" (dolist (font (font-family-list))  (princ (format "%s\n" font))))
+  ;; ‘script-representative-chars’
+  ;; ‘list-character-sets’
+  ;; ‘list-charset-chars’
 
   (set-face-attribute 'default nil :family "Ricty Diminished Discord" :height 180)
   ;; (set-face-attribute 'default nil :family "SF Mono Square" :height 180)
