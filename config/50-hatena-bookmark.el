@@ -17,3 +17,6 @@
               (helm-hatena-bookmark-candidate-number-limit . 100000)
               (helm-hatena-bookmark-interval . ,(* 4 60 60))))
 ;; (* 4 60 60)
+(leaf counsel-hatena-bookmark
+  :bind
+  ("C-c h" . counsel-hatena-bookmark))
