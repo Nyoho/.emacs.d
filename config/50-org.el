@@ -432,32 +432,34 @@
 ;;
 (leaf ox :after org)
 (leaf ox-publish :after ox
+  :custom
+  ((org-publish-project-alist
+    .
+    '(
+      ("nyotes"
+       :base-directory "~/org/public/"
+       :base-extension "org"
+       :publishing-directory "~/Dropbox/nyotes_site/pages/"
+       :publishing-function org-html-publish-to-html
+       :recursive t
+       :site-root "http://nyotes.nyoho.jp"
+       :exclude "^blog\\|^bitacora"
+       :section-numbers nil
+       :headline-levels 4
+       :html-extension "html"
+       :table-of-contents nil
+       :auto-index nil
+       :auto-preamble nil
+       :body-only t
+       :auto-postamble nil)
+      ("podcast"
+       :base-directory "~/org/podcast/"
+       :base-extension "org"
+       :publishing-directory "~/Dropbox/podcast-episodes/"
+       :publishing-function org-podcast-publish-to-txt
+       :recursive t)
+      )))
   :config
-  (setq org-publish-project-alist
-        '(
-          ("nyotes"
-           :base-directory "~/org/public/"
-           :base-extension "org"
-           :publishing-directory "~/Dropbox/nyotes_site/pages/"
-           :publishing-function org-html-publish-to-html
-           :recursive t
-           :site-root "http://nyotes.nyoho.jp"
-           :exclude "^blog\\|^bitacora"
-           :section-numbers nil
-           :headline-levels 4
-           :html-extension "html"
-           :table-of-contents nil
-           :auto-index nil
-           :auto-preamble nil
-           :body-only t
-           :auto-postamble nil)
-          ("podcast"
-           :base-directory "~/org/podcast/"
-           :base-extension "org"
-           :publishing-directory "~/Dropbox/podcast-episodes/"
-           :publishing-function org-podcast-publish-to-txt
-           :recursive t)
-          ))
   (leaf ox-podcast :after ox)
   ;; :publishing-function org-html-publish-to-html 
   ;; org-publish-org-to-html
