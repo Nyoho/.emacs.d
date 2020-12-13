@@ -1,5 +1,5 @@
-(use-package swift-mode
-  :defer t
+(leaf swift-mode
+  :ensure t
   :config
   (setq flycheck-swift-sdk-path
       (replace-regexp-in-string
