@@ -135,3 +135,7 @@
 ;; (defalias 'rt  'my-rake-spec)
 
 ;; (use-package git-dwim)
+
+
+(leaf browse-at-remote
+  :ensure t)
