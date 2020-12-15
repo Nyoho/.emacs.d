@@ -35,9 +35,14 @@
          ("\\.txt$" . org-mode)
          ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
   :custom
+  (org-directory . "~/org")
   (org-html-htmlize-output-type . 'css)
   (org-html-htmlize-font-prefix . "org-")
-  :init
+  (org-refile-targets
+   .
+   `((,(concat org-directory "/agenda/waiting.org") :maxlevel . 1)
+     (,(concat org-directory "/agenda/someday.org") :level . 1)))
+  :config
   (setq org-startup-truncated nil)
   ;; (setq org-startup-folded nil)
   (setq org-return-follows-link t)
@@ -50,7 +55,6 @@
   (setq org-hide-emphasis-markers nil) ;; ~foo~ =bar= のときの前後の記号をどうするか
   (setq org-replace-disputed-keys t)
   (setq org-src-fontify-natively t)
-  (setq org-directory "~/org/")
   (setq org-default-notes-file "~/org/notes.org")
 
   (setq org-mobile-inbox-for-pull "~/org/flagged.org")
@@ -71,20 +75,23 @@
   ;;         ("Note" ?n "\n* %U %^{トピックス} %^g \n%i%?\n %a" "~/org/notes.org")
   ;;         ))
   (setq org-preview-latex-default-process 'dvisvgm)
-  ;; org-capture 
-  (setq org-capture-templates
+
+  (leaf org-capture
+    :custom
+    (org-capture-templates
+     .
         '(("t" "Todo" entry
            ;; (file+headline (lambda () (concat org-directory "agenda/inbox.org")) "Inbox")
-           (file (lambda () (concat org-directory "agenda/inbox.org")))
+           (file (lambda () (concat org-directory "/agenda/inbox.org")))
            "* TODO %^{やること(「〜する」)} %^g\n%?\n  Added: %n")
           ("U" "Note" entry
-           (file+headline (lambda () (concat org-directory "notes.org" "")) "")
+           (file+headline (lambda () (concat org-directory "/notes.org" "")) "")
            "* %U %^{トピックス} %^g %i%? %a")
         ;; ("b" "Nyotes Page draft" entry (file (choose-new-page "~/org/nyotes/"))
         ;; ("p" "Project Entry" entry (file (choose-project-file))
         ;;  "* TODO %?\n  %i\n  %a\n\n")
         ;; "\n* TODO %?\n")
-          ))
+          )))
 
 
   ;; '(("t" "Todo" entry (file+headline "c:/Users/AAA/org/remind.org" "■Capture")
@@ -93,7 +100,6 @@
   ;;    "* %?\n  # Wrote on %U"))
   (defalias 'cp 'org-capture)
 
-  :config
   (unbind-key "C-," org-mode-map)
   ;; (require 'org-install) ;; obsoleted
 
