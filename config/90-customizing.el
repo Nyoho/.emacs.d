@@ -55,10 +55,6 @@
  '(org-export-with-toc nil)
  '(org-fast-tag-selection-single-key nil)
  '(org-log-done (quote (done)))
- '(org-refile-targets
-   (quote
-    (("gtd.org" :maxlevel . 1)
-     ("someday.org" :level . 1))))
  '(org-reverse-note-order nil)
  '(org-tags-column -78)
  '(org-tags-match-list-sublevels nil)
