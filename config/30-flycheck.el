@@ -30,7 +30,13 @@
               line-end))
     :modes (text-mode markdown-mode gfm-mode review-mode))
   (add-to-list 'flycheck-checkers 'textlint)
-  )
+
+  (leaf flycheck-posframe
+    :ensure t
+    :after flycheck
+    :custom-face
+    (flycheck-posframe-face . '((t (:foreground "#4a4a4a" :background "#5d4a4f"))))
+    :hook ((flycheck-mode-hook . flycheck-posframe-mode))))
 
 ;; Local Variables:
 ;; flycheck-disabled-checkers: (emacs-lisp-checkdoc)
