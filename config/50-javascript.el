@@ -51,3 +51,9 @@
   :after t
   :hook ((coffee-after-compile-hook . sourcemap-goto-corresponding-point))
   :setq ((coffee-args-compile quote ("-c" "-m"))))
+
+
+(leaf nvm
+  :ensure t
+  :config
+  (nvm-use "15"))
