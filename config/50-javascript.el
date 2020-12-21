@@ -55,5 +55,6 @@
 
 (leaf nvm
   :ensure t
+  :if (file-exists-p "~/.nvm/nvm.sh")
   :config
   (nvm-use "15"))
