@@ -34,6 +34,8 @@
   :mode (("\\.org$" . org-mode)
          ("\\.txt$" . org-mode)
          ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
+  :custom-face
+  (org-link . '((t (:foreground "DeepSkyBlue"))))
   :custom
   (org-directory . "~/org")
   (org-html-htmlize-output-type . 'css)
