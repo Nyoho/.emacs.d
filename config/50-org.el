@@ -575,3 +575,32 @@
   :ensure t
   :setq
   (org-tree-slide-slide-in-effect . nil))
+
+
+(leaf org-roam
+  :ensure t
+  :diminish org-roam-mode
+  :bind ((org-roam-mode-map
+          ("C-c n l" . org-roam)
+          ("C-c n f" . org-roam-find-file)
+          ("C-c n g" . org-roam-graph))
+         (org-mode-map
+          ("C-c n i" . org-roam-insert)
+          ("C-c n I" . org-roam-insert-immediate)))
+  :hook (after-init-hook)
+  :custom ((org-roam-directory . "~/org/roam/"))
+  :config
+  (leaf org-roam-server
+    :ensure t
+    :require t
+    :setq ((org-roam-server-host . "127.0.0.1")
+           (org-roam-server-port . 10000)
+           (org-roam-server-authenticate)
+           (org-roam-server-export-inline-images . t)
+           (org-roam-server-serve-files)
+           (org-roam-server-served-file-extensions '("pdf" "mp4" "ogv"))
+           (org-roam-server-network-poll . t)
+           (org-roam-server-network-arrows)
+           (org-roam-server-network-label-truncate . t)
+           (org-roam-server-network-label-truncate-length . 60)
+           (org-roam-server-network-label-wrap-length . 20))))

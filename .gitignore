@@ -37,3 +37,4 @@ prescient-save.el
 /.debug/company/
 /forge-database.sqlite
 /semanticdb/
+/org-roam.db
