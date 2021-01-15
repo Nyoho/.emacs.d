@@ -61,10 +61,9 @@
 
   (setq org-mobile-inbox-for-pull "~/org/flagged.org")
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-  (setq org-agenda-files (quote ("~/org/agenda/inbox.org"
-                                 "~/org/test/test.org"
-                                 "~/org/design.org")
-                                ))
+  (setq org-agenda-files '("~/org/agenda/inbox.org"
+                           "~/org/test/test.org"
+                           "~/org/design.org"))
   (setq org-agenda-span 'week)
   (setq org-hide-leading-stars t)
   ;; (setq org-odd-levels-only t) ;; indent 用途にはなしのほうがいい?
