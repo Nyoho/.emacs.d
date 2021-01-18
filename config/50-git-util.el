@@ -139,3 +139,11 @@
 
 (leaf browse-at-remote
   :ensure t)
+
+(defun browse-github ()
+  (interactive)
+  (shell-command "hub browse"))
+
+(defun pull-request ()
+  (interactive)
+  (shell-command "hub pull-request"))
