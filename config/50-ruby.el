@@ -20,9 +20,13 @@
 ;;
 ;; robe
 ;;
-(autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
-(autoload 'robe-ac-setup "robe-ac" "robe auto-complete" nil nil)
-(add-hook 'robe-mode-hook 'robe-ac-setup)
+(leaf robe
+  :ensure t
+  :config
+  (autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
+  (autoload 'robe-ac-setup "robe-ac" "robe auto-complete" nil nil)
+  (add-hook 'robe-mode-hook 'robe-ac-setup)
+  )
 
 ;; enhanced(enh)-ruby-mode
 (use-package enh-ruby-mode
