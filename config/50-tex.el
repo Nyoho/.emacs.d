@@ -241,6 +241,7 @@ to [/]."
 ;; https://skalldan.wordpress.com/2011/07/20/auctex-%e3%81%ae%e8%a8%ad%e5%ae%9a%e3%81%a8%e4%be%bf%e5%88%a9%e3%81%aa%e6%a9%9f%e8%83%bd/
 (defun my-autotex ()
   (interactive)
+  (require 'deferred)
   (cond
    ((string-match "\\.tex$" (buffer-file-name))
     (progn
@@ -279,17 +280,19 @@ to [/]."
           (lambda ()
             ;; TODO: Select beamer or usual latex automatically
             (org-beamer-export-to-latex)
+            (unless (get-buffer-process "*latexmk from org*")
+              (my-latexmk-start))
             ))
-        (deferred:nextc it
-          (lambda ()
-            (let* ((file-name (file-name-sans-extension buffer-file-name)))
-              (leaf smart-compile :ensure t :require t)
-              (start-process-shell-command
-               "Background TeX" "*Background TeX proccess*"
-               (smart-compile-string (format "uplatex -shell-escape %s && dvipdfmx %s" file-name file-name))
-               )
-               )
-            ))
+        ;; (deferred:nextc it
+        ;;   (lambda ()
+        ;;     (let* ((file-name (file-name-sans-extension buffer-file-name)))
+        ;;       (leaf smart-compile :ensure t :require t)
+        ;;       (start-process-shell-command
+        ;;        "Background TeX" "*Background TeX proccess*"
+        ;;        (smart-compile-string (format "uplatex -shell-escape %s && dvipdfmx %s" file-name file-name))
+        ;;        )
+        ;;        )
+        ;;     ))
         (deferred:nextc it
           (lambda ()
             (message "Starts auto-TeXing... done!")))
@@ -298,6 +301,19 @@ to [/]."
             (message "Starts auto-TeXing... An error occured.")))
       ))
    )))
+
+(defun my-latexmk-start ()
+  (interactive)
+  (let (dir buf)
+    (setq file (file-name-sans-extension (file-name-nondirectory (buffer-file-name))))
+    (setq buf (get-buffer-create "*latexmk from org*"))
+    (with-current-buffer buf
+      (erase-buffer))
+    (start-process "latexmk from Org" "*latexmk from org*" "latexmk" "-pvc" file)
+    ;; (call-process "latexmk" nil buf nil "-pvc" file)
+    ;;(display-buffer buf)
+    ))
+
 ;; wrapper
 (define-minor-mode my-autotex-mode
   "My autotex mode."
