@@ -99,8 +99,6 @@
   ;;    "* REMIND %? (wrote on %U)")
   ;;   ("k" "Knowledge" entry (file+headline "c:/Users/AAA/org/knowledge.org" "TOP")
   ;;    "* %?\n  # Wrote on %U"))
-  (defalias 'cp 'org-capture)
-
   (unbind-key "C-," org-mode-map)
   ;; (require 'org-install) ;; obsoleted
 
