@@ -42,7 +42,9 @@
   (org-html-htmlize-font-prefix . "org-")
   (org-refile-targets
    .
-   `((,(concat org-directory "/agenda/waiting.org") :maxlevel . 1)
+   `((,(concat org-directory "/agenda/inbox.org") :maxlevel . 1)
+     (,(concat org-directory "/agenda/actions.org") :maxlevel . 1)
+     (,(concat org-directory "/agenda/projects.org") :maxlevel . 1)
      (,(concat org-directory "/agenda/someday.org") :level . 1)))
   :config
   (setq org-startup-truncated nil)
@@ -62,6 +64,8 @@
   (setq org-mobile-inbox-for-pull "~/org/flagged.org")
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   (setq org-agenda-files '("~/org/agenda/inbox.org"
+                           "~/org/agenda/actions.org"
+                           "~/org/agenda/projects.org"
                            "~/org/test/test.org"
                            "~/org/design.org"))
   (setq org-agenda-span 'week)
