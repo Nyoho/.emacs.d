@@ -312,6 +312,7 @@
                       (org-deadline-warning-days 0)
                       ))))))
 
+(setq org-todo-keywords '((sequence "TODO" "WAITING" "|" "DONE")))
 ;; (setq org-todo-keywords '((sequence "TODO" "APPT" "STARTED" "DONE")))
 ;; (setq org-todo-keywords '("TODO" "Wait" "DONE")
 ;;       org-todo-interpretation 'sequence)
