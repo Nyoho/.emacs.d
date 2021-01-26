@@ -74,11 +74,6 @@
   (setq org-startup-indented t)
   ;; (setq org-adapt-indentation t)
 
-  ;; (setq org-remember-templates
-  ;;       '(
-  ;;         ("Todo" ?t "* TODO %^{やること(「〜する」)} %^g\n%?\n  Added: %U" "~/org/gtd.org" "Inbox")
-  ;;         ("Note" ?n "\n* %U %^{トピックス} %^g \n%i%?\n %a" "~/org/notes.org")
-  ;;         ))
   (setq org-preview-latex-default-process 'dvisvgm)
 
   (leaf org-capture
@@ -282,10 +277,6 @@
 ;;     (make-directory (file-name-directory path) t)
 ;;     (append-to-file (format "#+begin_html\n---\ntitle: %s\ntags: \ndescription: \n---\n#+end_html\n\n" title) nil path)
 ;;     path))
-
-;; (define-key global-map [f7] 'gtd)
-;; (define-key global-map [f8] 'remember)
-;; (define-key global-map [f9] 'remember-region)
 
 (setq org-agenda-exporter-settings
       '((ps-number-of-columns 1)
