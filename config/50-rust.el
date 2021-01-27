@@ -4,14 +4,16 @@
 
 (leaf rust-mode
   :ensure t
-  :hook ((rust-mode-hook . (lambda ()
+  :hook ((flycheck-mode-hook . flycheck-rust-setup)
+         (rust-mode-hook . (lambda ()
                              (racer-mode)
                              (flycheck-rust-setup)))
          (racer-mode-hook . eldoc-mode)
-         (racer-mode-hook . (lambda ()
-                              (company-mode)
-                              (set (make-variable-buffer-local 'company-idle-delay)  0.3)
-                              (set (make-variable-buffer-local 'company-minimum-prefix-length) 1))))
+         ;; (racer-mode-hook . (lambda ()
+         ;;                      (company-mode)
+         ;;                      (set (make-variable-buffer-local 'company-idle-delay)  0.3)
+         ;;                      (set (make-variable-buffer-local 'company-minimum-prefix-length) 1)))
+         )
   :custom ((rust-format-on-save . t))
   :config
   (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
