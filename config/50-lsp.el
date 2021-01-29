@@ -25,7 +25,6 @@
   (add-to-list 'exec-path (expand-file-name "~/ghq/github.com/elixir-lsp/elixir-ls/release"))
   (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
   :config
-  (require 'lsp-clients)
   ;; LSP UI tools
 
   (leaf lsp-ui
