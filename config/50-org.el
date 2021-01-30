@@ -35,7 +35,10 @@
          ("\\.txt$" . org-mode)
          ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
   :custom-face
-  (org-link . '((t (:foreground "DeepSkyBlue"))))
+  (org-link . '((t (:foreground "#3ADCEB"))))
+  ;; DeepSkyBlue
+  ;; #34D8DE
+  ;; #3ADCEB
   :custom
   (org-directory . "~/org")
   (org-html-htmlize-output-type . 'css)
