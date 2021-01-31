@@ -1,6 +1,7 @@
 (leaf *svg-exp
   :disabled t
   :config
+  ;; (image-type-available-p 'svg) => if 't' then ok
   (require 'svg)
   (let ((svg (svg-create 77 17)))
     ;; (svg-rectangle svg 3 0 71 17    :fill "blue")
