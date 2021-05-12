@@ -948,3 +948,10 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 (leaf transient-dwim
   :ensure t
   :bind ("M-+" . transient-dwim-dispatch))
+
+(defun deepl-region (beg end)
+  (interactive "r")
+  (let ((str (buffer-substring beg end)))
+    (browse-url
+     (concat "https://www.deepl.com/translator#en/ja/" (url-hexify-string str)))))
+
