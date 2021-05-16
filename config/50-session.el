@@ -14,4 +14,5 @@
   ;; デフォルトでは30
   (setq history-length 100000)
   (setq session-save-file "~/.session")
+  (setq session-name-disable-regexp "/COMMIT_EDITMSG$")
   (add-hook 'after-init-hook 'session-initialize))
