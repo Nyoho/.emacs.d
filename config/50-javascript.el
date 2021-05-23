@@ -57,4 +57,4 @@
   :ensure t
   :if (file-exists-p "~/.nvm/nvm.sh")
   :config
-  (nvm-use "15"))
+  (nvm-use "v16"))
