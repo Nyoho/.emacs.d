@@ -38,3 +38,5 @@ prescient-save.el
 /forge-database.sqlite
 /semanticdb/
 /org-roam.db
+/eln-cache
+
