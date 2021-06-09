@@ -34,7 +34,6 @@ prescient-save.el
 /.cache/treemacs-persist
 /themes
 /parinfer-rust
-/.debug/company/
 /forge-database.sqlite
 /semanticdb/
 /org-roam.db
