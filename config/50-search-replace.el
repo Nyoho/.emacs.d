@@ -24,6 +24,11 @@
                 (make-string (frame-width) ?\x5F) ;; "__"
                 (all-the-icons-faicon "sort-amount-asc")) ;; ""
       (format "%s\n" (make-string (1- (frame-width)) ?\x2D))))
+
+  (leaf ivy-migemo
+    :ensure t
+    :url "https://github.com/ROCKTAKEY/ivy-migemo")
+
   (leaf *ivy-format-functions
     :when window-system
     :config
@@ -83,6 +88,7 @@
                                       (counsel-rg . ytn-ivy-migemo-re-builder)
                                       (swiper . ytn-ivy-migemo-re-builder)
                                       (org-recent-headings . ytn-ivy-migemo-re-builder)
+                                      (org-roam-find-file . ivy-migemo--regex-plus)
                                       )))
   :config
   (defun ad:swiper-all-thing-at-point ()
