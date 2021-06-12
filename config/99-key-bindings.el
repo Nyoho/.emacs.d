@@ -76,7 +76,7 @@
 
 (define-key my/ctrl-q-map (kbd "C-s") 'goto-scratch-buffer)
 (define-key my/ctrl-q-map (kbd "C-b") 'browse-url)
-(define-key my/ctrl-q-map (kbd "C-o") 'counsel-rg-org)
+(define-key my/ctrl-q-map (kbd "C-o") 'consult-ripgrep-org)
 (define-key my/ctrl-q-map (kbd "m") 'my-toggle-mode-line)
 
 (define-key my/ctrl-q-map (kbd "C-n") 'neotree-toggle)

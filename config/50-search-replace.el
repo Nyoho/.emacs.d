@@ -109,9 +109,14 @@
 
 
 (defun counsel-rg-org ()
-  "~/org/以下を検索"
+  "`~/org/' 以下を検索 with counsel."
   (interactive)
   (counsel-rg "" "~/org/"))
+
+(defun consult-ripgrep-org ()
+  "`~/org/' 以下を検索 with consult."
+  (interactive)
+  (consult-ripgrep "~/org/" ""))
 
 (leaf visual-regexp
   :ensure t
