@@ -193,7 +193,10 @@
   :bind* (("M-m" . consult-buffer))
   :bind (
          ("M-s"   . consult-line)
-         ("M-g ." . consult-ripgrep)))
+         ("M-g ." . consult-ripgrep))
+  :config
+  (autoload 'projectile-project-root "projectile")
+  (setq consult-project-root-function #'projectile-project-root))
 
 (leaf orderless
   :ensure t
