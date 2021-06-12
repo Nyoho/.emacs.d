@@ -8,6 +8,7 @@ ac-comphist.dat
 auto-save-list
 eww-bookmarks
 history
+history.*
 image-dired
 projectile-bookmarks.eld
 projectile.cache
