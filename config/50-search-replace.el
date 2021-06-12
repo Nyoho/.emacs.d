@@ -2,13 +2,16 @@
 ;; Thanks, abo-abo. https://github.com/abo-abo/swiper/
 
 (leaf counsel
+  :disabled t
   :ensure t
   :diminish ivy-mode counsel-mode
-  :bind* (("M-m" . counsel-buffer-or-recentf))
-  :bind (("C-x b" . counsel-switch-buffer)
-         ("M-g ." . counsel-rg)))
+  ;; :bind* (("M-m" . counsel-buffer-or-recentf))
+  ;; :bind (("C-x b" . counsel-switch-buffer)
+  ;;        ("M-g ." . counsel-rg))
+  )
 
 (leaf ivy
+  :disabled t
   :ensure t
   :custom
   (ivy-use-virtual-buffers . t)
@@ -70,6 +73,7 @@
   )
 
 (leaf swiper
+  :disabled t
   :ensure t
   :after dash s
   :commands swiper swiper-all
@@ -120,6 +124,7 @@
          (smex-completion-method . 'ivy)))
 
 (leaf prescient
+  :disabled t
   :ensure t
   :after ivy-prescient
   :custom
@@ -129,6 +134,7 @@
   (prescient-persist-mode 1))
 
 (leaf ivy-prescient
+  :disabled t
   :ensure t
   :config
   (ivy-prescient-mode 0))
@@ -151,3 +157,55 @@
         (avy-process avy--old-cands))))
   (add-to-list 'avy-styles-alist
                '(avy-goto-migemo-timer . pre)))
+
+
+(leaf vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
+(leaf embark
+  :ensure t
+  :bind
+  (("s-e" . embark-act)
+   ("C-h B" . embark-bindings))
+  :config
+  (setq prefix-help-command #'embark-prefix-help-command)
+  (setq embark-action-indicator
+        (lambda (map _target)
+          (which-key--show-keymap "Embark" map nil nil 'no-paging)
+          #'which-key--hide-popup-ignore-command)
+        embark-become-indicator embark-action-indicator))
+
+(leaf embark-consult
+  :ensure t
+  :after embark consult
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
+
+(leaf consult
+  :ensure t
+  :bind* (("M-m" . consult-buffer))
+  :bind (
+         ("M-s"   . consult-line)
+         ("M-g ." . consult-ripgrep)))
+
+(leaf orderless
+  :ensure t
+  :init
+  (icomplete-mode)
+  :custom
+  (completion-styles . '(orderless)))
+
+(leaf marginalia
+  :ensure t
+  :init
+  (marginalia-mode))
+
+(leaf affe
+  :ensure t
+  :after orderless consult
+  :config
+  ;; Manual preview key for `affe-grep'
+  (consult-customize affe-grep :preview-key
+                     (kbd "M-.")))
