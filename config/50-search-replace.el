@@ -208,13 +208,43 @@
   :ensure t
   :init
   (icomplete-mode)
+  (defun orderless-migemo (component)
+    (let ((pattern (migemo-get-pattern component)))
+      (condition-case nil
+          (progn (string-match-p pattern "") pattern)
+        (invalid-regexp nil))))
+
+  (orderless-define-completion-style orderless-default-style
+    (orderless-matching-styles '(orderless-literal
+                                 orderless-regexp)))
+
+  (orderless-define-completion-style orderless-migemo-style
+    (orderless-matching-styles '(orderless-literal
+                                 orderless-regexp
+                                 orderless-migemo)))
+
+  (setq completion-category-overrides
+        '((command (styles orderless-default-style))
+          (file (styles orderless-migemo-style))
+          (buffer (styles orderless-migemo-style))
+          (symbol (styles orderless-default-style))
+          (consult-location (styles orderless-migemo-style)) ; category `consult-location' は `consult-line' などに使われる
+          (consult-multi (styles orderless-migemo-style)) ; category `consult-multi' は `consult-buffer' などに使われる
+          (unicode-name (styles orderless-migemo-style))
+          (variable (styles orderless-default-style))))
+
+  ;; (setq orderless-matching-styles '(orderless-literal orderless-regexp orderless-migemo))
+
   :custom
   (completion-styles . '(orderless)))
 
 (leaf marginalia
   :ensure t
   :init
-  (marginalia-mode))
+  (marginalia-mode)
+  :config
+  (add-to-list 'marginalia-prompt-categories
+               '("\\<File\\>" . file)))
 
 (leaf affe
   :ensure t
