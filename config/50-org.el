@@ -584,7 +584,7 @@
           ("C-c n i" . org-roam-insert)
           ("C-c n I" . org-roam-insert-immediate)))
   :hook (after-init-hook)
-  :custom ((org-roam-directory . "~/org/roam/"))
+  :custom ((org-roam-directory . "~/org/r/"))
   :config
   (leaf org-roam-server
     :ensure t
