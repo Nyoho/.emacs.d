@@ -69,8 +69,7 @@
   (setq org-agenda-files '("~/org/agenda/inbox.org"
                            "~/org/agenda/actions.org"
                            "~/org/agenda/projects.org"
-                           "~/org/test/test.org"
-                           "~/org/design.org"))
+                           ))
   (setq org-agenda-span 'week)
   (setq org-hide-leading-stars t)
   ;; (setq org-odd-levels-only t) ;; indent 用途にはなしのほうがいい?
