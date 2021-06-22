@@ -78,9 +78,6 @@
 
   (setq default-frame-alist initial-frame-alist)
 
-  ;; bar
-  (tool-bar-mode 0)
-  (setq ns-pop-up-frames nil)
 
   (setq dnd-open-file-other-window nil)
 
