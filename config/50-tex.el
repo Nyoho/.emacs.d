@@ -280,7 +280,7 @@ to [/]."
           (lambda ()
             ;; TODO: Select beamer or usual latex automatically
             (org-beamer-export-to-latex)
-            (unless (get-buffer-process "*latexmk from org*")
+            (unless (get-buffer-process (my-autotex-buffer-name))
               (my-latexmk-start))
             ))
         ;; (deferred:nextc it
@@ -302,14 +302,17 @@ to [/]."
       ))
    )))
 
+(defun my-autotex-buffer-name ()
+  (format "*latexmk from org [%s]*" (buffer-file-name)))
+
 (defun my-latexmk-start ()
   (interactive)
   (let (dir buf)
     (setq file (file-name-sans-extension (file-name-nondirectory (buffer-file-name))))
-    (setq buf (get-buffer-create "*latexmk from org*"))
+    (setq buf (get-buffer-create (my-autotex-buffer-name)))
     (with-current-buffer buf
       (erase-buffer))
-    (start-process "latexmk from Org" "*latexmk from org*" "latexmk" "-pvc" file)
+    (start-process "latexmk from Org" (my-autotex-buffer-name) "latexmk" "-pvc" file)
     ;; (call-process "latexmk" nil buf nil "-pvc" file)
     ;;(display-buffer buf)
     ))
