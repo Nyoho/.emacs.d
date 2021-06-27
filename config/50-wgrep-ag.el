@@ -4,8 +4,8 @@
 (leaf ag
   :ensure t
   :custom ((ag-highlight-search . t)
-           (ag-reuse-window 'nil)
-           (ag-reuse-buffers 'nil)))
+           (ag-reuse-window . 'nil)
+           (ag-reuse-buffers . 'nil)))
 
 ;; ag した結果のバッファをそのまま編集できる wgrep の ag 版
 (leaf wgrep-ag
