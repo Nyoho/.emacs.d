@@ -16,13 +16,13 @@
     (search-forward-regexp
      (concat (format-time-string "%Y-%m-%d" (current-time)) " [0-9]....") arg t))
 
-  (add-hook 'dired-mode-hook
-            '(lambda ()
-               (font-lock-add-keywords
-                major-mode
-                (list
-                 '(my-dired-today-search . my-face-f-2)
-                 ))))
+  ;; (add-hook 'dired-mode-hook
+  ;;           '(lambda ()
+  ;;              (font-lock-add-keywords
+  ;;               major-mode
+  ;;               (list
+  ;;                '(my-dired-today-search . my-face-f-2)
+  ;;                ))))
   (defun dired-mode-hooks()
     (dired-filter-mode))
   (add-hook 'dired-mode-hook 'dired-mode-hooks)

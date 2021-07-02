@@ -2,8 +2,7 @@
 
 (leaf expand-region
   :ensure t
-  :bind (("C-," . er/expand-region) ("C-M-," . er/contract-region))
-  :require t)
+  :bind (("C-," . er/expand-region) ("C-M-," . er/contract-region)))
 
 (leaf multiple-cursors
   :ensure t
