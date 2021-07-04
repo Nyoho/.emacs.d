@@ -39,7 +39,10 @@
 
   ;; 3040-309f 全角ひらがな, 30a0-30ff 全角カタカナ
   ;; https://ja.wikipedia.org/wiki/%E5%B9%B3%E4%BB%AE%E5%90%8D_(Unicode%E3%81%AE%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF)
-  (set-fontset-font nil '(#x3040 . #x30ff) (font-spec :family "Capanito"))
+  ;; (set-fontset-font nil '(#x3040 . #x30ff) (font-spec :family "Capanito"))
+  (set-fontset-font nil '(#x3040 . #x30ff) (font-spec :family "Tenhamasen Font"))
+  ;; (set-fontset-font nil '(#x3040 . #x30ff) (font-spec :family "FUTENE"))
+  ;; (set-fontset-font nil '(#x3040 . #x30ff) (font-spec :family "Maru-berry Font"))
   ;; (set-fontset-font nil '(#x3040 . #x30ff) (font-spec :family "Hiragino Kaku Gothic ProN"))
 
   ;; ｶﾀｶﾅ (半角カタカナ)、ｈｏｇｅＨＯＧＥ (全角アルファベット)
@@ -77,6 +80,9 @@
   (dolist (elt '(("Hiragino Maru Gothic ProN" . 1.2)
                  ("Hiragino Kaku Gothic ProN" . 1.2)
                  ("Capanito"                  . 1.2)
+                 ("Tenhamasen Font"           . 1.2)
+                 ("FUTENE"                    . 1.2)
+                 ("Maru-berry Font"           . 1.2)
                  ("Kozuka Gothic Pr6N"        . 1.0)
                  ("Apple Color Emoji"         . 0.91)
                  ))
