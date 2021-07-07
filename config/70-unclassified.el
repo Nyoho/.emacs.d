@@ -236,6 +236,7 @@ redrawが non-nilの場合は、Windowを再描画します。"
 (use-package ibuffer
   :defer t
   :config
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-formats
         '((mark modified read-only " " (name 50 50) " "  (size 6 -1 :right) " " (mode 16 16 :right) " " filename)
           (mark " " (name 16 -1) " " filename)))

@@ -22,7 +22,6 @@
 
 
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
 ;; (global-set-key (kbd "M-[") 'backward-paragraph)
