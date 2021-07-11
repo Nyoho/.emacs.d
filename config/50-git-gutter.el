@@ -41,3 +41,11 @@
   (git-gutter-fr:modified ((t (:foreground "#404040" :background "#c0fc7f"))))
   (git-gutter-fr:added    ((t (:foreground "#108a3b" :background "#50fc7f"))))
   (git-gutter-fr:deleted  ((t (:foreground "#8f2986" :background "#ff79c6")))))
+
+(leaf diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode t)
+  :hook ((magit-pre-refresh-hook . diff-hl-magit-pre-refresh)
+         (magit-post-refresh-hook . diff-hl-magit-post-refresh)
+         (dired-mode-hook . diff-hl-dired-mode)))
