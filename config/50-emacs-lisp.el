@@ -167,9 +167,9 @@ In the absence of INDEX, just call `eldoc-docstring-format-sym-doc'."
         (add-text-properties start end (list 'face argument-face) doc))
       (setq doc (eldoc-docstring-format-sym-doc prefix doc))
       doc)))
-(advice-add #'elisp--highlight-function-argument
-            :override
-            #'my:elisp--highlight-function-argument)
-(advice-add #'eldoc-docstring-format-sym-doc
-            :around
-            #'my:eldoc-docstring-format-sym-doc)
+;; (advice-add #'elisp--highlight-function-argument
+;;             :override
+;;             #'my:elisp--highlight-function-argument)
+;; (advice-add #'eldoc-docstring-format-sym-doc
+;;             :around
+;;             #'my:eldoc-docstring-format-sym-doc)
