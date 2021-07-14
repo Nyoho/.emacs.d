@@ -1,3 +1,12 @@
+
+;; From https://emacs.stackexchange.com/questions/55024/how-to-make-a-temporary-directory-that-gets-deleted-once-the-body-is-finished
+(defmacro with-temp-directory (temp-dir &rest body)
+  `(let ((,temp-dir (make-temp-file "" t)))
+    (unwind-protect
+      (progn
+        ,@body)
+      (delete-directory ,temp-dir t))))
+
 (defun find-file-upward (file-name &optional dir)
   (interactive)
   (let ((default-directory (file-name-as-directory (or dir default-directory))))
