@@ -600,3 +600,6 @@
            (org-roam-server-network-label-truncate . t)
            (org-roam-server-network-label-truncate-length . 60)
            (org-roam-server-network-label-wrap-length . 20))))
+
+(leaf org-fragtog
+  :ensure t)
