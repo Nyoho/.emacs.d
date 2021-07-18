@@ -13,3 +13,12 @@
   :bind ((ag-mode-map
           ("r" . wgrep-change-to-wgrep-mode)))
   :hook ((ag-mode-hook . wgrep-ag-setup)))
+
+(leaf wgrep
+  :ensure t
+  :bind
+  (grep-mode-map
+   ("r" . wgrep-change-to-wgrep-mode))
+  :custom
+  ((wgrep-auto-save-buffer . t)
+   (wgrep-change-readonly-file . t)))
