@@ -197,13 +197,31 @@
 
 (leaf consult
   :ensure t
-  :bind* (("M-m" . consult-buffer))
-  :bind (
-         ("M-s"   . consult-line)
-         ("M-g ." . consult-ripgrep))
+  :bind* (("M-m" . consult-buffer)
+          ("C-x C-a" . my-consult-project))
+  :bind (("M-s" . consult-line))
   :config
   (autoload 'projectile-project-root "projectile")
-  (setq consult-project-root-function #'projectile-project-root))
+  (setq consult-project-root-function #'projectile-project-root)
+
+  (setq my-consult--source-project-buffer
+        (plist-put consult--source-project-buffer :hidden nil))
+
+  (setq my-consult--source-project-file
+        (plist-put consult--source-project-file :hidden nil))
+
+  (defun my-consult-project ()
+    "my `consult' command for project only"
+    (interactive)
+    (when-let (buffer (consult--multi '(my-consult--source-project-buffer
+                                        my-consult--source-project-file)
+                                      :require-match
+                                      t ;(confirm-nonexistent-file-or-buffer)
+                                      :prompt "(in proj) Switch to: "
+                                      :history nil
+                                      :sort nil))
+      (unless (cdr buffer)
+        (consult--buffer-action (car buffer))))))
 
 (leaf orderless
   :ensure t
