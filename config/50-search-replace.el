@@ -265,8 +265,9 @@
   :init
   (marginalia-mode)
   :config
+  (add-to-list 'marginalia-prompt-categories '("\\<Node\\>" . file))
   (add-to-list 'marginalia-prompt-categories
-               '("\\<File\\>" . file)))
+               '("\\<Fuzzy grep in.*\\>" . file)))
 
 (leaf affe
   :ensure t
