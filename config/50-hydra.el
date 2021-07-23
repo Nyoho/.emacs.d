@@ -18,8 +18,8 @@
   ╭──────────────────────────────────────────────────────────────────────────────╯
                            [_q_]: quit, [_<SPC>_]: center
           "
-      ("j" scroll-down-in-place)
-      ("k" scroll-up-in-place)
+      ("j" scroll-down-line)
+      ("k" scroll-up-line)
       ("l" forward-char)
       ("d" delete-char)
       ("h" backward-char)
