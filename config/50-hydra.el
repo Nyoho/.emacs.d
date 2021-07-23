@@ -41,6 +41,28 @@
       ("/" avy-goto-char :exit t)
       ("<SPC>" recenter-top-bottom)
       ("q" nil))
+
+    (defhydra help/hydra/timestamp (:color blue :hint none)
+      "
+   === Timestamp ===                                                     _q_uit
+0.  ?i? (_i_so 8601)    ?n? (_n_ow)    ?w? (_w_eek)    ?a? (week-d_a_y)
+_1_.  ?t? (ISO 8601 including _t_imezone)
+_2_.  ?r?    (Org Mode: _r_ight now)
+_3_.  ?s?          (Org Mode: by _s_elect)
+"
+      ("q" nil)
+      ("i" help/insert-datestamp (format-time-string "%F"))
+      ("n" help/insert-currenttime (format-time-string "%H:%M"))
+      ("w" help/insert-week (format-time-string "%W"))
+      ("a" help/insert-month-and-day (format-time-string "%m%d"))
+      ("t" help/insert-timestamp (help/get-timestamp))
+      ("r" help/org-time-stamp-with-seconds-now
+       (format-time-string "<%F %a %H:%M>"))
+      ("s" org-time-stamp (format-time-string "<%F %a>"))
+      ("0" help/show-my-date)
+      ("1" help/insert-timestamp)
+      ("2" help/org-time-stamp-with-seconds-now)
+      ("3" org-time-stamp))
     ))
 
 (defhydra hydra/move ()
@@ -53,27 +75,6 @@
   ("<backspace>" scroll-down-command "up")
   ("." hydra-repeat "repeat"))
 
-(defhydra help/hydra/timestamp (:color blue :hint none)
-  "
-   === Timestamp ===                                                     _q_uit
-0.  ?i? (_i_so 8601)    ?n? (_n_ow)    ?w? (_w_eek)    ?a? (week-d_a_y)
-_1_.  ?t? (ISO 8601 including _t_imezone)
-_2_.  ?r?    (Org Mode: _r_ight now)
-_3_.  ?s?          (Org Mode: by _s_elect)
-"
-  ("q" nil)
-  ("i" help/insert-datestamp (format-time-string "%F"))
-  ("n" help/insert-currenttime (format-time-string "%H:%M"))
-  ("w" help/insert-week (format-time-string "%W"))
-  ("a" help/insert-month-and-day (format-time-string "%m%d"))
-  ("t" help/insert-timestamp (help/get-timestamp))
-  ("r" help/org-time-stamp-with-seconds-now
-   (format-time-string "<%F %a %H:%M>"))
-  ("s" org-time-stamp (format-time-string "<%F %a>"))
-  ("0" help/show-my-date)
-  ("1" help/insert-timestamp)
-  ("2" help/org-time-stamp-with-seconds-now)
-  ("3" org-time-stamp))
 (defun help/show-my-date ()
   "Produces and show date and time in preferred format."
   (interactive)
