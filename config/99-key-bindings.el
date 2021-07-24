@@ -30,8 +30,7 @@
 
 ;; helm
 ;; (global-set-key (kbd "C-x C-a") 'find-file-in-project)
-(global-set-key (kbd "C-x C-a") 'counsel-git)
-(global-set-key (kbd "C-x C-g") 'counsel-git-grep)
+(global-set-key (kbd "C-x C-g") 'consult-git-grep)
 ;; (global-set-key (kbd "C-x C-g") 'helm-git-grep-at-point)
 
 ;; (require 'helm-ls-git)
@@ -44,10 +43,8 @@
 ;; (global-set-key [remap execute-extended-command] #'helm-smex)
 ;; (global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
 
-(global-set-key [remap execute-extended-command] #'counsel-M-x)
 (global-set-key (kbd "M-X") #'smex-major-mode-commands)
 
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; helm-calcul-expression で bc みたいなのが計算できる
 
@@ -75,6 +72,7 @@
 
 (define-key my/ctrl-q-map (kbd "C-s") 'goto-scratch-buffer)
 (define-key my/ctrl-q-map (kbd "C-b") 'browse-url)
+;; (define-key my/ctrl-q-map (kbd "C-o") 'affe-grep-org)
 (define-key my/ctrl-q-map (kbd "C-o") 'consult-ripgrep-org)
 (define-key my/ctrl-q-map (kbd "m") 'my-toggle-mode-line)
 
