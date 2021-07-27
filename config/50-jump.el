@@ -38,7 +38,8 @@
          ("M-g i" . dumb-jump-go-prompt)
          ("M-g x" . dumb-jump-go-prefer-external)
          ("M-g z" . dumb-jump-go-prefer-external-other-window))
-  :custom ((dumb-jump-selector . 'ivy)) ;; (dumb-jump-selector . helm)
+  :custom ((dumb-jump-selector . 'completing-read))
+  :hook (xref-backend-functions . dumb-jump-xref-activate)
   :config
   (dumb-jump-mode)
   :ensure t)
