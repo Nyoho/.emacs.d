@@ -588,7 +588,6 @@
   :config
   (leaf org-roam-server
     :ensure t
-    :require t
     :setq ((org-roam-server-host . "127.0.0.1")
            (org-roam-server-port . 10000)
            (org-roam-server-authenticate)
