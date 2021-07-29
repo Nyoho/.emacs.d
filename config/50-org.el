@@ -576,16 +576,16 @@
 (leaf org-roam
   :ensure t
   :diminish org-roam-mode
-  :bind ((org-roam-mode-map
-          ("C-c n l" . org-roam)
-          ("C-c n f" . org-roam-find-file)
-          ("C-c n g" . org-roam-graph))
-         (org-mode-map
-          ("C-c n i" . org-roam-insert)
-          ("C-c n I" . org-roam-insert-immediate)))
-  :hook (after-init-hook)
+  :setq ((org-roam-v2-ack . t))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture))
+  ;; :hook (after-init-hook)
   :custom ((org-roam-directory . "~/org/r/"))
   :config
+  (org-roam-setup)
   (leaf org-roam-server
     :ensure t
     :setq ((org-roam-server-host . "127.0.0.1")
