@@ -4,3 +4,4 @@
 
 (setq tool-bar-mode t)
 (setq ns-pop-up-frames nil)
+(setq org-roam-v2-ack t)
