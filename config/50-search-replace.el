@@ -265,6 +265,7 @@
   :init
   (marginalia-mode)
   :config
+  (add-to-list 'marginalia-prompt-categories '("\\<Heading\\>" . file))
   (add-to-list 'marginalia-prompt-categories '("\\<Node\\>" . file))
   (add-to-list 'marginalia-prompt-categories
                '("\\<Fuzzy grep in.*\\>" . file)))

@@ -563,8 +563,7 @@
 
 (leaf org-recent-headings
   :ensure t
-  :after ivy
-  :bind ("C-c f r" . org-recent-headings-ivy)
+  :bind ("C-c f r" . org-recent-headings)
   :config (org-recent-headings-mode))
 
 (leaf org-tree-slide
