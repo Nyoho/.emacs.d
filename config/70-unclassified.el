@@ -956,3 +956,8 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
     (browse-url
      (concat "https://www.deepl.com/translator#en/ja/" (url-hexify-string str)))))
 
+(defun insert-current-modified-time ()
+  (interactive)
+  (insert (format-time-string "#+date: <%F %T>" (visited-file-modtime))))
+
+
