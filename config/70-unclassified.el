@@ -961,3 +961,21 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (insert (format-time-string "#+date: <%F %T>" (visited-file-modtime))))
 
 
+;; https://blog.medalotte.net/archives/1043
+(defun my/region-replace (str newstr begin end)
+  "指定範囲内で置換を行う"
+  (goto-char begin)
+  (while (search-forward str end t)
+    (replace-match newstr)))
+ 
+(defun my/replace-with-comma-and-period ()
+  "選択範囲内の句読点をコンマとピリオドに置き換える"
+  (interactive)
+  (let ((curpos (point))
+        (begin (if (region-active-p)
+                   (region-beginning) (point-min)))
+        (end (if (region-active-p)
+                 (region-end) nil)))
+    (my/region-replace "。" "．" begin end)
+    (my/region-replace "、" "，" begin end)
+    (goto-char curpos)))
