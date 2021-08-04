@@ -78,6 +78,9 @@
 
   (setq org-preview-latex-default-process 'dvisvgm)
 
+  (add-to-list 'org-structure-template-alist '("t" . "theorem"))
+  (add-to-list 'org-structure-template-alist '("p" . "prop"))
+
   (leaf org-capture
     :custom
     (org-capture-templates
@@ -600,3 +603,12 @@
 
 (leaf org-fragtog
   :ensure t)
+
+(leaf company-org-block
+  :ensure t
+  :custom
+  (company-org-block-edit-style . 'inline)
+  :hook ((org-mode-hook . (lambda ()
+                            (setq-local company-backends '(company-org-block))
+                            (company-mode +1)))))
+ 
