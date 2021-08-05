@@ -16,7 +16,8 @@
  '(calendar-week-start-day 0)
  '(case-fold-search t)
  '(custom-safe-themes
-   '("b7e460a67bcb6cac0a6aadfdc99bdf8bbfca1393da535d4e8945df0648fa95fb"
+   '("234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6"
+     "b7e460a67bcb6cac0a6aadfdc99bdf8bbfca1393da535d4e8945df0648fa95fb"
      "5379937b99998e0510bd37ae072c7f57e26da7a11e9fb7bced8b94ccc766c804"
      "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a"
      "3577ee091e1d318c49889574a31175970472f6f182a9789f1a3e9e4513641d86"
