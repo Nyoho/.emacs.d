@@ -182,7 +182,7 @@ redrawが non-nilの場合は、Windowを再描画します。"
   (when (string-match "Dropbox\\|/org/" buffer-file-name)
     (auto-revert-mode 1)))
 
-(add-hook 'find-file-hook 'dropbox-auto-revert)
+;; (add-hook 'find-file-hook 'dropbox-auto-revert)
 
 
 
