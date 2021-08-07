@@ -685,12 +685,12 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (define-key view-mode-map " " 'scroll-up))
 (add-hook 'view-mode-hook 'view-mode-hook0)
 
-(defadvice find-file
-    (around find-file-switch-to-view-file (file &optional wild) activate)
-  (if (and (not (file-writable-p file))
-           (not (file-directory-p file)))
-      (view-file file)
-    ad-do-it))
+;; (defadvice find-file
+;;     (around find-file-switch-to-view-file (file &optional wild) activate)
+;;   (if (and (not (file-writable-p file))
+;;            (not (file-directory-p file)))
+;;       (view-file file)
+;;     ad-do-it))
 
 (defvar view-mode-force-exit nil)
 (defmacro do-not-exit-view-mode-unless-writable-advice (f)
