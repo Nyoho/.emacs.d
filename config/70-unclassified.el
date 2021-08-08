@@ -233,10 +233,9 @@ redrawが non-nilの場合は、Windowを再描画します。"
 ;;
 ;; for ibuffer
 ;;
-(use-package ibuffer
-  :defer t
+(leaf ibuffer
+  :bind ("C-x C-b" . ibuffer)
   :config
-  (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-formats
         '((mark modified read-only " " (name 50 50) " "  (size 6 -1 :right) " " (mode 16 16 :right) " " filename)
           (mark " " (name 16 -1) " " filename)))
@@ -267,7 +266,6 @@ redrawが non-nilの場合は、Windowを再描画します。"
     (propertize 
      (if (and (fboundp 'navi2ch-article-get-current-subject)
               (not (string= (navi2ch-article-get-current-subject) "")))
-           ;;(format " %s" (navi2ch-article-get-current-subject))
          (format " %s" (navi2ch-article-get-current-subject))
        (buffer-name))
      'font-lock-face (ibuffer-buffer-name-face buffer mark))
