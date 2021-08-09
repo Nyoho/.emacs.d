@@ -125,7 +125,7 @@ redrawが non-nilの場合は、Windowを再描画します。"
   ;; (set-clipboard-coding-system 'sjis-mac)
 
   (set-keyboard-coding-system 'utf-8)
-  (set-file-name-coding-system 'utf-8)
+  ;; (set-file-name-coding-system 'utf-8)
   (set-clipboard-coding-system 'utf-8)
 
   ;; (modify-category-entry (make-char 'japanese-jisx0213-1) ?j)
