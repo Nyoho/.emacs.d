@@ -22,7 +22,8 @@
 (leaf paredit
   :ensure t
   :hook ((emacs-lisp-mode-hook . enable-paredit-mode)
-         (lisp-interacton-mode-hook . enable-paredit-mode)))
+         ;(lisp-interacton-mode-hook . enable-paredit-mode)
+         ))
 
 ;; From ROCKTAKEY
 (defvar my:eldoc-symbol nil)
