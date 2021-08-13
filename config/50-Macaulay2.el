@@ -5,6 +5,7 @@
 ;;
 ;; brew install Macaulay2/tap/M2
 (leaf *Macaulay2
+  :if (file-exists-p "/usr/local/bin/M2")
 ;  :mode (("\\.m2\\'" . M2-mode))
   :setq ((M2-shell-exe . "/usr/local/bin/zsh")
          ;; (M2-exe . "/Applications/Macaulay2/bin/M2 --no-readline --print-width 99")
