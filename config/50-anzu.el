@@ -1,15 +1,12 @@
 ;; 検索置換が簡単になる
-(use-package anzu
+(leaf anzu
   :ensure t
+  :diminish t
   :init
   (global-anzu-mode +1)
-  (setq anzu-use-migemo t)
-  (setq anzu-search-threshold 1000)
-  (setq anzu-minimum-input-length 3)
-  :config
-
+  :custom
+  (anzu-use-migemo . t)
+  (anzu-search-threshold . 1000)
+  (anzu-minimum-input-length . 3)
   :bind (("C-c r" . anzu-query-replace)
          ("C-c R" . anzu-query-replace-regexp)))
-
-;; (global-set-key (kbd "C-c r") 'anzu-query-replace)
-;; (global-set-key (kbd "C-c R") 'anzu-query-replace-regexp)
