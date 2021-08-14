@@ -20,10 +20,12 @@
   :ensure t)
 
 (leaf paredit
+  "C-( C-left C-) C-right M-s"
   :ensure t
-  :hook ((emacs-lisp-mode-hook . enable-paredit-mode)
-         ;(lisp-interacton-mode-hook . enable-paredit-mode)
-         ))
+  :diminish t
+  :hook ((emacs-lisp-mode-hook . enable-paredit-mode))
+  :config
+  (define-key paredit-mode-map (kbd "C-j") nil))
 
 ;; From ROCKTAKEY
 (defvar my:eldoc-symbol nil)
