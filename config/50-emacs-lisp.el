@@ -24,8 +24,7 @@
   :ensure t
   :diminish t
   :hook ((emacs-lisp-mode-hook . enable-paredit-mode))
-  :config
-  (define-key paredit-mode-map (kbd "C-j") nil))
+  :bind (paredit-mode-map ("C-j" . nil)))
 
 ;; From ROCKTAKEY
 (defvar my:eldoc-symbol nil)
