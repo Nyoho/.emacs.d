@@ -1,17 +1,14 @@
-;;
-;; for js2-mode (javascript)
-;;
-(leaf js2-mode
-  :ensure t
-  :commands js2-mode js2-jsx-mode
-  :mode (("\\.js\\'" . js2-mode)
-         ("\\.jsx\\'" . js2-jsx-mode)
-         ("components\\/.*\\.js\\'" . js2-jsx-mode))
+(leaf js-mode
+  :commands js-mode js-jsx-mode
+  :mode (("\\.js\\'" . js-mode)
+         ("\\.jsx\\'" . rjsx-mode)
+         ("components\\/.*\\.js\\'" . js-mode))
   ;; :hook (js2-mode . prettier-js-mode)
   :custom ((js2-strict-missing-semi-warning . nil)
+           (js-indent-level . 2)
            (js2-basic-offset . 2)
            (js2-bounce-indent-p . t))
-  :hook ((js2-jsx-mode-hook . flycheck-mode))
+  :hook ((js-jsx-mode-hook . flycheck-mode))
   :bind ((:js-mode-map ("M-." . nil)) ;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so unbind it.
          )
   :config
