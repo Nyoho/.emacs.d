@@ -65,3 +65,11 @@
   ;; (require 'moccur-edit)
   )
 (defalias 'mg 'moccur-grep-find)
+
+
+(leaf yafolding
+  :ensure t)
+
+(leaf json-mode
+  :ensure t)
+
