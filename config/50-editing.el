@@ -73,3 +73,18 @@
 (leaf json-mode
   :ensure t)
 
+(leaf hs-minor-mode
+  "`hs-minor-mode' 
+S-<mouse-2>     hs-toggle-hiding
+C-c @ C-a       hs-show-all
+C-c @ C-c       hs-toggle-hiding
+C-c @ C-d       hs-hide-block
+C-c @ C-e       hs-toggle-hiding
+C-c @ C-h       hs-hide-block
+C-c @ C-l       hs-hide-level
+C-c @ C-s       hs-show-block
+C-c @ C-t       hs-hide-all
+C-c @ ESC       Prefix Command
+C-c @ C-M-h     hs-hide-all
+C-c @ C-M-s     hs-show-all
+")
