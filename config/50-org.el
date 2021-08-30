@@ -602,6 +602,7 @@
            (org-roam-server-network-label-wrap-length . 20))))
 
 (leaf org-fragtog
+  :doc "使うときは M-x org-fragtog-mode する。"
   :ensure t)
 
 (leaf company-org-block
