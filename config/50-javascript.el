@@ -55,3 +55,7 @@
   :if (file-exists-p "~/.nvm/nvm.sh")
   :config
   (nvm-use "v16"))
+
+
+(leaf prettier-js
+  :ensure t)
