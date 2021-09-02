@@ -124,6 +124,11 @@
   (interactive)
   (consult-ripgrep "~/org/" ""))
 
+(defun affe-grep-org ()
+  "`~/org/' 以下を検索 with affe."
+  (interactive)
+  (affe-grep "~/org/" ""))
+
 (leaf visual-regexp
   :ensure t
   :bind (("M-%" . vr/query-replace)))
