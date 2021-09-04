@@ -140,14 +140,11 @@
          (smex-completion-method . 'ivy)))
 
 (leaf prescient
-  :disabled t
   :ensure t
-  :after ivy-prescient
   :custom
   `((prescient-aggressive-file-save . t)
     (prescient-save-file . ,(expand-file-name "~/.emacs.d/prescient-save.el")))
-  :config
-  (prescient-persist-mode 1))
+  :global-minor-mode prescient-persist-mode)
 
 (leaf ivy-prescient
   :disabled t
