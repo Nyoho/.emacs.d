@@ -200,6 +200,9 @@
 (leaf consult
   :ensure t
   :bind* (("M-m" . consult-buffer)
+          ("M-g ," . consult-grep)
+          ("M-g ." . consult-ripgrep)
+          ("C-c o" . consult-outline)
           ("C-x C-a" . my-consult-project))
   :bind (("M-s" . consult-line))
   :config
