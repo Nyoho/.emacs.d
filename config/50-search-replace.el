@@ -278,6 +278,10 @@
 (leaf affe
   :ensure t
   :after orderless consult
+  :bind
+  ;; (("M-g ." . affe-grep))
+  :custom
+  (affe-find-command . "fd -HI -t f")
   :config
   ;; Manual preview key for `affe-grep'
   (consult-customize affe-grep :preview-key
