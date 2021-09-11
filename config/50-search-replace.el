@@ -286,3 +286,10 @@
   ;; Manual preview key for `affe-grep'
   (consult-customize affe-grep :preview-key
                      (kbd "M-.")))
+
+(leaf ghq
+  :ensure t)
+  
+(leaf consult-ghq
+  :ensure t
+  :after ghq)
