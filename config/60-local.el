@@ -11,7 +11,7 @@
 ;;
 (leaf hotentry
   :after t
-  :disabled
+  :disabled t
   :el-get syohex/hotentry.el
   :setq
   ((hotentry:favorites quote ("math" "機械学習" "emacs" "ruby" "python"))
