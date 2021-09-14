@@ -75,7 +75,7 @@
 
 ;; TODO: なんか候補は出るけどアクションの結果が出ない
 (leaf counsel-dash
-  :ensure t
+  :disabled t
   :bind
   (("C-c d" . counsel-dash-at-point))
   :custom ((counsel-dash-docsets-path . "~/Library/Application Support/Dash/DocSets/")
