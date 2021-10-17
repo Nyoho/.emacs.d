@@ -49,9 +49,9 @@
      (,(concat org-directory "/agenda/actions.org") :maxlevel . 1)
      (,(concat org-directory "/agenda/projects.org") :maxlevel . 1)
      (,(concat org-directory "/agenda/someday.org") :level . 1)))
+  (org-startup-folded . t)
   :config
   (setq org-startup-truncated nil)
-  ;; (setq org-startup-folded nil)
   (setq org-return-follows-link t)
   ;; (setq org-log-done nil)
   (setq org-log-done t)
