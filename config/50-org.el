@@ -466,7 +466,7 @@
        :recursive t)
       )))
   :config
-  (leaf ox-podcast :after ox)
+  (require 'ox-podcast)
   ;; :publishing-function org-html-publish-to-html 
   ;; org-publish-org-to-html
   (setq org-html-doctype "html5")
@@ -561,8 +561,8 @@
   )
 
 
-(leaf ox-gfm :after ox :ensure t)
-(leaf ox-qmd :after ox :ensure t)
+(leaf ox-gfm :after org :ensure t)
+(leaf ox-qmd :after org :ensure t)
 
 (leaf org-recent-headings
   :ensure t
