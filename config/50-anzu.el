@@ -1,7 +1,7 @@
 ;; 検索置換が簡単になる
 (leaf anzu
   :ensure t
-  :diminish t
+  :blackout t
   :init
   (global-anzu-mode +1)
   :custom

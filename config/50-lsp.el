@@ -3,7 +3,7 @@
 (leaf lsp-mode
   :ensure t
   :commands lsp lsp-rename
-  :diminish lsp-mode
+  :blackout lsp-mode
   :custom  (
             ;; debug
             (lsp-print-io)

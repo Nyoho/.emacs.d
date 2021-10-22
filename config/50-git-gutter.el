@@ -17,7 +17,7 @@
 ;;   (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-commit)
 ;;   (define-key git-gutter+-mode-map (kbd "C-x C-y") 'git-gutter+-stage-and-commit-whole-buffer)
 ;;   (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer)
-;;   :diminish (git-gutter+-mode . "gg"))
+;;   :blackout (git-gutter+-mode . "gg"))
 
 (use-package git-gutter
   :ensure t

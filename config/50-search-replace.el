@@ -4,7 +4,7 @@
 (leaf counsel
   :disabled t
   :ensure t
-  :diminish ivy-mode counsel-mode
+  :blackout ivy-mode counsel-mode
   ;; :bind* (("M-m" . counsel-buffer-or-recentf))
   ;; :bind (("C-x b" . counsel-switch-buffer)
   ;;        ("M-g ." . counsel-rg))

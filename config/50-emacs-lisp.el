@@ -22,7 +22,7 @@
 (leaf paredit
   "C-( C-left C-) C-right M-s"
   :ensure t
-  :diminish t
+  :blackout t
   :hook ((emacs-lisp-mode-hook . enable-paredit-mode))
   :bind (paredit-mode-map ("C-j" . nil)))
 

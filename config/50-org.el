@@ -577,7 +577,7 @@
 
 (leaf org-roam
   :ensure t
-  :diminish org-roam-mode
+  :blackout org-roam-mode
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
