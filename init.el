@@ -227,14 +227,8 @@
     ;;   ;; :after ppp page-break-lines
     ;;   )
 
-    (leaf diminish
-      :doc "Diminished modes are minor modes with no modeline display"
-      :req "emacs-24.3"
-      :tag "extensions" "diminish" "minor" "codeprose" "emacs>=24.3"
-      :url "https://github.com/myrjola/diminish.el"
-      :emacs>= 24.3
-      :ensure t)
-
+    (leaf blackout :ensure t)
+    
     (leaf transient
       :doc "Transient commands"
       :req "emacs-25.1"
