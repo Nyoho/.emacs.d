@@ -26,9 +26,8 @@
   ;;         ))
   (yas-reload-all))
 
-(leaf ivy-yasnippet
-  :ensure t
-  :after yasnippet)
+(leaf consult-yasnippet
+  :ensure t)
 
 (defun my-get-boundary-and-thing ()
   "example of using `bounds-of-thing-at-point'"
