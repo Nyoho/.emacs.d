@@ -34,7 +34,7 @@
     (iceberg-theme-create-theme-file)
     (load-theme 'solarized-iceberg-dark t))
   
-  (load-theme 'doom-dracula)
+  ;; (load-theme 'doom-dracula)
   ;; (load-theme 'doom-one)
   ;; (load-theme 'doom-challenger-deep)
 
@@ -65,4 +65,18 @@
   ;; (color-theme-solarized)
   ;; (color-theme-solarized-dark)
   ;; (color-theme-select)
-  )
+  (leaf modus-themes
+    :ensure t
+    :bind ("<f9>" . modus-themes-toggle)
+    :init
+    (modus-themes-load-themes)
+    :config
+    (modus-themes-load-vivendi)
+    :custom
+    ((modus-themes-italic-constructs . t)
+     (modus-themes-bold-constructs . t)
+     (modus-themes-mixed-fonts . t)
+     (modus-themes-syntax . '(faint alt-syntax green-strings yellow-comments))
+     (modus-themes-fringes . 'intense)
+     (modus-themes-org-blocks . 'tinted-background))
+    ))
