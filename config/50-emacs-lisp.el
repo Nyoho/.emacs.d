@@ -1,7 +1,6 @@
 (leaf emacs-lisp
+  :mode (("Cask\\'" . emacs-lisp-mode))
   :hook (emacs-lisp-mode . smartparens-mode))
-
-(add-to-list 'auto-mode-alist '("Cask\\'" . emacs-lisp-mode))
 
 (leaf scratch-comment
   :ensure t
