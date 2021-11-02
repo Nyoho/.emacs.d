@@ -8,7 +8,7 @@
           :package elisp-mode
           ("C-c C-j" . scratch-comment-eval-sexp))))
 
-(leaf lispy :ensure t)
+;; (leaf lispy :ensure t)
 
 (leaf parinfer-rust-mode
   :ensure t
