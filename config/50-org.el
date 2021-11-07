@@ -584,6 +584,8 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture))
   ;; :hook (after-init-hook)
+  :init
+  (setq org-roam-v2-ack t)
   :custom ((org-roam-directory . "~/org/r/"))
   :config
   (org-roam-setup)
