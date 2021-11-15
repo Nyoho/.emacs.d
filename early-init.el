@@ -6,3 +6,4 @@
 (setq ns-pop-up-frames nil)
 
 (setq inhibit-startup-screen t)
+(setq read-process-output-max 2000000)
