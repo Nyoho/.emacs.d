@@ -14,6 +14,9 @@
   :ensure t
   :hook emacs-lisp-mode)
 
+(leaf eldoc
+  :blackout t)
+
 (leaf eldoc-box
   :url "https://github.com/casouri/eldoc-box"
   :ensure t)
