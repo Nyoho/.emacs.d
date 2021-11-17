@@ -16,7 +16,7 @@
             (lsp-prefer-flymake . 'flymake)
             (lsp-enable-completion-at-point))
   :hook (;;(LaTeX-mode-hook  . lsp)
-         (ruby-mode-hook   . lsp)
+         ;; (ruby-mode-hook   . lsp)
          (rust-mode-hook   . lsp)
          (elixir-mode-hook . lsp)
          (go-mode-hook     . lsp))
