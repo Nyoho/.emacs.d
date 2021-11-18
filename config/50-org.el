@@ -10,10 +10,6 @@
   :ensure t
   :after org)
 
-(leaf org-plus-contrib
-  :ensure t
-  :after org)
-
 (leaf ob-async
   :ensure t
   :setq (ob-async-no-async-languages-alist . '("jupyter-python" "jupyter-julia")))
@@ -108,6 +104,9 @@
 
   (delq 'org-gnus org-modules)
 
+  (leaf org-contrib
+    :ensure t)
+  
   (setq inferior-julia-program-name (car (file-expand-wildcards "/Applications/Julia-*.app/Contents/Resources/julia/bin/julia")))
 
   (org-babel-do-load-languages
