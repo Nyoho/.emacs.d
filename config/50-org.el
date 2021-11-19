@@ -588,19 +588,11 @@
   :custom ((org-roam-directory . "~/org/r/"))
   :config
   (org-roam-setup)
-  (leaf org-roam-server
+
+  (leaf org-roam-ui
     :ensure t
-    :setq ((org-roam-server-host . "127.0.0.1")
-           (org-roam-server-port . 10000)
-           (org-roam-server-authenticate)
-           (org-roam-server-export-inline-images . t)
-           (org-roam-server-serve-files)
-           (org-roam-server-served-file-extensions '("pdf" "mp4" "ogv"))
-           (org-roam-server-network-poll . t)
-           (org-roam-server-network-arrows)
-           (org-roam-server-network-label-truncate . t)
-           (org-roam-server-network-label-truncate-length . 60)
-           (org-roam-server-network-label-wrap-length . 20))))
+    :bind (("C-c n u" . org-roam-ui-mode))
+    :custom ((org-roam-ui-update-on-save . t))))
 
 (leaf org-fragtog
   :doc "使うときは M-x org-fragtog-mode する。"
