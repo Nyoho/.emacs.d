@@ -73,6 +73,9 @@
 (leaf json-mode
   :ensure t)
 
+(leaf json-par
+  :ensure t)
+
 (leaf hs-minor-mode
   "`hs-minor-mode' 
 S-<mouse-2>     hs-toggle-hiding
