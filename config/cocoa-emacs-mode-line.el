@@ -26,4 +26,5 @@
   (set-face-background 'region "DeepPink")
   (set-face-foreground 'mode-line-inactive "gray11")
   (set-face-background 'mode-line-inactive "gray20")
+  (set-face-foreground 'mode-line-inactive "gray70")
   )
