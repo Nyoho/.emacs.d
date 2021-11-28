@@ -78,5 +78,6 @@
      (modus-themes-mixed-fonts . t)
      (modus-themes-syntax . '(faint alt-syntax green-strings yellow-comments))
      (modus-themes-fringes . 'intense)
-     (modus-themes-org-blocks . 'tinted-background))
+     (modus-themes-org-blocks . 'tinted-background)
+     (modus-themes-mode-line . '(moody borderless accented)))
     ))
