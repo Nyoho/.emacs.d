@@ -32,6 +32,8 @@
 (use-package enh-ruby-mode
   :defer t
   :config
+  (add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
+
   ;; 保存時にmagic commentを追加しないようにする
   (defadvice enh-ruby-mode-set-encoding (around stop-enh-ruby-mode-set-encoding)
     "If enh-ruby-not-insert-magic-comment is true, stops enh-ruby-mode-set-encoding."
