@@ -1,6 +1,7 @@
-(use-package typescript-mode
-  :defer t
-  :mode (("\\.ts\\'" . typescript-mode)))
+(leaf typescript-mode
+  :ensure t
+  :mode ("\\.ts\\'")
+  :config)
 
 (use-package tide
   :defer t
