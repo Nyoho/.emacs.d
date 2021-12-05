@@ -98,3 +98,8 @@
 
 
 (leaf php-mode :ensure t)
+
+
+(leaf slim-mode
+  :ensure t)
+
