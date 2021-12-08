@@ -581,11 +581,14 @@
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
          ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture))
+         ("C-c n c" . org-roam-capture)
+         (:org-mode-map
+          ("C-M-i"  . completion-at-point)))
   ;; :hook (after-init-hook)
   :init
   (setq org-roam-v2-ack t)
-  :custom ((org-roam-directory . "~/org/r/"))
+  :custom ((org-roam-directory . "~/org/r/")
+           (org-roam-complete-everywhere . t))
   :config
   (org-roam-setup)
 
@@ -594,6 +597,10 @@
     :bind (("C-c n u" . org-roam-ui-mode))
     :custom ((org-roam-ui-update-on-save . t))))
 
+(leaf org-roam-dailies
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map))
+  
 (leaf org-fragtog
   :doc "使うときは M-x org-fragtog-mode する。"
   :ensure t)
