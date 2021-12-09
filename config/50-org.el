@@ -158,7 +158,6 @@
   ;; speed-commands
   ;; headlineの先頭でone key
   (setq org-use-speed-commands t)
-  (add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
 
 
   ;; Insert an image from clipboard
