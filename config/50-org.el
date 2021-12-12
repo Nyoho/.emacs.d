@@ -27,6 +27,7 @@
   :hook ((find-file-hook . my/ob-jupyter-require)))
 
 (leaf org
+  :ensure t
   :mode (("\\.org$" . org-mode)
          ("\\.txt$" . org-mode)
          ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
