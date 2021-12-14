@@ -97,6 +97,7 @@
         (consult--buffer-action (car buffer))))))
 
 (leaf orderless
+  :require t
   :ensure t
   :init
   (icomplete-mode)
@@ -106,6 +107,7 @@
           (progn (string-match-p pattern "") pattern)
         (invalid-regexp nil))))
 
+  :config
   (orderless-define-completion-style orderless-default-style
     (orderless-matching-styles '(orderless-literal
                                  orderless-regexp)))
@@ -125,6 +127,7 @@
           (symbol (styles orderless-default-style))
           (consult-location (styles orderless-migemo-style)) ; category `consult-location' は `consult-line' などに使われる
           (consult-multi (styles orderless-migemo-style)) ; category `consult-multi' は `consult-buffer' などに使われる
+          (org-roam-node (styles orderless-migemo-style)) ; category `org-roam-node' は `org-roam-node-find' で使われる (Thx: naoking158)
           (unicode-name (styles orderless-migemo-style))
           (variable (styles orderless-default-style))))
 
