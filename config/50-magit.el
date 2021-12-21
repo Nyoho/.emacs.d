@@ -17,7 +17,8 @@
   ;;   (set-face-background 'magit-item-highlight "white"))
   ;; (eval-after-load "vc"
   ;;   '(remove-hook 'find-file-hooks 'vc-find-file-hook))
-  )
+  :custom
+  ((magit-log-margin . '(t "%Y-%m-%d %H:%M:%S" magit-log-margin-width t 12))))
 
 (leaf forge
   :ensure t
