@@ -72,7 +72,8 @@
           ("M-g ." . consult-ripgrep)
           ("C-c o" . consult-outline)
           ("C-x C-a" . my-consult-project))
-  :bind (("M-s" . consult-line))
+  :bind (("M-s" . consult-line)
+         ("C-M-s" . consult-line))
   :config
   (autoload 'projectile-project-root "projectile")
   (setq consult-project-root-function #'projectile-project-root)
