@@ -139,6 +139,9 @@
 
 (leaf marginalia
   :ensure t
+  :bind (("M-A" . marginalia-cycle)
+         (:minibuffer-local-map
+          ("M-A" . marginalia-cycle)))
   :init
   (marginalia-mode)
   :config
