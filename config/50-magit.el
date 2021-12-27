@@ -23,3 +23,9 @@
 (leaf forge
   :ensure t
   :after magit)
+
+(leaf magit-delta
+  :when (executable-find "delta")
+  :ensure t
+  :after magit
+  :hook (magit-mode-hook))
