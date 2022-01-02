@@ -598,6 +598,7 @@
     :custom ((org-roam-ui-update-on-save . t))))
 
 (leaf org-roam-dailies
+  :after org-roam
   :bind-keymap
   ("C-c n d" . org-roam-dailies-map))
   
