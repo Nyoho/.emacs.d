@@ -40,3 +40,6 @@
 ;;   :hook ((c-mode c++-mode objc-mode) .
 ;;          (lambda () (require 'ccls) (lsp))))
 
+(leaf rustic
+  :ensure t
+  :after rust-mode)
