@@ -588,7 +588,16 @@
   :init
   (setq org-roam-v2-ack t)
   :custom ((org-roam-directory . "~/org/r/")
-           (org-roam-complete-everywhere . t))
+           (org-roam-complete-everywhere . t)
+           (org-roam-capture-templates
+            . '(("d" "default" plain "%?" :target
+                 (file+head "${slug}.org" "#+title: ${title}\n#+date: %U\n") ;; Remove "%<%Y%m%d%H%M%S>-"
+                 :unnarrowed t)
+                ("b" "book notes" plain "* Source\n\nAuthor: %^{Author}\nTitle: ${title}\nYear: %^{Year}\n\n* Summary\n\n%?" :target
+                 (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: book\n#+date: %U\n")
+                 :unnarrowed t)
+                ))
+           )
   :config
   (org-roam-setup)
 
