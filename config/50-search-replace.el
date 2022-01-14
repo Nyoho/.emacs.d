@@ -118,11 +118,11 @@
                                  orderless-regexp
                                  orderless-migemo)))
 
-  (orderless-define-completion-style orderless-strict-full-initialism-style
-    (orderless-matching-styles '(orderless-strict-full-initialism)))
+  (orderless-define-completion-style orderless-initialism-style
+    (orderless-matching-styles '(orderless-initialism)))
 
   (setq completion-category-overrides
-        '((command (styles orderless-strict-full-initialism-style))
+        '((command (styles orderless-initialism-style))
           (file (styles orderless-migemo-style))
           (buffer (styles orderless-migemo-style))
           (symbol (styles orderless-default-style))
