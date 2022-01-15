@@ -32,7 +32,9 @@
          ("\\.txt$" . org-mode)
          ("/[rR][eE][aA][dD][mM][eE]$" . org-mode))
   :custom-face
-  (org-link . '((t (:foreground "#3ADCEB"))))
+  (org-link . '((((class color) (background light)) :foreground "#2AA8DB")
+                (((class color) (background dark)) :foreground "#3ADCEB")
+                (t :weight bold)))
   ;; DeepSkyBlue
   ;; #34D8DE
   ;; #3ADCEB
