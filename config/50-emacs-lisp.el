@@ -28,6 +28,11 @@
   :hook ((emacs-lisp-mode-hook . enable-paredit-mode))
   :bind (paredit-mode-map ("C-j" . nil)))
 
+
+(leaf macrostep
+  :doc "macrostep-mode: inline expanding macro of Emacs lisp"
+  :ensure t)
+
 ;; From ROCKTAKEY
 (defvar my:eldoc-symbol nil)
 (defun my:first-line (string)
