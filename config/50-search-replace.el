@@ -82,7 +82,7 @@
         (plist-put consult--source-project-buffer :hidden nil))
 
   (setq my-consult--source-project-file
-        (plist-put consult--source-project-file :hidden nil))
+        (plist-put consult--source-project-recent-file :hidden nil))
 
   (defun my-consult-project ()
     "my `consult' command for project only"
