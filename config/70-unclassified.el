@@ -977,3 +977,8 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
     (my/region-replace "。" "．" begin end)
     (my/region-replace "、" "，" begin end)
     (goto-char curpos)))
+
+
+(leaf visual-fill-column
+  :doc "見た目の幅を制限する"
+  :ensure t)
