@@ -1,5 +1,9 @@
 ;;; editing
 
+(leaf ediff-wind
+  :custom
+  (ediff-window-setup-function . 'ediff-setup-windows-plain))
+
 (leaf expand-region
   :ensure t
   :bind (("C-," . er/expand-region) ("C-M-," . er/contract-region)))
