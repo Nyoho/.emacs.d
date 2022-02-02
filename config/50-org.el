@@ -595,6 +595,9 @@
             . '(("d" "default" plain "%?" :target
                  (file+head "${slug}.org" "#+title: ${title}\n#+date: %U\n") ;; Remove "%<%Y%m%d%H%M%S>-"
                  :unnarrowed t)
+                ("p" "public note" plain "%?" :target
+                 (file+head "public/${slug}.org" "#+title: ${title}\n#+date: %U\n")
+                 :unnarrowed t)
                 ("b" "book notes" plain "* Source\n\nAuthor: %^{Author}\nTitle: ${title}\nYear: %^{Year}\n\n* Summary\n\n%?" :target
                  (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: book\n#+date: %U\n")
                  :unnarrowed t)
