@@ -575,6 +575,8 @@
   :setq
   (org-tree-slide-slide-in-effect . nil))
 
+(leaf org-present
+  :ensure t)
 
 (leaf org-roam
   :ensure t
