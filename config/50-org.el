@@ -630,3 +630,12 @@
                             (setq-local company-backends '(company-org-block))
                             (company-mode +1)))))
  
+(leaf org-ref
+  :ensure t)
+
+(leaf org-roam-bibtex
+  :after org-roam
+  :ensure t
+  :config
+  (require 'org-ref))
+
