@@ -320,10 +320,8 @@
 ;; (global-set-key (kbd "C-c g") 'gtd)
 
 
-
-
-
-(setq org-plantuml-jar-path (car (file-expand-wildcards "/usr/local/Cellar/plantuml/*/libexec/plantuml.jar")))
+(unless (setq org-plantuml-jar-path (car (file-expand-wildcards "/usr/local/Cellar/plantuml/*/libexec/plantuml.jar")))
+  (setq org-plantuml-jar-path (car (file-expand-wildcards "/opt/homebrew/Cellar/plantuml/*/libexec/plantuml.jar"))))
 
 (leaf ox-latex
   :after org
