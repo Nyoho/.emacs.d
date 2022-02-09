@@ -16,9 +16,12 @@
    (migemo-user-dictionary . nil)
    (migemo-regex-dictionary . nil)
    (migemo-options . '("--quiet" "--nonewline" "--emacs"))
-   (migemo-dictionary . "/usr/local/share/migemo/utf-8/migemo-dict")
    (migemo-coding-system . 'utf-8-unix))
   :config
+  (let ((migemo-dict-candidates
+         '("/usr/local/share/migemo/utf-8/migemo-dict"
+           "/opt/homebrew/share/migemo/utf-8/migemo-dict")))
+    (setq migemo-dictionary (cl-find-if #'file-exists-p migemo-dict-candidates)))
   (load-library "migemo")
   (migemo-init)
 
