@@ -981,4 +981,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 (leaf visual-fill-column
   :doc "見た目の幅を制限する"
-  :ensure t)
+  :ensure t
+  :custom
+  (visual-fill-column-center-text . t))
