@@ -52,6 +52,7 @@
       (package-install 'leaf))))
 
 (dolist (dir (list
+              "/opt/homebrew/bin"
               "/usr/local/bin"
               "/usr/bin"
               "/bin"
