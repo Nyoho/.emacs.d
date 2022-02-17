@@ -26,6 +26,9 @@
   :after org
   :hook ((find-file-hook . my/ob-jupyter-require)))
 
+(leaf ob-mermaid
+  :ensure t)
+
 (leaf org
   :ensure t
   :mode (("\\.org$" . org-mode)
@@ -130,7 +133,9 @@
      (plantuml . t)
      (C . t)
      (ditaa . t)
-     (dot . t)))
+     (dot . t)
+     (mermaid . t)
+     ))
 
   ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp" t)
 
