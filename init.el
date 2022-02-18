@@ -39,17 +39,43 @@
 (unless (boundp 'user-emacs-directory)
   (defvar user-emacs-directory (expand-file-name "~/.emacs.d/")))
 
-(prog1 "prepare leaf"
-  (prog1 "package"
-    (custom-set-variables
-     '(package-archives '(("org"   . "https://orgmode.org/elpa/")
-                          ("melpa" . "https://melpa.org/packages/")
-                          ("gnu"   . "https://elpa.gnu.org/packages/")
-                          ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
-    (package-initialize)
-    (unless (package-installed-p 'leaf)
-      (package-refresh-contents)
-      (package-install 'leaf))))
+(eval-and-compile
+  (customize-set-variable
+   'package-archives '(("org"   . "https://orgmode.org/elpa/")
+                       ("melpa" . "https://melpa.org/packages/")
+                       ("gnu"   . "https://elpa.gnu.org/packages/")
+                       ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+  (package-initialize)
+  (unless (package-installed-p 'leaf)
+    (package-refresh-contents)
+    (package-install 'leaf))
+
+  (leaf leaf-keywords
+    :doc "Additional leaf.el keywords for external packages"
+    :url "https://github.com/conao3/leaf-keywords.el"
+    :ensure t
+    :init
+    (leaf el-get
+      :ensure t
+      ;; :custom
+      ;; (el-get-notify-type       . 'message)
+      ;; (el-get-git-shallow-clone . t)
+      )
+    (leaf hydra :ensure t)
+    (leaf blackout :ensure t)
+    :config
+    (leaf-keywords-init)))
+
+(leaf transient
+  :doc "Transient commands"
+  :req "emacs-25.1"
+  :tag "bindings" "emacs>=25.1"
+  :url "https://github.com/magit/transient"
+  :emacs>= 25.1
+  :ensure t)
+
+(leaf leaf-tree :ensure t)
+(leaf leaf-convert :ensure t)
 
 (dolist (dir (list
               "/opt/homebrew/bin"
@@ -199,51 +225,6 @@
 ;; (load "config/init" t)
 ;; init-loader に置き換えた
 
-(leaf leaf
-  :config
-  (leaf leaf-keywords
-    :ensure t
-    :init
-    (leaf package
-      :config
-      (leaf *elpa-workaround
-        :emacs>= 26.1
-        :emacs<= 26.2
-        :custom ((gnutls-algorithm-priority . "NORMAL:-VERS-TLS1.3"))))
-
-    (leaf el-get
-      :doc "Manage the external elisp bits and pieces you depend upon"
-      :tag "emacs" "package" "elisp" "install" "elpa" "git" "git-svn" "bzr" "cvs" "svn" "darcs" "hg" "apt-get" "fink" "pacman" "http" "http-tar" "emacswiki"
-      :url "http://www.emacswiki.org/emacs/el-get"
-      :ensure t
-      :init (unless (executable-find "git")
-              (warn "'git' couldn't found. el-get can't download any packages")))
-
-    ;; (leaf feather
-    ;;   :doc "Parallel thread modern package manager"
-    ;;   :req "emacs-26.3" "async-await-1.0" "ppp-1.0" "page-break-lines-0.1"
-    ;;   :tag "convenience" "package" "emacs>=26.3"
-    ;;   :url "https://github.com/conao3/feather.el"
-    ;;   :emacs>= 26.3
-    ;;   :ensure t
-    ;;   ;; :after ppp page-break-lines
-    ;;   )
-
-    (leaf blackout :ensure t)
-    
-    (leaf transient
-      :doc "Transient commands"
-      :req "emacs-25.1"
-      :tag "bindings" "emacs>=25.1"
-      :url "https://github.com/magit/transient"
-      :emacs>= 25.1
-      :ensure t)
-
-    (leaf leaf-tree
-      :ensure t)
-
-    :config
-    (leaf-keywords-init)))
 
 (leaf cus-edit
   :doc "tools for customizing Emacs and Lisp packages"
