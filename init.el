@@ -1,4 +1,4 @@
-;;; -*- mode: emacs-lisp; coding: utf-8-unix; indent-tabs-mode: nil -*-
+;;; -*- indent-tabs-mode: nil; lexical-binding: t; -*-
 ;;;
 ;;; ~/.emacs.d/init.el
 ;;;
@@ -293,4 +293,6 @@
                         (float-time (time-subtract
                                      after-init-time
                                      before-init-time))))))
+
+(provide 'init)
 ;; the end of init.el
