@@ -16,5 +16,4 @@ After cloning, do the following.
 
 #+begin_src sh
 git submodule update --init --recursive
-cask
 #+end_src
