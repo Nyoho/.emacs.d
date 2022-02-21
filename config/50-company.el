@@ -8,6 +8,11 @@
   (company-idle-delay . 0)
   (company-selection-wrap-around . t)
   (company-minimum-prefix-length . 2)
+  (company-dabbrev-downcase . nil)
+  (company-dabbrev-other-buffers . nil)
+  (company-dabbrev-code-other-buffers . nil)
+  (company-dabbrev-code-everywhere . t)
+  (company-require-match . 'never)
   :bind
   ((company-active-map
     ("C-n" . company-select-next)
