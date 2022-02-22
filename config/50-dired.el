@@ -64,8 +64,10 @@
 (leaf dired-subtree
   :ensure t
   :after dired
+  :require t
+  :bind
+  (dired-mode-map ("<tab>" . 'dired-subtree-toggle))
   :config
-  (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-toggle)
   ;; org-modeのように
   ;; (define-key dired-mode-map (kbd "<tab>") 'dired-subtree-remove)
   ;; (define-key dired-mode-map (kbd "C-x n n") 'dired-subtree-narrow)
