@@ -275,17 +275,6 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; ((((class color)
-;;       (background dark))
-;;      ;;(:background "dark state gray"))
-;;      (:background "gray10"
-;;                   :underline "gray24"))
-;;     (((class color)
-;;       (background light))
-;;      (:background "khaki" ;"ForestGreen"
-;;                   :underline nil))
-;;     (t ()))
-
 (add-hook 'after-init-hook
           (lambda ()
             (message "--- Emacs booting time: %.3f [msec]"
