@@ -106,9 +106,7 @@
   :bind
   (:dired-mode-map
    ("(" . dired-hide-details-mode)
-   ("C-t" . nil)
-   ;; ("C-t" . *********)
-   )
+   ("C-t" . nil))
   :custom
   (dired-use-ls-dired . nil)
   :config
