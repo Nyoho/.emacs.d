@@ -93,8 +93,10 @@
   :ensure t)
 
 (leaf all-the-icons-dired
-  :ensure t)
+  :ensure t
+  :if (window-system)
   ;; :hook (dired-mode-hook . all-the-icons-dired-mode))
+  )
 
 (leaf dired
   :hook ((dired-mode . dired-hide-details-mode)
