@@ -79,5 +79,8 @@
      (modus-themes-syntax . '(faint alt-syntax green-strings yellow-comments))
      (modus-themes-fringes . nil) ;;'intense
      (modus-themes-org-blocks . 'tinted-background)
+     (modus-themes-completions . '((matches . (background intense))
+                                     (selection . (accented intense))
+                                     (popup . (accented intense))))
      (modus-themes-mode-line . '(moody borderless accented)))
     ))
