@@ -642,3 +642,11 @@
   :config
   (require 'org-ref))
 
+
+(leaf org-modern
+  :doc "Org-modeの見た目を少しかっこよくする"
+  :url "https://github.com/minad/org-modern"
+  :ensure t
+  :after org
+  :hook (org-mode-hook . org-modern-mode))
+
