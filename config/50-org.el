@@ -626,11 +626,12 @@
   :ensure t)
 
 (leaf company-org-block
+  :doc "'<'だけでブロックの挿入モードが出現できる。"
   :ensure t
   :custom
   (company-org-block-edit-style . 'inline)
   :hook ((org-mode-hook . (lambda ()
-                            (setq-local company-backends '(company-org-block))
+                            (setq-local company-backends (cons 'company-org-block company-backends))
                             (company-mode +1)))))
  
 (leaf org-ref
