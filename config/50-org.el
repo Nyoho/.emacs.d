@@ -534,8 +534,10 @@
     ;;                         `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))
     )
 
-  (setq org-bullets-bullet-list
+  :custom
+  (org-bullets-bullet-list .
         '(
+          "■" "▶" "▶" "▶" "▶" "▶" "▶"
           "■" "▶" "▽" "▲" "△" "▼" "◎"
           "●" "●" "●" "●" "●" "●" "●" 
           "壹" "貳" "參" "肆" "伍" "陸" "漆"
