@@ -596,7 +596,7 @@
   ;; :hook (after-init-hook)
   :init
   (setq org-roam-v2-ack t)
-  :custom ((org-roam-directory . "~/org/r/")
+  :custom `((org-roam-directory . "~/org/r/")
            (org-roam-complete-everywhere . t)
            (org-roam-capture-templates
             . '(("d" "default" plain "%?" :target
@@ -609,6 +609,9 @@
                  (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: book\n#+date: %U\n")
                  :unnarrowed t)
                 ))
+           (org-roam-node-display-template
+            .
+            ,(concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
            )
   :config
   (org-roam-setup)
