@@ -1,7 +1,9 @@
 ;;
 ;; popup -- Mac OS X の通常の view のように ctrl + command + d で辞書.app
 ;;
-(require 'popup)
+(leaf popup
+  :ensure t)
+
 (defun ns-popup-dictionary ()
   "カーソル付近の単語を Mac の辞書でひく"
   (interactive)
