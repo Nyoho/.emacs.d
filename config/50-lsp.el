@@ -83,3 +83,14 @@
 ;;          (lambda () (require 'ccls) (lsp))))
 
 (leaf lsp-latex :ensure t)
+
+(leaf lsp-tailwindcss
+  :ensure t
+  :url "https://github.com/merrickluo/lsp-tailwindcss"
+  :doc "Use Tailwind CSS Language Server (@tailwindcss/language-server) internally.
+npm install -g @tailwindcss/language-server"
+  :custom
+  (lsp-tailwindcss-add-on-mode . t)
+  :config
+  ;; (push 'tide-mode lsp-tailwindcss-major-modes)
+  )
