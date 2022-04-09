@@ -3,8 +3,8 @@
   :mode ("\\.ts\\'")
   :config)
 
-(use-package tide
-  :defer t
+(leaf tide
+  :ensure t
   :config
   (add-hook 'typescript-mode-hook
             (lambda ()
