@@ -67,7 +67,6 @@
  '(robe-completing-read-func (quote helm-robe-completing-read))
  '(session-globals-regexp "-\\(ring\\|history\\|COMMIT_EDITMSG\\)\\'")
  '(session-use-package t nil (session))
- '(yas-trigger-key "TAB")
  '(warning-suppress-log-types '((comp)))
  '(warning-suppress-types '((comp))))
 

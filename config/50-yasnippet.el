@@ -5,6 +5,7 @@
   :ensure t
   :custom
   (yas-key-syntaxes . '(yas-longest-key-from-whitespace "w_.()" "w_." "w_" "w"))
+  (yas-snippet-dirs . '("~/.emacs.d/snippets"))
   :hook ((emacs-lisp-mode-hook . yas-minor-mode)
          (ruby-mode-hook . yas-minor-mode)
          (enh-ruby-mode-hook . yas-minor-mode)
