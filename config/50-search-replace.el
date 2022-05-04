@@ -119,7 +119,8 @@
                                  orderless-migemo)))
 
   (orderless-define-completion-style orderless-initialism-style
-    (orderless-matching-styles '(orderless-initialism)))
+    (orderless-matching-styles '(orderless-initialism
+                                 orderless-literal)))
 
   (setq completion-category-overrides
         '((command (styles orderless-initialism-style))
