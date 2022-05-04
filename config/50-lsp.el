@@ -2,6 +2,7 @@
 
 (leaf lsp-mode
   :ensure t
+  :doc "s-l w s (=lsp)"
   :commands lsp lsp-rename
   :blackout lsp-mode
   :custom  (
