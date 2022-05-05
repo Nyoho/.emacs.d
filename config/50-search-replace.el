@@ -71,7 +71,7 @@
           ("M-g ," . consult-grep)
           ("M-g ." . consult-ripgrep)
           ("C-c o" . consult-outline)
-          ("C-x C-a" . my-consult-project))
+          )
   :bind (("M-s" . consult-line)
          ("C-M-s" . consult-line))
   :config
@@ -96,6 +96,11 @@
                                       :sort nil))
       (unless (cdr buffer)
         (consult--buffer-action (car buffer))))))
+
+(leaf consult-ls-git
+  :ensure t
+  :bind
+  ("C-x C-a" . consult-ls-git))
 
 (leaf orderless
   :require t
