@@ -1,6 +1,8 @@
 (leaf typescript-mode
   :ensure t
   :mode ("\\.ts\\'")
+  :custom
+  (typescript-indent-level . 2)
   :config)
 
 (leaf tide
