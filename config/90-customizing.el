@@ -62,7 +62,6 @@
  '(org-tags-column -78)
  '(org-tags-match-list-sublevels nil)
  '(org-time-stamp-rounding-minutes (quote (0 5)))
- '(org-use-fast-todo-selection t)
  '(org-use-tag-inheritance nil)
  '(robe-completing-read-func (quote helm-robe-completing-read))
  '(session-globals-regexp "-\\(ring\\|history\\|COMMIT_EDITMSG\\)\\'")
