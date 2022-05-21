@@ -59,7 +59,6 @@
  '(org-fast-tag-selection-single-key nil)
  '(org-log-done (quote (done)))
  '(org-reverse-note-order nil)
- '(org-tags-column -78)
  '(org-tags-match-list-sublevels nil)
  '(org-time-stamp-rounding-minutes (quote (0 5)))
  '(org-use-tag-inheritance nil)
