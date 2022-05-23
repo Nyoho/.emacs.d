@@ -265,7 +265,6 @@
          ("C-c a" . org-agenda)
          ("C-c c" . org-capture)
          ("C-c l" . org-store-link)
-         ("C-c i" . org-mac-grab-link)
          ("C-c k" . org-multiple-keymap-minor-mode)
          ("C-c m" . org-mark-ring-goto)
          ("C-c /" . org-sparse-tree-indirect-buffer)
@@ -496,7 +495,11 @@
 ;; M-x omlg-grab-link でいろいろできます。
 ;; (global-set-key (kbd "C-c ol") 'omlg-grab-link)
 
-(leaf org-mac-link :after org)
+(leaf org-mac-link
+  :ensure t
+  :after org
+  :bind
+  ("C-c i" . org-mac-link-get-link))
 
 (leaf org-tempo :after org)
 
