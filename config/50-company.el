@@ -32,6 +32,7 @@
     :after auctex org)
 
   ;; yasnippetとの連携
+  ;; from https://github.com/syl20bnr/spacemacs/pull/179
   (defvar company-mode/enable-yas t
     "Enable yasnippet for all backends.")
   (defun company-mode/backend-with-yas (backend)
