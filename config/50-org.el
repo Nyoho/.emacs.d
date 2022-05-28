@@ -627,8 +627,8 @@
 (leaf org-roam-dailies
   :after org-roam
   :bind-keymap
-  ("C-c n d" . org-roam-dailies-map))
-  
+  ("C-c n d" . 'org-roam-dailies-map)) ;; Eager macro-expansion failure: (void-variable org-roam-dailies-map)
+
 (leaf org-fragtog
   :doc "使うときは M-x org-fragtog-mode する。"
   :ensure t)
