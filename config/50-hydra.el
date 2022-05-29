@@ -114,3 +114,101 @@ _3_.  ?s?          (Org Mode: by _s_elect)
         timestamp))
     ))
 
+(leaf hydra-posframe
+  :doc "Show hidra hints on posframe"
+  :url "https://github.com/Ladicle/hydra-posframe"
+  :if (window-system)
+  :el-get Ladicle/hydra-posframe
+  :global-minor-mode hydra-posframe-mode
+  :custom
+  (hydra-posframe-border-width . 5)
+  (hydra-posframe-parameters . '((left-fringe . 8) (right-fringe . 8)))
+  :custom-face
+  (hydra-posframe-border-face . '((t (:background "#323445")))))
+
+(leaf major-mode-hydra
+  :doc "Use pretty-hydra to define template easily"
+  :url "https://github.com/jerrypnz/major-mode-hydra.el"
+  :ensure t
+  :require pretty-hydra)
+
+(leaf *org-hydra
+  :doc "Hydra template for org metadata"
+  :bind
+  ((:org-mode-map
+    :package org
+    ("#" . insert-or-open-org-hydra)))
+  :preface
+  (defun insert-or-open-org-hydra ()
+    (interactive)
+    (if (or (region-active-p) (looking-back "^\s*" 1))
+        (*org-hydra/body)
+      (self-insert-command 1)))
+  :pretty-hydra
+  ((:title " Org Mode" :color blue :quit-key "q" :foreign-keys warn :separator "-")
+   ("Header"
+    (("t" (insert "#+title: ") "title")
+     ("h" (insert "#+html_head: <style></style>") "html_head") 
+     ("l" (insert "#+LATEX_CLASS: ") "LATEX_CLASS")
+     ("o" (insert "#+tags: ") "tags")
+     ("f" (insert "#+filetags: ") "filetags")
+     ("a" (insert (format-time-string "#+lastmod: [%Y-%m-%d %a %H:%M]" (current-time))) "lastmod")))))
+
+(leaf *hydra-goto
+  :doc "Search and move cursor"
+  :bind ("M-j" . *hydra-goto/body)
+  :pretty-hydra
+  ((:title " Goto" :color blue :quit-key "q" :foreign-keys warn :separator "-")
+   ("Goto"
+    (("i" avy-goto-char         "char")
+     ("t" avy-goto-migemo-timer "migemo timer")
+     ("w" avy-goto-word-2       "word")
+     ("j" avy-resume            "resume"))
+    "Line"
+    (("h" avy-goto-line        "head")
+     ("e" avy-goto-end-of-line "end")
+     ("n" consult-goto-line    "number"))
+    "Topic"
+    (("o"  consult-outline      "outline")
+     ("m"  consult-imenu        "imenu")
+     ("gm" consult-global-imenu "global imenu"))
+    "Error"
+    ((","  flycheck-previous-error "previous" :exit nil)
+     ("."  flycheck-next-error "next" :exit nil)
+     ("l"  consult-flycheck "list"))
+    "Spell"
+    ((">"  flyspell-goto-next-error "next" :exit nil)
+     ("cc" flyspell-correct-at-point "correct" :exit nil)))))
+
+(leaf *hydra-toggle
+  :doc "Toggle functions"
+  :bind ("M-t" . *hydra-toggle/body)
+  :pretty-hydra
+  ((:title " Toggle" :color blue :quit-key "q" :foreign-keys warn :separator "-")
+   ("Basic"
+    (("v" view-mode "view mode" :toggle t)
+     ;;("w" whitespace-mode "whitespace" :toggle t)
+     ;;("W" whitespace-cleanup "whitespace cleanup")
+     ;;("r" rainbow-mode "rainbow" :toggle t)
+     ;;("b" beacon-mode "beacon" :toggle t)
+     ("o" org-modern-mode "org-modern" :toggle t)
+     ("s" svg-tag-mode "svg-tag" :toggle t)
+     )
+    "Line & Column"
+    (("l" toggle-truncate-lines "truncate line" :toggle t)
+     ("n" display-line-numbers-mode "line number" :toggle t)
+     ("f" display-fill-column-indicator-mode "column indicator" :toggle t)
+     ("c" visual-fill-column-mode "visual column" :toggle t))
+    "Highlight"
+    (;;("h" highlight-symbol "highligh symbol" :toggle t)
+     ;;("L" hl-line-mode "line" :toggle t)
+     ;;("t" hl-todo-mode "todo" :toggle t)
+     ("g" git-gutter-mode "git gutter" :toggle t)
+     ;;("i" highlight-indent-guides-mode "indent guide" :toggle t)
+     )
+    ;; "Window"
+    ;; (("t" toggle-window-transparency "transparency" :toggle t)
+    ;;  ("m" toggle-window-maximize "maximize" :toggle t)
+    ;;  ("p" presentation-mode "presentation" :toggle t)
+    ;;  )
+    )))
