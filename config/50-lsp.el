@@ -85,6 +85,12 @@
 
 (leaf lsp-latex :ensure t)
 
+(leaf lsp-julia
+  :ensure t
+  :require t
+  :custom
+  (lsp-julia-default-environment . "~/.julia/environments/v1.7"))
+
 (leaf lsp-tailwindcss
   :ensure t
   :url "https://github.com/merrickluo/lsp-tailwindcss"
