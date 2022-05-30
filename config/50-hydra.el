@@ -162,7 +162,7 @@ _3_.  ?s?          (Org Mode: by _s_elect)
    ("Goto"
     (("i" avy-goto-char         "char")
      ("t" avy-goto-migemo-timer "migemo timer")
-     ("w" avy-goto-word-2       "word")
+     ("w" avy-goto-word-0       "word")
      ("j" avy-resume            "resume"))
     "Line"
     (("h" avy-goto-line        "head")
