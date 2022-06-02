@@ -13,22 +13,18 @@
 (setq explicit-shell-file-name shell-file-name)
 
 ;; terminal を日本語, utf8 でうまく使えるように
-(cond
- ((or mac-p ns-p)
-  ;; Mac OS X の HFC+ ファイルフォーマットではファイル名は NFD (の様な物)で扱うため以下の設定をする必要がある
-  (require 'ucs-normalize)
-  (setq file-name-coding-system 'utf-8-hfs)
-  (setq locale-coding-system 'utf-8-hfs))
- (windows-p
-  (setq file-name-coding-system 'utf-8)
-  (setq locale-coding-system 'utf-8)
-  ;; もしコマンドプロンプトを利用するなら sjisにする
-  ;; (setq file-name-coding-system 'sjis)
-  ;; (setq locale-coding-system 'sjis)
-  )
- (t
-  (setq file-name-coding-system 'utf-8)
-  (setq locale-coding-system 'utf-8)))
+(leaf *coding-system
+  :config
+  (if (eq system-type 'darwin)
+      (progn
+        (require 'ucs-normalize)
+        (setq file-name-coding-system 'utf-8-hfs)
+        (setq locale-coding-system 'utf-8-hfs))
+    
+    (progn
+      (setq file-name-coding-system 'utf-8)
+      (setq locale-coding-system 'utf-8)
+      )))
 
 ;; Emacs が保持する terminfo を利用する
 (setq system-uses-terminfo nil)

@@ -145,34 +145,6 @@
 (add-to-list 'exec-path (expand-file-name "~/.rbenv/shims"))
 (add-to-list 'exec-path (expand-file-name "~/.rbenv/bin"))
 
-
-;; Emacs の種類バージョンを判別するための変数を定義
-;; see http://github.com/elim/dotemacs/blob/master/init.el
-(defun x->bool (elt) (not (not elt)))
-(defvar emacs22-p (equal emacs-major-version 22))
-(defvar emacs23-p (equal emacs-major-version 23))
-(defvar emacs23+p (>= emacs-major-version 23))
-(defvar darwin-p (eq system-type 'darwin))
-;;(defvar ns-p (featurep 'ns))
-(defvar ns-p (eq window-system 'ns))
-(defvar carbon-p (and (eq window-system 'mac) emacs22-p))
-;; (defvar mac-p (and (eq window-system 'mac) emacs23+p))
-(defvar mac-p (memq window-system '(mac ns)))
-(defvar linux-p (eq system-type 'gnu/linux))
-(defvar colinux-p (when linux-p
-                    (let ((file "/proc/modules"))
-                      (and
-                       (file-readable-p file)
-                       (x->bool
-                        (with-temp-buffer
-                          (insert-file-contents file)
-                          (goto-char (point-min))
-                          (re-search-forward "^cofuse\.+" nil t)))))))
-(defvar cygwin-p (eq system-type 'cygwin))
-(defvar nt-p (eq system-type 'windows-nt))
-(defvar meadow-p (featurep 'meadow))
-(defvar windows-p (or cygwin-p nt-p meadow-p))
-
 ;;
 ;; initchart.el
 ;; https://qiita.com/yuttie/items/0f38870817c11b2166bd
@@ -199,7 +171,7 @@
 (setq comment-style 'multi-line)
 
 ;; 起動時間計測
-(when emacs23+p
+(when (>= emacs-major-version 23)
   (defun message-startup-time ()
     (message "Emacs loaded in %dms"
              (/ (- (+ (third after-init-time) (* 1000000 (second after-init-time)))
