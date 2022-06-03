@@ -202,9 +202,6 @@
   :tag "builtin" "faces" "help"
   :custom `((custom-file . ,(locate-user-emacs-file "custom.el"))))
 
-;; (require 'cask "~/.cask/cask.el")
-;; (cask-initialize)
-
 (leaf use-package
   :doc "A configuration macro for simplifying your .emacs"
   :req "emacs-24.3" "bind-key-2.4"
