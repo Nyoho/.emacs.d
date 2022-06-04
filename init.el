@@ -12,8 +12,6 @@
 (setq byte-compile-warnings '(not cl-functions obsolete))
 (require 'cl)
 
-(cd "~")
-
 ;; https://gist.github.com/takaxp/ffcfbf6558a272186012b5218bc0c9fc
 ;; .emacs.d/init.el の先頭に記述
 (defconst before-load-init-time (current-time))
