@@ -16,21 +16,3 @@
 (add-hook 'c-mode-common-hook
           '(lambda()
              (gtags-mode 1)))
-
-;; http://shibayu36.hatenablog.com/entry/20101229/1293625186
-;; anything-gtags.elを導入してみた - $shibayu36->blog;
-(defun anything-gtags-select-all ()
-  (interactive)
-  (anything-other-buffer
-   '(
-     anything-c-source-gtags-select
-     anything-c-source-imenu)
-   "*anything gtags*"))
-(defalias 'gt 'anything-gtags-select-all)
-(defun anything-gtags-from-here ()
-    (interactive)
-    (anything
-     :sources '(anything-c-source-imenu
-                anything-c-source-gtags-select)
-     :input (thing-at-point 'symbol)))
-(defalias 'gh 'anything-gtags-from-here)
