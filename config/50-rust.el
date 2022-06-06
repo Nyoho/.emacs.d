@@ -8,7 +8,7 @@
          (rust-mode-hook . (lambda ()
                              (racer-mode)
                              (flycheck-rust-setup)))
-         (racer-mode-hook . eldoc-mode)
+         ;; (racer-mode-hook . eldoc-mode)
          ;; (racer-mode-hook . (lambda ()
          ;;                      (company-mode)
          ;;                      (set (make-variable-buffer-local 'company-idle-delay)  0.3)
