@@ -87,7 +87,6 @@
 
 (leaf lsp-julia
   :ensure t
-  :require t
   :custom
   (lsp-julia-default-environment . "~/.julia/environments/v1.7"))
 
