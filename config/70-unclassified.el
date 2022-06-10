@@ -720,23 +720,24 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;
 ;; an inertia scroll due to deferred.el
 ;;
-(if (and (not linux-p) nil)
-    (progn
-      (require 'inertial-scroll)
-      (setq inertias-global-minor-mode-map 
-            (inertias-define-keymap
-             '(
-               ("<next>"  . inertias-up)
-               ("<prior>" . inertias-down)
-               ("C-v"     . inertias-up)
-               ("M-v"     . inertias-down)
-               ) inertias-prefix-key))
-      (inertias-global-minor-mode 1)
-      (setq inertias-initial-velocity 380) ; 初速（大きいほど一気にスクロールする）
-      (setq inertias-friction 2300)        ; 摩擦抵抗（大きいほどすぐ止まる）
-      (setq inertias-rest-coef 0.5)         ; 画面端でのバウンド量（0はバウンドしない。1.0で弾性反発）
-      (setq inertias-update-time 0)      ; 画面描画のwait時間（msec）
-      ))
+(leaf inertial-scroll
+  :disabled t
+  :config
+  (require 'inertial-scroll)
+  (setq inertias-global-minor-mode-map 
+        (inertias-define-keymap
+         '(
+           ("<next>"  . inertias-up)
+           ("<prior>" . inertias-down)
+           ("C-v"     . inertias-up)
+           ("M-v"     . inertias-down)
+           ) inertias-prefix-key))
+  (inertias-global-minor-mode 1)
+  (setq inertias-initial-velocity 380) ; 初速（大きいほど一気にスクロールする）
+  (setq inertias-friction 2300) ; 摩擦抵抗（大きいほどすぐ止まる）
+  (setq inertias-rest-coef 0.5) ; 画面端でのバウンド量（0はバウンドしない。1.0で弾性反発）
+  (setq inertias-update-time 0) ; 画面描画のwait時間（msec）
+  )
 
 ;;
 ;; sudo ext
