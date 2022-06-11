@@ -1,7 +1,6 @@
 ;;
 ;; for migemo -- migemo 最高
 ;;
-;; (if (equal (call-process-shell-command "which cmigemo" nil t) 0)
 (leaf migemo
   :ensure t
   :when (executable-find "cmigemo")
