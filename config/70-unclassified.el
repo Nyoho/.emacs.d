@@ -516,11 +516,10 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 ;; (if window-system (server-start))
 ;; server start for emacs-client
-(use-package server
+(leaf server
   :config
   (unless (server-running-p)
-    (server-start))
-  )
+    (server-start)))
 
 
 ;;
