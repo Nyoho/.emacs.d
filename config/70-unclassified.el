@@ -521,14 +521,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (unless (server-running-p)
     (server-start)))
 
-
-;;
-;; Macaylay 2
-;;
-;; (load "~/.emacs-Macaulay2" t)
-
-
-
 ;;
 ;; hiki-mode
 ;;
