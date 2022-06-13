@@ -514,8 +514,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;; srcltx
 ;; (TeX-source-specials-mode 1)
 
-;; (if window-system (server-start))
-;; server start for emacs-client
 (leaf server
   :config
   (unless (server-running-p)
