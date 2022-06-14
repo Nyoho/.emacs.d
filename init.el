@@ -219,25 +219,6 @@
   :custom ((init-loader-show-log-after-init quote error-only))
   :require t)
 
-;; esup: the Emacs StartUp Profiler
-(leaf esup
-  :ensure t)
-(leaf noflet
-  :ensure t)
-(defun esup-init-loader ()
-  (interactive)
-  (let ((files)
-        (esup-user-init-file "/tmp/esup-init.el"))
-    (noflet ((load (file &rest _) (push (locate-library file) files)))
-            (init-loader-load (concat user-emacs-directory "config")))
-    (with-current-buffer (find-file-noselect esup-user-init-file)
-      (erase-buffer)
-      (dolist (file (reverse files))
-        (insert-file-contents file)
-        (goto-char (point-max)))
-      (save-buffer))
-    (esup)))
-
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 
