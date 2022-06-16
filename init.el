@@ -168,16 +168,6 @@
 
 (setq comment-style 'multi-line)
 
-;; 起動時間計測
-(when (>= emacs-major-version 23)
-  (defun message-startup-time ()
-    (message "Emacs loaded in %dms"
-             (/ (- (+ (third after-init-time) (* 1000000 (second after-init-time)))
-                   (+ (third before-init-time) (* 1000000 (second before-init-time))))
-                1000)))
-  (add-hook 'after-init-hook 'message-startup-time))
-
-
 ;;
 ;; 標準 Elisp の設定
 ;;(load "config/builtins")
@@ -221,14 +211,6 @@
 
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
-
-(add-hook 'after-init-hook
-          (lambda ()
-            (message "--- Emacs booting time: %.3f [msec]"
-                     (* 1
-                        (float-time (time-subtract
-                                     after-init-time
-                                     before-init-time))))))
 
 (provide 'init)
 ;; the end of init.el
