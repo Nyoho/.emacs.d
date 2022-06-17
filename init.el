@@ -168,23 +168,6 @@
 
 (setq comment-style 'multi-line)
 
-;;
-;; 標準 Elisp の設定
-;;(load "config/builtins")
-
-;; 非標準 Elisp の設定
-;;(load "config/packages")
-
-;; 個別の設定があったら読み込む
-;;
-;;(condition-case err
-;;   (load "config/local")
-;;  (error))
-
-;; (load "config/init" t)
-;; init-loader に置き換えた
-
-
 (leaf cus-edit
   :doc "tools for customizing Emacs and Lisp packages"
   :tag "builtin" "faces" "help"
