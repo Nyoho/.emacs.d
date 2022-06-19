@@ -7,9 +7,9 @@
   :blackout lsp-mode
   :custom  (
             ;; debug
-            (lsp-print-io)
-            (lsp-trace)
-            (lsp-print-performance)
+            (lsp-print-io . nil)
+            (lsp-trace . nil)
+            (lsp-print-performance . nil)
             ;; general
             (lsp-auto-guess-root . t)
             (lsp-document-sync-method . 'incremental) ;; always send incremental document
