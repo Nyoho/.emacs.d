@@ -21,7 +21,9 @@
          (rust-mode-hook   . lsp)
          (elixir-mode-hook . lsp)
          (go-mode-hook     . lsp))
-  :bind ((lsp-mode-map ("C-c r" . lsp-rename)))
+  :bind
+  (:lsp-mode-map ("C-c r"   . lsp-rename)
+                 ("C-c C-c" . lsp-execute-code-action))
   :init
   (add-to-list 'exec-path (expand-file-name "~/ghq/github.com/elixir-lsp/elixir-ls/release"))
   (add-to-list 'exec-path (expand-file-name "~/.cargo/bin"))
@@ -67,12 +69,14 @@
             (lsp-ui-doc--hide-frame))
         (lsp-ui-doc-mode 1)))
 
-    :bind ((lsp-mode-map ("C-c C-r" . lsp-ui-peek-find-references)
-                         ("C-c C-j" . lsp-ui-peek-find-definitions)
-                         ("C-c i"   . lsp-ui-peek-find-implementation)
-                         ("C-c m"   . lsp-ui-imenu)
-                         ("C-c s"   . lsp-ui-sideline-mode)
-                         ("C-c d"   . ladicle/toggle-lsp-ui-doc)))
+    :bind
+    (:lsp-mode-map
+     ("C-c C-r" . lsp-ui-peek-find-references)
+     ("C-c C-j" . lsp-ui-peek-find-definitions)
+     ("C-c i"   . lsp-ui-peek-find-implementation)
+     ("C-c m"   . lsp-ui-imenu)
+     ("C-c s"   . lsp-ui-sideline-mode)
+     ("C-c d"   . ladicle/toggle-lsp-ui-doc))
 
     :hook ((lsp-mode-hook . lsp-ui-mode)))
   )
