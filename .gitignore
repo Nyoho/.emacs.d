@@ -33,6 +33,8 @@ el-get/
 org-recent-headings
 prescient-save.el
 /.cache/treemacs-persist
+/.cache/lsp
+/.cache/svg-lib
 /themes
 /parinfer-rust
 /forge-database.sqlite
