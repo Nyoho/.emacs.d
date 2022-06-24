@@ -600,7 +600,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom `((org-roam-directory . "~/org/r/")
-           (org-roam-complete-everywhere . t)
+           (org-roam-completion-everywhere . t)
            (org-roam-capture-templates
             . '(("d" "default" plain "%?" :target
                  (file+head "${slug}.org" "#+title: ${title}\n#+date: %U\n") ;; Remove "%<%Y%m%d%H%M%S>-"
