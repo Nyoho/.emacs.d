@@ -439,14 +439,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 
 
-;;
-;; pgp, gpg, epa-file
-;;
-(leaf epa-file
-  :when (version< "23" emacs-version)
-  :config
-  ;; (setq epg-gpg-program "gpg")
-  (epa-file-enable))
 
 
 
@@ -515,6 +507,7 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;; (TeX-source-specials-mode 1)
 
 (leaf server
+  :require t
   :config
   (unless (server-running-p)
     (server-start)))
