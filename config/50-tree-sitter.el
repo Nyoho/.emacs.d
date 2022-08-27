@@ -10,4 +10,7 @@
 
 (leaf tree-sitter-langs
   :ensure t
-  :after tree-sitter)
+  :after tree-sitter
+  :config
+  (tree-sitter-require 'tsx)
+  (add-to-list 'tree-sitter-major-mode-language-alist '(typescript-tsx-mode . tsx)))
