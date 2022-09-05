@@ -6,6 +6,10 @@
   :preface
   (define-derived-mode typescript-tsx-mode typescript-mode "TSX"
     (setq-local indent-line-function 'rjsx-indent-line))
+  :bind 
+  (typescript-tsx-mode-map
+   ("<" . rjsx-electric-lt)
+   (">" . rjsx-electric-gt))
   :custom
   (typescript-indent-level . 2)
   :setq 
