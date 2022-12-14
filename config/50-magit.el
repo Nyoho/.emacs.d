@@ -28,4 +28,4 @@
   :when (executable-find "delta")
   :ensure t
   :after magit
-  :hook (magit-mode-hook))
+  :hook (magit-mode-hook . magit-delta-mode))
