@@ -41,14 +41,6 @@
   :after js2
   :hook (js2-mode-hook . (lambda ()
                            (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
-;;
-;; CoffeeScript
-;;
-(leaf coffee-mode
-  :after t
-  :hook ((coffee-after-compile-hook . sourcemap-goto-corresponding-point))
-  :setq ((coffee-args-compile quote ("-c" "-m"))))
-
 
 (leaf nvm
   :ensure t
