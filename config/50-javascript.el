@@ -1,7 +1,7 @@
 (leaf js-mode
   :commands js-mode js-jsx-mode
   :mode (("\\.js\\'" . js-mode)
-         ("\\.jsx\\'" . rjsx-mode)
+         ("\\.jsx\\'" . js-jsx-mode)
          ("components\\/.*\\.js\\'" . js-mode))
   ;; :hook (js2-mode . prettier-js-mode)
   :custom ((js2-strict-missing-semi-warning . nil)
@@ -28,7 +28,8 @@
 
 (leaf rjsx-mode
   :ensure t
-  :magic ("^import React" . rjsx-mode))
+  ;; :magic ("^import React" . rjsx-mode)
+  )
 
 ;; From http://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
 (leaf js2-refactor
