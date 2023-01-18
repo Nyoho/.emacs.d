@@ -453,16 +453,19 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 ;;
 ;; twittering-mode "M-x twit"
 ;;
-(use-package twittering-mode
-  :defer t
+(leaf twittering-mode
+  :ensure t
+  :custom
+  (twittering-use-master-password . t)
+  (twittering-use-icon-storage . t)
   :config
-  (defun twittering-capable-of-encryption-p ()
-    (and (or (require 'epa nil t) (require 'alpaca nil t))
-         (executable-find "gpg1")))
+  ;; (defun twittering-capable-of-encryption-p ()
+  ;;   (and (or (require 'epa nil t) (require 'alpaca nil t))
+  ;;        (executable-find "gpg1")))
 
-  (setq twittering-use-master-password t)
-  (setq twittering-use-ssl t)
+  ;; (setq twittering-use-ssl t)
   (setq twittering-icon-mode t)
+  (defalias 'epa--decode-coding-string 'decode-coding-string)
   (setq twittering-initial-timeline-spec-string
         '(":replies"
           ":favorites"
