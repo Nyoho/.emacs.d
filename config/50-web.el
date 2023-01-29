@@ -103,3 +103,17 @@
 (leaf slim-mode
   :ensure t)
 
+(leaf astro-mode
+  :init
+  (define-derived-mode astro-mode web-mode "astro")
+  :mode (".*\\.astro\\'")
+  :config
+
+  (with-eval-after-load 'lsp-mode
+    (add-to-list 'lsp-language-id-configuration
+                 '(astro-mode . "astro"))
+
+    (lsp-register-client
+     (make-lsp-client :new-connection (lsp-stdio-connection '("astro-ls" "--stdio"))
+                      :activation-fn (lsp-activate-on "astro")
+                      :server-id 'astro-ls))))
