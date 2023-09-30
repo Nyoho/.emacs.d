@@ -812,9 +812,8 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (interactive)
   ;; (let* ((str (url-hexify-string (string-word-or-region))))
   (let* ((str (buffer-substring (mark) (point))))
-    (process-kill-without-query
-     (start-process-shell-command "speech" nil 
-                                  "/usr/bin/say " (concat "\"" str "\"" )))))
+    (start-process-shell-command "speech" nil
+                                 (concat "/usr/bin/say \"" str "\"" ))))
 
   ;;; Search marked region by google
 (defun osxws-search-google()
