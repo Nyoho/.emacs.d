@@ -963,6 +963,18 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
     (my/region-replace "、" "，" begin end)
     (goto-char curpos)))
 
+(defun my/replace-with-japanese-comma-and-period ()
+  "選択範囲内のコンマとピリオドを日本語の句読点をに置き換える"
+  (interactive)
+  (let ((curpos (point))
+        (begin (if (region-active-p)
+                   (region-beginning) (point-min)))
+        (end (if (region-active-p)
+                 (region-end) nil)))
+    (my/region-replace "．" "。" begin end)
+    (my/region-replace "，" "、" begin end)
+    (goto-char curpos)))
+
 
 (leaf visual-fill-column
   :doc "見た目の幅を制限する"
