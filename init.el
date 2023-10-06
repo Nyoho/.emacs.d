@@ -75,8 +75,8 @@
 (leaf leaf-convert :ensure t)
 
 (dolist (dir (list
-              "/opt/homebrew/bin"
               "/usr/local/bin"
+              "/opt/homebrew/bin"
               "/usr/bin"
               "/bin"
               "/usr/sbin"
