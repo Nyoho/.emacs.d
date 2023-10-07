@@ -107,15 +107,11 @@
 (setq exec-path
       (append (list
                "/Library/TeX/texbin"
-               "/usr/local/bin"
                "/usr/bin"
                "/bin"
                "/sbin"
                "/usr/sbin"
                "/Users/nyoho/bin"
-               "/usr/share/emacs/site-lisp/"
-               "/usr/share/emacs/site-lisp/anthy/"
-               "/usr/local/share/emacs/site-lisp/"
                )
               exec-path))
 
