@@ -35,7 +35,8 @@
     :ensure t
     :after flycheck
     :custom-face
-    (flycheck-posframe-face . '((t (:foreground "#4a4a4a" :background "#5d4a4f"))))
+    ;; (flycheck-posframe-face . '((t (:foreground "#4a4a4a" :background "#5d4a4f"))))
+    (flycheck-posframe-background-face . '((t (:foreground "#4a4a4a" :background "#5d4a4f"))))
     :hook ((flycheck-mode-hook . flycheck-posframe-mode))))
 
 ;; Local Variables:
