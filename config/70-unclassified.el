@@ -61,22 +61,25 @@ redrawが non-nilの場合は、Windowを再描画します。"
 ;;
 ;; 編集行を目立たせる（現在行をハイライト表示する）
 ;;
-(defface hlline-face
-  '((((class color)
-      (background dark))
-     ;;(:background "dark state gray"))
-     (:background "gray10"
-                  :underline "gray24"))
-    (((class color)
-      (background light))
-     (:background "khaki" ;"ForestGreen"
-                  :underline nil))
-    (t ()))
-  "*Face used by hl-line.")
-(setq hl-line-face 'hlline-face)
-(if (not window-system)
-    (setq hl-line-face 'underline))
-(global-hl-line-mode)
+(leaf *hlline
+  :disabled t
+  :config
+  (defface hlline-face
+    '((((class color)
+        (background dark))
+       ;;(:background "dark state gray"))
+       (:background "gray10"
+                    :underline "gray24"))
+      (((class color)
+        (background light))
+       (:background "khaki"             ;"ForestGreen"
+                    :underline nil))
+      (t ()))
+    "*Face used by hl-line.")
+  (setq hl-line-face 'hlline-face)
+  (if (not window-system)
+      (setq hl-line-face 'underline))
+  (global-hl-line-mode))
 
 ;;; 行の先頭でC-kを一回押すだけで行全体を消去する
 (setq kill-whole-line t)
