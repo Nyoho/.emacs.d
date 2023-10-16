@@ -984,3 +984,9 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   :ensure t
   :custom
   (visual-fill-column-center-text . t))
+
+(leaf *comp
+  :custom
+  (native-comp-async-jobs-number . 8)
+  (native-comp-speed . 3))
+
