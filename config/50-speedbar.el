@@ -3,7 +3,7 @@
 ;;
 ;; ad-advised-definition-p が 24.4 からなくなったのでエラー
 (use-package sr-speedbar
-  :ensure t
+  :ensure nil
   :config
   (setq sr-speedbar-right-side nil) 
 
