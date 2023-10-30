@@ -25,7 +25,6 @@
     ("C-p" . company-select-previous))
    (emacs-lisp-mode-map
     ("C-M-i" . company-complete)))
-  :require t
   :config
   (leaf company-math
     :ensure t
