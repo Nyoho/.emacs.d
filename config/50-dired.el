@@ -4,7 +4,24 @@
 (leaf dired-filter
   :ensure t
   :after dired
-  :bind (dired-mode-map ("C-c t" . dired-filter-group-mode)))
+  :bind (dired-mode-map ("C-c t" . dired-filter-group-mode))
+  :custom
+  (dired-filter-group-saved-groups
+   . '(("default"
+        ("TeX/LaTeX"
+         (extension "tex" "bib"))
+        ("Org"
+         (extension . "org"))
+        ("PDF"
+         (extension . "pdf"))
+        ("Images"
+         (extension "png" "jpg" "jpeg" "tiff" "bmp"))
+        ("Programs"
+         (extension "c" "m" "cpp" "rb" "py" "swift" "h"))
+        ("POV-Ray"
+         (extension "pov"))
+        ("Archives"
+         (extension "gz" "bz2" "xz" "tar" "zip" "rar"))))))
 
 (leaf dired-x
   :after dired
@@ -38,23 +55,7 @@
   (setq dired-dwim-target t)
 
   ;; dired-filter-group
-  (setq dired-filter-group-saved-groups
-        '(("default"
-           ("TeX/LaTeX"
-            (extension "tex" "bib"))
-           ("Org"
-            (extension . "org"))
-           ("PDF"
-            (extension . "pdf"))
-           ("Images"
-            (extension "png" "jpg" "jpeg" "tiff" "bmp"))
-           ("Programs"
-            (extension "c" "m" "cpp" "rb" "py" "swift" "h"))
-           ("POV-Ray"
-            (extension "pov"))
-           ("Archives"
-            (extension "gz" "bz2" "xz" "tar" "zip" "rar")))))
-  )
+)
 
 
 ;;
