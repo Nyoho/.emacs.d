@@ -50,7 +50,7 @@
       (around dired-sort-other-h activate)
     (ad-set-arg 0 (concat (ad-get-arg 0) "h"))
     ad-do-it
-    (setq dired-actual-switches (dired-replace-in-string "h" "" dired-actual-switches)))
+    (setq dired-actual-switches (replace-regexp-in-string "h" "" dired-actual-switches)))
 
   (setq dired-dwim-target t)
 
