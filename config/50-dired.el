@@ -1,6 +1,11 @@
 ;;
 ;; for dired
 ;;
+
+(leaf
+  :custom
+  (dired-dwim-target . t))
+
 (leaf dired-filter
   :ensure t
   :after dired
@@ -51,9 +56,6 @@
     (ad-set-arg 0 (concat (ad-get-arg 0) "h"))
     ad-do-it
     (setq dired-actual-switches (replace-regexp-in-string "h" "" dired-actual-switches)))
-
-  (setq dired-dwim-target t)
-
   ;; dired-filter-group
 )
 
@@ -83,8 +85,7 @@
   (define-key dired-mode-map (kbd "h") 'dired-subtree-up-dwim)
 
   ;; 2 windows が両方 dired のときに copy や rename が楽になる。リモートでも動作するので便利。
-  (setq dired-dwim-target t)
-  )
+)
 
 (leaf gist
   :ensure t
