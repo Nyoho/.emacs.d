@@ -1,11 +1,6 @@
 ;;
 ;; for dired
 ;;
-
-(leaf
-  :custom
-  (dired-dwim-target . t))
-
 (leaf dired-filter
   :ensure t
   :after dired
@@ -111,6 +106,7 @@
    ("C-t" . nil))
   :custom
   (dired-use-ls-dired . nil)
+  (dired-dwim-target . t)
   :config
   (leaf wdired
     :require t
