@@ -4,8 +4,6 @@
 ;; From command line:
 ;; emacs -q --eval '(load (concat (setq user-emacs-directory "~/.emacs.d/") "minimal-init.el"))'
 
-(require 'cl)
-
 (dolist (dir (list
               "/usr/local/bin"
               "/usr/bin"
