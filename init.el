@@ -10,7 +10,6 @@
 (setq user-mail-address "algebraicallyClosedField@gmail.com")
 
 (setq byte-compile-warnings '(not cl-functions obsolete))
-(require 'cl)
 
 ;; https://gist.github.com/takaxp/ffcfbf6558a272186012b5218bc0c9fc
 ;; .emacs.d/init.el の先頭に記述
@@ -120,7 +119,7 @@
   (setq load-path
         (append
          (cons dir
-               (remove-if-not (lambda (x) (file-directory-p x))
+               (cl-remove-if-not (lambda (x) (file-directory-p x))
                               (mapcar (lambda (x) (concat dir "/" x))
                                       (directory-files dir nil "^[^.][^.]" t))))
          load-path)))
