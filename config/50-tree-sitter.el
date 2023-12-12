@@ -14,3 +14,12 @@
   :config
   (tree-sitter-require 'tsx)
   (add-to-list 'tree-sitter-major-mode-language-alist '(typescript-tsx-mode . tsx)))
+
+(leaf treesit-auto
+  :ensure t
+  :custom
+  (treesit-auto-install . 'prompt)
+  :require t
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
