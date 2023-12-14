@@ -42,3 +42,4 @@ prescient-save.el
 /org-roam.db
 /eln-cache
 emacs.pdump
+/tree-sitter
