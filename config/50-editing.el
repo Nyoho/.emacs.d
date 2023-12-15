@@ -60,6 +60,12 @@
 (leaf smartparens
   :ensure t)
 
+(leaf dmacro
+  :ensure t
+  :blackout t
+  :custom `((dmacro-key . ,(kbd "C-S-e")))
+  :global-minor-mode global-dmacro-mode)
+
 ;;
 ;; moccur 関連
 ;;
