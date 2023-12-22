@@ -2,8 +2,8 @@
 ;; for speedbar
 ;;
 ;; ad-advised-definition-p が 24.4 からなくなったのでエラー
-(use-package sr-speedbar
-  :ensure nil
+(leaf sr-speedbar
+  :ensure t
   :config
   (setq sr-speedbar-right-side nil) 
 
