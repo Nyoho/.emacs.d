@@ -8,6 +8,4 @@
   (setq sr-speedbar-right-side nil) 
 
   :bind
-  (("s-r" . sr-speedbar-toggle))
-;; (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-)
+  (("s-r" . sr-speedbar-toggle)))
