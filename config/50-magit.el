@@ -8,7 +8,7 @@
          ;; https://raw.githubusercontent.com/magit/magit/next/Documentation/RelNotes/1.4.0.txt
          (magit-status-buffer-switch-function . 'switch-to-buffer)
          (magit-log-edit-confirm-cancellation . nil)
-         (vc-handled-backends . '()))
+         )
   :config
   ;; (set-face-foreground 'magit-diff-add "green3")
   ;; (set-face-foreground 'magit-diff-del "red3")
