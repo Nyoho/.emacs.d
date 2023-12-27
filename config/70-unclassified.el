@@ -990,3 +990,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
   (native-comp-async-jobs-number . 8)
   (native-comp-speed . 3))
 
+
+(leaf idris-mode
+  :ensure t)
