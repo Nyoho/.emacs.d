@@ -993,3 +993,11 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 (leaf idris-mode
   :ensure t)
+
+(defun my-gpg-file-hook ()
+  (when (string-suffix-p ".gpg" (buffer-file-name))
+    (fset 'epg-wait-for-status 'ignore)))
+
+(leaf *epg
+  :hook (find-file-hook . my-gpg-file-hook))
+
