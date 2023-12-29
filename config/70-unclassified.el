@@ -1001,3 +1001,10 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 (leaf *epg
   :hook (find-file-hook . my-gpg-file-hook))
 
+(leaf pdf-tools
+  :doc "(pdf-tools-install)"
+  :ensure t)
+
+(leaf nov
+  :ensure t
+  :doc "EPUB viewer")
