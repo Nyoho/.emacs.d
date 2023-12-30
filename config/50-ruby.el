@@ -10,13 +10,6 @@
 (defun ruby-mode-set-encoding ())
 (setq ruby-insert-encoding-magic-comment nil)
 
-
-(use-package ruby-refactor
-  :defer t)
-;; (use-package ruby-mode
-;;   :hook ruby-refactor-mode-launch
-;;   :hook robe-mode)
-
 ;;
 ;; robe
 ;;
