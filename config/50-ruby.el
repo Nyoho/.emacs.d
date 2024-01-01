@@ -21,9 +21,9 @@
   (add-hook 'robe-mode-hook 'robe-ac-setup)
   )
 
-;; enhanced(enh)-ruby-mode
-(use-package enh-ruby-mode
-  :defer t
+(leaf enh-ruby-mode
+  :doc "An enhanced ruby-mode"
+  :ensure t
   :config
   (add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
 
