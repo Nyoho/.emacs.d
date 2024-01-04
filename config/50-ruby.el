@@ -70,13 +70,12 @@
 
 
 
-(use-package inf-ruby
-  :defer t
+(leaf inf-ruby
+  :ensure t
   :config
   (setq inf-ruby-default-implementation "pry")
   (setq inf-ruby-eval-binding "Pry.toplevel_binding")
-  (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
-  )
+  (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on))
 
 ;; in ~/.pryrc
 ;; Pry.config.editor = "emacsclient"
