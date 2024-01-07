@@ -1,14 +1,10 @@
-;;
-;; ruby-mode
-;;
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
-(defun ruby-mode-set-encoding ())
-(setq ruby-insert-encoding-magic-comment nil)
+
+(leaf ruby-mode
+  ;; :preface
+  ;; (defun ruby-mode-set-encoding nil)
+  :mode ("\\.rake$" "Rakefile$" "\\.gemspec$" "\\.ru$" "Gemfile$" "Guardfile$")
+  :custom
+  (ruby-insert-encoding-magic-comment . nil))
 
 ;;
 ;; robe
