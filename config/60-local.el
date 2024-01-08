@@ -1,12 +1,4 @@
 ;;
-;; cucumber.el (feature-mode)
-;;
-(use-package feature-mode
-  :defer t
-  :config
-  )
-
-;;
 ;; hotentry.el
 ;;
 (leaf hotentry
