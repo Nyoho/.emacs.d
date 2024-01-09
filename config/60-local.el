@@ -43,22 +43,6 @@
   :mode (("\\.ya?ml$" . yaml-mode)))
 
 ;;
-;; Zen Coding Mode
-;;
-(use-package zencoding-mode
-  :defer t
-  :config
-  (add-hook 'sgml-mode-hook 'zencoding-mode)
-  (add-hook 'html-mode-hook 'zencoding-mode)
-  (add-hook 'web-mode-hook 'zencoding-mode)
-  ;;(add-hook 'text-mode-hook 'zencoding-mode)
-  (define-key zencoding-mode-keymap (kbd "<C-return>") 'zencoding-expand-yas)
-  (define-key zencoding-preview-keymap (kbd "C-c C-m") 'zencoding-preview-accept)
-  )
-
-
-
-;;
 ;; dash-at-point.el
 ;;
 ;; (leaf dash-at-point
