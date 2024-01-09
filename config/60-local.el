@@ -50,17 +50,18 @@
 ;;   (("C-c d" . dash-at-point)))
 
 ;; TODO: なんか候補は出るけどアクションの結果が出ない
-(leaf counsel-dash
-  :disabled t
+(leaf consult-dash
+  :ensure t
   :bind
-  (("C-c d" . counsel-dash-at-point))
-  :custom ((counsel-dash-docsets-path . "~/Library/Application Support/Dash/DocSets/")
-           (counsel-dash-common-docsets . '("Javascript" "Rust" "Python_3")))
-  :hook ((emacs-lisp-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Emacs_Lisp"))))
-         (ruby-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Ruby_2"))))
-         (rust-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Rust"))))
-         (python-mode-hook . (lambda () (setq-local counsel-dash-docsets '("Python_3")))))
-  )
+  ("C-c d" . consult-dash)
+  ;; :custom ((consult-dash-docsets-path . "~/Library/Application Support/Dash/DocSets/")
+  ;;          (consult-dash-common-docsets . '("Javascript" "Rust" "Python_3")))
+  :config
+  (consult-customize consult-dash :initial (thing-at-point 'symbol))
+  :hook ((emacs-lisp-mode-hook . (lambda () (setq-local consult-dash-docsets '("Emacs_Lisp"))))
+         (ruby-mode-hook . (lambda () (setq-local consult-dash-docsets '("Ruby_2"))))
+         (rust-mode-hook . (lambda () (setq-local consult-dash-docsets '("Rust"))))
+         (python-mode-hook . (lambda () (setq-local consult-dash-docsets '("Python_3"))))))
 
 ;;
 ;; popwin.el
