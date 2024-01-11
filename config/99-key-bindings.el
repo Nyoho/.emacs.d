@@ -91,10 +91,6 @@
     global-map "C-c" '(("+" . 'evil-numbers/inc-at-pt)
                        ("-" . 'evil-numbers/dec-at-pt)))
 
-;; (global-set-key (kbd "C-c b") 'helm-descbinds) ;; C-h b でできるので外した。
-
-
-
 ;; e2wm
 (global-set-key (kbd "C-x C-S-d") 'e2wm:dp-array)
 
