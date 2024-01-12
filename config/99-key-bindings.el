@@ -100,7 +100,5 @@
 
 (global-set-key (kbd "C-x v b") 'git-branch-next-action)
 
-(global-set-key (kbd "C-x m") 'magit-status)
-
 ;; https://www.youtube.com/watch?v=Iqh50fgbIVk
 (global-set-key (kbd "\e\ei") (lambda () (interactive) (find-file "~/org/index.org")))

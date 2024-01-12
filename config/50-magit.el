@@ -9,6 +9,8 @@
          (magit-status-buffer-switch-function . 'switch-to-buffer)
          (magit-log-edit-confirm-cancellation . nil)
          )
+  :bind
+  ("C-x m"  . magit-status)
   :config
   ;; (set-face-foreground 'magit-diff-add "green3")
   ;; (set-face-foreground 'magit-diff-del "red3")
