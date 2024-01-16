@@ -183,8 +183,9 @@
 
 (leaf init-loader
   :ensure t
-  :init (init-loader-load (concat user-emacs-directory "config"))
-  :custom ((init-loader-show-log-after-init quote error-only))
+  :config
+  (init-loader-load (concat user-emacs-directory "config"))
+  :custom (init-loader-show-log-after-init . 'error-only)
   :require t)
 
 (put 'narrow-to-region 'disabled nil)
