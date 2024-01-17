@@ -43,3 +43,4 @@ prescient-save.el
 /eln-cache
 emacs.pdump
 /tree-sitter
+/multisession
