@@ -18,5 +18,8 @@
               (helm-hatena-bookmark-interval . ,(* 4 60 60))))
 ;; (* 4 60 60)
 (leaf consult-hatena-bookmark
+  :ensure t
+  :preface
+  (load (concat user-emacs-directory "private/hatena.el"))
   :bind
   ("C-c h" . consult-hatena-bookmark))
