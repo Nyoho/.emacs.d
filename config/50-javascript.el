@@ -52,3 +52,8 @@
 
 (leaf prettier-js
   :ensure t)
+
+(leaf prettier
+  :doc "そのバッファで M-x prettier-mode したらすぐ使える。
+使えなかったら npm install -g prettier してみる。"
+  :ensure t)
