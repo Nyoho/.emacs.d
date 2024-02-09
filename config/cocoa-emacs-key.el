@@ -1,6 +1,8 @@
-(when window-system
-    ;; the command key as the meta key
-    (setq ns-command-modifier (quote meta))
+(leaf cocoa-key-setting
+  :when window-system
+  :config
+  ;; the command key as the meta key
+  (setq ns-command-modifier (quote meta))
   ;; the alt key as the super key
   (setq ns-alternate-modifier (quote super))
 
