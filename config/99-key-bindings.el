@@ -83,14 +83,6 @@
   (interactive)
   (switch-to-buffer "*scratch*"))
 
-(smartrep-define-key
-    global-map "C-q" '(("-" . 'goto-last-change)
-                       ("+" . 'goto-last-change-reverse)))
-
-(smartrep-define-key
-    global-map "C-c" '(("+" . 'evil-numbers/inc-at-pt)
-                       ("-" . 'evil-numbers/dec-at-pt)))
-
 ;; e2wm
 (global-set-key (kbd "C-x C-S-d") 'e2wm:dp-array)
 
