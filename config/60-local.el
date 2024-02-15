@@ -124,11 +124,9 @@
   (shell-command (concat "open " (buffer-file-name))))
 
 
-(use-package saveplace
-  :defer t
+(leaf saveplace
   :config
-  (setq-default save-place t)
-  )
+  (save-place-mode 1))
 
 
 ;; (use-package copy-code
