@@ -7,9 +7,12 @@
   :config
   
   ;; (set-face-attribute 'mode-line nil :family "Optima" :height 0.95)
-  (set-face-attribute 'mode-line nil :family "DIN Condensed" :height 1.0)
+  (set-face-attribute 'mode-line nil :family "DIN Condensed" :weight 'bold :height 1.0)
+  ;; (set-face-attribute 'mode-line nil :family "Avenir Next Condensed" :weight 'normal :height 1.0)
+  ;; (set-face-attribute 'mode-line nil :family "Avenir Next Condensed" :height 1.0)
   (set-face-attribute 'mode-line-inactive nil :family "DIN Condensed" :height 1.0)
-  
+  (set-face-attribute 'mode-line-inactive nil :family "DIN Condensed" :weight 'bold :height 1.0)
+
   (setq-default mode-line-format
                 (cons (propertize "\u200b" 'display '((raise 0.5) (height 0.0))) mode-line-format))
 
