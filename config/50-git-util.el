@@ -151,8 +151,8 @@
 
 (defun browse-github ()
   (interactive)
-  (shell-command "hub browse"))
+  (shell-command "gh browse"))
 
 (defun pull-request ()
   (interactive)
-  (shell-command "hub pull-request"))
+  (shell-command "gh pr create"))
