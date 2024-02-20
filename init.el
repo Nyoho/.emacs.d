@@ -138,16 +138,19 @@
 (add-to-list 'exec-path (expand-file-name "~/.rbenv/shims"))
 (add-to-list 'exec-path (expand-file-name "~/.rbenv/bin"))
 
-;;
-;; initchart.el
-;; https://qiita.com/yuttie/items/0f38870817c11b2166bd
-;; M-x initchart-visualize-init-sequence でSVGファイル作成
-(require 'initchart)
-;; Measure the execution time of a specified function for every call.
-;; Optionally, you might give a parameter name of the function you specified to
-;; record what value is passed to the function.
-(initchart-record-execution-time-of load file)
-(initchart-record-execution-time-of require feature)
+(leaf initchart
+  :doc
+  "initchart.el
+  https://qiita.com/yuttie/items/0f38870817c11b2166bd
+  M-x initchart-visualize-init-sequence でSVGファイル作成"
+  :vc ( :url "https://github.com/yuttie/initchart")
+  :require t
+  :config
+  ;; Measure the execution time of a specified function for every call.
+  ;; Optionally, you might give a parameter name of the function you specified to
+  ;; record what value is passed to the function.
+  (initchart-record-execution-time-of load file)
+  (initchart-record-execution-time-of require feature))
 
 ;;
 ;; Several settings
