@@ -453,35 +453,6 @@ ALL-BUFFERS is the list of buffer appearing in Buffer Selection Menu."
 
 
 
-;;
-;; twittering-mode "M-x twit"
-;;
-(leaf twittering-mode
-  :ensure t
-  :custom
-  (twittering-use-master-password . t)
-  (twittering-use-icon-storage . t)
-  :config
-  ;; (defun twittering-capable-of-encryption-p ()
-  ;;   (and (or (require 'epa nil t) (require 'alpaca nil t))
-  ;;        (executable-find "gpg1")))
-
-  ;; (setq twittering-use-ssl t)
-  (setq twittering-icon-mode t)
-  (defalias 'epa--decode-coding-string 'decode-coding-string)
-  (setq twittering-initial-timeline-spec-string
-        '(":replies"
-          ":favorites"
-          ":retweets_of_me"
-          ":home"
-          ))
-  ;; (setq twittering-username "NeXTSTEP2OSX")
-  ;; ;;(setq twittering-password "")
-
-  ;; (setq twittering-tmp-dir "/tmp/twitter-buddy-icons"))
-)
-
-
 ;; (custom-set-variables
 ;;   ;; custom-set-variables was added by Custom.
 ;;   ;; If you edit it by hand, you could mess it up, so be careful.
