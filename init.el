@@ -156,8 +156,6 @@
 ;; Several settings
 ;;
 ;; font-lock, colors
-(setq font-lock-use-default-fonts nil)
-(setq font-lock-use-default-colors nil)
 (global-font-lock-mode t)
 (setq font-lock-support-mode 'jit-lock-mode)
 (require 'font-lock)
