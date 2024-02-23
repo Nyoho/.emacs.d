@@ -91,13 +91,8 @@
 (setenv "MANPATH" (concat "/usr/bin/man:/usr/local/man:/usr/share/man:/Developer/usr/share/man:/sw/man" (getenv "MANPATH")))
 (setenv "TEXINPUTS" ".:~/tex/texinputs:")
 
-
 (setq load-path
       (append (list
-               "/usr/share/emacs/site-lisp/"
-               "/usr/share/emacs/site-lisp/anthy/"
-               "/usr/local/share/emacs/site-lisp/"
-               "/usr/local/share/emacs/site-lisp/mew/"
                (concat user-emacs-directory "elisp")
                (concat user-emacs-directory "site-start.d")
                )
