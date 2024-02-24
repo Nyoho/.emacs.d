@@ -42,9 +42,7 @@
                        ("elpa"   . "https://elpa.gnu.org/packages/")
                        ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
   (package-initialize)
-  (unless (package-installed-p 'leaf)
-    (package-refresh-contents)
-    (package-install 'leaf))
+  (use-package leaf :ensure t)
 
   (leaf leaf-keywords
     :doc "Additional leaf.el keywords for external packages"
