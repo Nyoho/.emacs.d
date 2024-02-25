@@ -1,20 +1,3 @@
-(use-package guide-key
-  :ensure t
-  :disabled t
-  :config
-
-  (setq guide-key/guide-key-sequence
-        '("C-x r" "C-x 4" ; global
-          (org-mode "C-c C-x")
-          (outline-minor-mode "C-c @")))
-
-  (setq guide-key/highlight-command-regexp "rectangle\\|register\\|org-clock")
-  (setq guide-key/idle-delay 1.0)
-  ;; ;; 下部にキー一覧を表示させる(デフォルトはright)
-  ;; (setq guide-key/popup-window-position 'bottom)
-  (setq guide-key/text-scale-amount -1)
-  (guide-key-mode 1))
-
 ;; which-key も入れてみた。-> けど外してみた -> また有効にした。
 (leaf which-key
   :ensure t
