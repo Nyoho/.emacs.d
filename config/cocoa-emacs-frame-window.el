@@ -77,6 +77,7 @@
              ))))
 
   (setq default-frame-alist initial-frame-alist)
+  (set-cursor-color  "orange red")
 
 
   (setq dnd-open-file-other-window nil)
