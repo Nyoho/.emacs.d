@@ -21,5 +21,4 @@
   (treesit-auto-install . 'prompt)
   :require t
   :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
+  (treesit-auto-add-to-auto-mode-alist 'all))
