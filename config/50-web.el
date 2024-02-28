@@ -9,7 +9,7 @@
          "\\.jsp\\'"
          "\\.as[cp]x\\'"
          "\\.erb\\'"
-         "\\.tsx\\'")
+         )
   :bind (("C-c C-v" . browse-url-of-buffer))
   :config
   (with-eval-after-load "flycheck"
