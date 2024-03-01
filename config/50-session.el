@@ -13,4 +13,5 @@
    (session-globals-max-string . 100000)
    (history-length . 100000)
    (session-save-file . "~/.session")
+   (session-save-file-coding-system . 'utf-8)
    (session-name-disable-regexp . "/COMMIT_EDITMSG$")))
