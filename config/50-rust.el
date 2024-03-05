@@ -6,7 +6,6 @@
   :ensure t
   :hook ((flycheck-mode-hook . flycheck-rust-setup)
          (rust-mode-hook . (lambda ()
-                             (racer-mode)
                              (flycheck-rust-setup)))
          ;; (racer-mode-hook . eldoc-mode)
          ;; (racer-mode-hook . (lambda ()
