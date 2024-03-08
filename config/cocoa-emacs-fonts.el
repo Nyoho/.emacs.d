@@ -18,7 +18,8 @@
   ;; (set-fontset-font nil '(#x0080 . #x024F) (font-spec :family "Menlo"))
   ;; (set-fontset-font nil 'ascii (font-spec :family "Menlo"))
   ;; (set-fontset-font nil 'ascii (font-spec :family "Menlo" :size 16))
-  (set-fontset-font nil '(#x0000 . #x0080) (font-spec :family "Menlo" :size 14))
+  ;; (set-fontset-font nil '(#x0000 . #x0080) (font-spec :family "Menlo" :size 14))
+  (set-fontset-font nil '(#x0000 . #x0080) (font-spec :family "JetBrains Mono" :size 14))
   ;; (set-fontset-font nil 'ascii (font-spec :family "Inconsolata" :size 16))
   
   ;; (set-fontset-font nil 'mule-unicode-0100-24ff '("monaco" . "iso10646-1"))
