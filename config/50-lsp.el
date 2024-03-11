@@ -20,6 +20,7 @@
          ;; (ruby-mode-hook   . lsp)
          (rust-mode-hook   . lsp)
          (elixir-mode-hook . lsp)
+         ;; (typescript-mode-hook . lsp) ;; npm i -g typescript-language-server typescript
          (go-mode-hook     . lsp))
   :bind
   (:lsp-mode-map ("C-c r"   . lsp-rename)
