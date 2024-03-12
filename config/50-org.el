@@ -658,5 +658,19 @@
   :url "https://github.com/minad/org-modern"
   :ensure t
   :after org
-  :hook (org-mode-hook . org-modern-mode))
+  :hook
+  (org-mode-hook . org-modern-mode)
+  (org-agenda-finalize-hook . org-modern-agenda)
+
+  :custom
+  (org-modern-hide-stars     . 'learding)
+  (org-modern-progress       . 12)
+  (org-modern-todo           . t)
+  (org-modern-tag            . t)
+  (org-modern-block          . t)
+  (org-modern-table-vertical . 3)
+  (org-modern-timestamp      . t)
+  (org-modern-star           . 'replace)
+  (org-modern-replace-stars  . "🌳🔲🔷🔹►"))
+
 
