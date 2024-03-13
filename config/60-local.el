@@ -10,12 +10,12 @@
    (hotentry:default-threshold . 2) ;; defaultは 3
    ))
 
-;;
-;; 最小の e2wm 設定例
-;;
-;; (use-package e2wm)
-;; (global-set-key (kbd "M-+") 'e2wm:start-management)
-
+(leaf e2wm
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x C-S-d") 'e2wm:dp-array)
+  ;;(global-set-key (kbd "M-+") 'e2wm:start-management)
+  )
 
 ;;
 ;; css-mode customizing
@@ -192,6 +192,14 @@
          (half-width (/ width 2)))
     (set-frame-width (selected-frame) half-width)))
 
+
+(leaf ultra-scroll
+  :vc (:url "https://github.com/jdtsmith/ultra-scroll")
+  :init
+  (setq scroll-conservatively 101
+        scroll-margin 0)
+  :config
+  (ultra-scroll-mode 1))
 
 ;;
 ;; Make scratch buffer 'org-mode'
