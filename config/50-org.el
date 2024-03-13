@@ -673,4 +673,8 @@
   (org-modern-star           . 'replace)
   (org-modern-replace-stars  . "🌳🔲🔷🔹►"))
 
+(leaf osm
+  :doc "OpenStreetMap viewer"
+  :emacs>= 28.1
+  :ensure t)
 
