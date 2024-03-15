@@ -83,11 +83,6 @@
   (interactive)
   (switch-to-buffer "*scratch*"))
 
-;; e2wm
-(global-set-key (kbd "C-x C-S-d") 'e2wm:dp-array)
-
-
-
 (defalias 'exit 'save-buffers-kill-emacs)
 
 (global-set-key (kbd "C-x v b") 'git-branch-next-action)
