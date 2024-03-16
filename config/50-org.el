@@ -647,11 +647,15 @@
   :ensure t)
 
 (leaf org-roam-bibtex
+  :doc "See https://www.youtube.com/watch?v=Wy9WvF5gWYg"
   :after org-roam
   :ensure t
   :config
   (require 'org-ref))
 
+(leaf bibtex-completion
+  :custom
+  (bibtex-completion-bibliography . '("~/tex/myref.bib")))
 
 (leaf org-modern
   :doc "Org-modeの見た目を少しかっこよくする"
