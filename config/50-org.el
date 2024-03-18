@@ -612,6 +612,11 @@
                 ("b" "book notes" plain "* Source\n\nAuthor: %^{Author}\nTitle: ${title}\nYear: %^{Year}\n\n* Summary\n\n%?" :target
                  (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: book\n#+date: %U\n")
                  :unnarrowed t)
+                ("r" "bibliography reference" plain "%?
+%^{author} published %^{entry-type} in %^{date}: fullcite:%\\1."
+                 :target
+                 (file+head "references/${citekey}.org" "#+title: ${title} by ${author}\n")
+                 :unnarrowed t)
                 ))
            (org-roam-node-display-template
             .
