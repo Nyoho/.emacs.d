@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (leaf cocoa-key-setting
   :when window-system
   :config
