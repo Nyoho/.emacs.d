@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; themes
 (leaf themes
   :when window-system
