@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (when window-system
   ;; (add-to-list 'default-frame-alist '(alpha . (100 83)))
 
