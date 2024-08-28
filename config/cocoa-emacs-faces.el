@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (leaf *macOS-face-customization
   :when window-system
   :config
