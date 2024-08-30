@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (leaf font-setting
   :disabled nil
   :when window-system
