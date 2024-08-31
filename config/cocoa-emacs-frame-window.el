@@ -1,3 +1,4 @@
+;;  -*- lexical-binding: t; -*-
 ;;
 ;; Appearance settings for Cocoa Emacs ns NEXTSTEP
 ;;
