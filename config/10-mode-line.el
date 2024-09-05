@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 
 ;; From http://peccu.hatenablog.com/entry/2015/05/02/000000
 ;; Show Git branch information to mode-line
