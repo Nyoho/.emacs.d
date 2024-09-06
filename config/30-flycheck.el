@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf flycheck
   :ensure t
   :custom ((flycheck-pos-tip-timeout . 30))
