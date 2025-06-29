@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf ddskk
   :ensure t
   :custom
