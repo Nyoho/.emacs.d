@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; LSP - the Language Server Protocol
 
 (leaf lsp-mode

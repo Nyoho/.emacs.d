@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf magit
   :ensure t
   ;; :mode (("COMMIT_EDITMSG$" . magit-mode))

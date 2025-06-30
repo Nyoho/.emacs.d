@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 ;; Emacs講座 -第8回- タブ幅 / マスタカの ChangeLog メモ

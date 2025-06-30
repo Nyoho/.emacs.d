@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf ellama
   :ensure t
   :added "2024-08-19"
