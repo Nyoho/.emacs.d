@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;
 ;; popup -- Mac OS X の通常の view のように ctrl + command + d で辞書.app
 ;;
