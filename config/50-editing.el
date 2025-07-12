@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; editing
 
 (leaf ediff-wind

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf mi
   :when (eq system-type 'darwin)
   :doc "DTM on Emacs"

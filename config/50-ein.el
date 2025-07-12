@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;
 ;; ein: Jupyter notebook client
 ;; https://github.com/millejoh/emacs-ipython-notebook
