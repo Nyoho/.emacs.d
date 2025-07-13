@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 
 ;; From https://emacs.stackexchange.com/questions/55024/how-to-make-a-temporary-directory-that-gets-deleted-once-the-body-is-finished
 (defmacro with-temp-directory (temp-dir &rest body)

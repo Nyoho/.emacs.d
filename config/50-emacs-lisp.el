@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf emacs-lisp
   :mode (("Cask\\'" . emacs-lisp-mode))
   :hook (emacs-lisp-mode . smartparens-mode))
