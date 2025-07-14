@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf helm-hatena-bookmark
   :disabled t
   :config

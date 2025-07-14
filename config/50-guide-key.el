@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; which-key も入れてみた。-> けど外してみた -> また有効にした。
 (leaf which-key
   :ensure t
