@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf js-mode
   :commands js-mode js-jsx-mode
   :mode (("\\.js\\'" . js-mode)

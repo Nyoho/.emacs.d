@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf hydra
   :ensure t
   :bind

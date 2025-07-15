@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;  Emacsでの見た目そのままにソースコードをブラウザで開くコマンドを作った (Kanasansoft Web Lab.)
 ;; http://www.kanasansoft.com/weblab/2011/07/htmlize-and-browse.html
 ;;
