@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; (ag-highlight-search t)  ; 検索結果の中の検索語をハイライトする
 ;; (ag-reuse-window 'nil)   ; 現在のウィンドウを検索結果表示に使う
 ;; (ag-reuse-buffers 'nil)) ; 現在のバッファを検索結果表示に使う

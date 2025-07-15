@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;
 ;; https://www.emacswiki.org/emacs/NeoTree
 

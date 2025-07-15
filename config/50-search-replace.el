@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 
 (defun consult-ripgrep-org ()
   "`~/org/' 以下を検索 with consult."

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf typescript-mode
   :ensure t
   :mode 

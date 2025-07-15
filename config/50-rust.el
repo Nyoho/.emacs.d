@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; From http://keens.github.io/blog/2016/12/29/kizuitararustnokankyoukouchikugakanarirakuninatteta/
 ;; rustup component add rust-src しておく
 ;; rustup default nightly

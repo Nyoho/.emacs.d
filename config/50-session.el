@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;
 ;; session.el -- カーソル位置とか kill-ring とか覚えておいてくれて便利
 ;;

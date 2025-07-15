@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf projectile
   :ensure t
   :bind

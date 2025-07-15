@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 
 (leaf company
   :ensure t

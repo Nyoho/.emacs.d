@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 
 (leaf ruby-mode
   ;; :preface

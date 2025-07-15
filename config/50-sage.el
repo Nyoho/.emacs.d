@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; https://github.com/sagemath/sage-shell-mode
 
 (leaf sage-shell-mode

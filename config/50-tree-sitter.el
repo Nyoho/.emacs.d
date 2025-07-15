@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf tree-sitter
   :ensure (t tree-sitter-langs)
   :hook

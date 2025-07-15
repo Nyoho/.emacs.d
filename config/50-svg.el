@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf *svg-exp
   :if (window-system)
   :config

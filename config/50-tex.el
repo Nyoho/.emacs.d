@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;
 ;; for TeX, LaTeX, pLaTeX2e, ...
 ;;

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (leaf swift-mode
   :ensure t
   :config

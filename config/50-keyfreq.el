@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+;;
 ;; keyfreq.el
 ;;
 ;; A statistics for history of commands I execute
