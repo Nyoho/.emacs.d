@@ -69,10 +69,8 @@
   (leaf modus-themes
     :ensure t
     :bind ("<f9>" . modus-themes-toggle)
-    :init
-    (modus-themes-load-themes)
-    :config
-    (modus-themes-load-vivendi)
+    :setq
+    (modus-themes-common-palette-overrides . modus-themes-preset-overrides-intense)
     :custom
     ((modus-themes-italic-constructs . t)
      (modus-themes-bold-constructs . t)
