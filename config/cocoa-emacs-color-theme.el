@@ -46,6 +46,25 @@
     (interactive)
     (mapc 'disable-theme custom-enabled-themes))
 
+  (defun macos-dark-mode-enabled-p ()
+    "Check if macOS is in dark mode."
+    (string= (string-trim
+              (shell-command-to-string
+               "osascript -e 'tell application \"System Events\" to tell appearance preferences to return dark mode'"))
+             "true"))
+  
+  (defun sync-emacs-theme-with-macos ()
+    "Sync Emacs theme with macOS dark mode."
+    (interactive)
+    (reset-current-theme)
+    (if (macos-dark-mode-enabled-p)
+        (load-theme 'doom-one t)
+      ;; (load-theme 'solarized-gruvbox-light t)
+      (load-theme 'doom-homage-white t)))
+
+  (sync-emacs-theme-with-macos)
+  ;; (run-with-timer 0 (* 5 60) 'sync-emacs-theme-with-macos)
+
   ;; (load-theme 'heroku t)
   ;; (load-theme 'rebecca t)
   ;; (load-theme 'apropospriate-dark t)
