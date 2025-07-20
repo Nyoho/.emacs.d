@@ -76,6 +76,42 @@
   ;; (set-fontset-font nil '(#xde00 . #xdeff) (font-spec :family "Symbola"))
   (set-fontset-font nil '(#x1f000 . #x1fa00) (font-spec :family "Apple Color Emoji") nil 'prepend)
 
+  ;; Lepcha
+  (set-fontset-font nil '(#x1c00 . #x1c4f) (font-spec :family "Noto Sans Lepcha") nil 'prepend)
+
+  ;; Javanese
+  (set-fontset-font nil '(#xa980 . #xa9df) (font-spec :family "Noto Sans Javanese") nil 'prepend)
+
+  ;; Balinese
+  (set-fontset-font nil '(#x1b00 . #x1b7f) (font-spec :family "Noto Serif Balinese") nil 'prepend)
+
+  ;; Kharoshthi
+  (set-fontset-font nil '(#x10a00 . #x10a58) (font-spec :family "Noto Sans Kharoshthi") nil 'prepend)
+  
+  ;; Miyao
+  (set-fontset-font nil '(#x16f00 . #x16f9f) (font-spec :family "Noto Sans Miao") nil 'prepend)
+  
+  ;; Hanunoo
+  (set-fontset-font nil '(#x1720 . #x1736) (font-spec :family "Noto Sans Hanunoo") nil 'prepend)
+  
+  ;; Ahom
+  (set-fontset-font nil '(#x11700 . #x1174f) (font-spec :family "Noto Serif Ahom") nil 'prepend)
+  
+  ;; Cuneiform
+  (set-fontset-font nil '(#x12000 . #x1254f) (font-spec :family "Noto Sans Cuneiform") nil 'prepend)
+  
+  ;; Buginese
+  (set-fontset-font nil '(#x1a00 . #x1a1f) (font-spec :family "Noto Sans Buginese") nil 'prepend)
+  
+  ;; Meetei Mayek
+  (set-fontset-font nil '(#xabc0 . #xabff) (font-spec :family "Noto Sans Meetei Mayek") nil 'prepend)
+  
+  ;; BarMeetei Mayek
+  (set-fontset-font nil '(#xabc0 . #xabff) (font-spec :family "Noto Sans Meetei Mayek") nil 'prepend)
+  
+  ;; Bhaiksuki
+  (set-fontset-font nil '(#x11c00 . #x11c6f) (font-spec :family "Noto Sans Bhaiksuki") nil 'prepend)
+  
   ;; East Asian Ambiguous Width ○×α
   (use-cjk-char-width-table 'ja_JP)
 
