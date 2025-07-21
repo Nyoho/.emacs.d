@@ -40,7 +40,10 @@
   (customize-set-variable
    'package-archives '(("melpa"  . "https://melpa.org/packages/")
                        ("elpa"   . "https://elpa.gnu.org/packages/")
-                       ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+                       ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                       ("celpa"  . "https://celpa.conao3.com/packages/")
+                       ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")))
+  (setq package-archive-priorities '(("melpa" . 5) ("jcs-elpa" . 0)))
   (package-initialize)
   (use-package leaf :ensure t)
 
