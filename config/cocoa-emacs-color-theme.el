@@ -114,14 +114,16 @@
 
 ;; local workaround for Emacs 31 face inheritance cycle (doom-themes + gnus faces)
 (defun my/fix-gnus-face-inheritance-cycles ()
-  "Break gnus face inheritance cycles that can crash child frames (posframe) on Emacs 31."
-  (when (facep 'gnus-group-news-low)
-    ;; Gnus defface が low -> low-empty を持つ一方、テーマが low-empty -> low を作ると循環する。
-    ;; よって low の inherit を強制的に切る。
-    (set-face-attribute 'gnus-group-news-low nil :inherit nil)))
+  "Break gnus face inheritance cycles that crash child frames (corfu/posframe) on Emacs 31.
+
+`set-face-attribute' only fixes the default frame; new frames re-apply the theme
+face spec via `face-spec-recalc', so we must patch the spec itself."
+  (dolist (face '(gnus-group-news-low gnus-group-news-low-empty))
+    (when (facep face)
+      (face-spec-set face '((t)) 'face-defface-spec)
+      (set-face-attribute face nil :inherit nil))))
 (add-hook 'after-init-hook #'my/fix-gnus-face-inheritance-cycles)
-(add-hook 'find-file-hook #'my/fix-gnus-face-inheritance-cycles)
 (when (boundp 'after-load-theme-hook)
   (add-hook 'after-load-theme-hook #'my/fix-gnus-face-inheritance-cycles))
-(with-eval-after-load 'org
+(with-eval-after-load 'gnus
   (my/fix-gnus-face-inheritance-cycles))
