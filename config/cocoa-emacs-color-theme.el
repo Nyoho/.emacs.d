@@ -28,6 +28,15 @@
   ;; (load-theme 'solarized-gruvbox-dark t)
   ;; (load-theme 'solarized-light-high-contrast t)
   
+  (leaf solarized-theme
+    :doc ""
+    :ensure t
+    :require t
+    :config
+    (solarized-create-theme-file-with-palette 'light 'nakazye-solarized-light
+      '("#d688a7" "#f4f0f9"
+        "#c1e2f6" "#efc9cd" "#e8c34d" "#e4a747" "#c2d648" "#a2dcad" "#94cbd1" "#c6a3d8")))
+
   (leaf iceberg-theme
     :ensure t
     :disabled t
