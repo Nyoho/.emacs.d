@@ -1,8 +1,47 @@
 ;; -*- lexical-binding: t; -*-
 
+(leaf corfu
+  :ensure t
+  :custom
+  (corfu-cycle . t)
+  (corfu-auto . t)
+  (corfu-auto-prefix . 1)
+  (corfu-quit-at-boundary . nil)
+  (corfu-scroll-margin . 5)
+  (corfu-echo-documentation . t)
+  :bind
+  ((corfu-map
+	 ("TAB" . corfu-insert)
+	 ([tab] . corfu-insert)
+     ("S-TAB" . corfu-previous)
+     ("<backtab>" . corfu-previous)
+	 ("C-n" . corfu-next)
+	 ("C-p" . corfu-previous)))
+  :init
+  (global-corfu-mode))
+
+(leaf cape
+  :ensure t
+  :config
+  (add-to-list 'completion-at-point-functions (cape-company-to-capf #'company-yasnippet))
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-tex)
+  ;; (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+  (add-to-list 'completion-at-point-functions #'cape-abbrev)
+  ;; (add-to-list 'completion-at-point-functions #'cape-ispell)
+  ;; (add-to-list 'completion-at-point-functions #'cape-symbol)
+  )
+
+
+(leaf corfu-popupinfo
+  :after corfu
+  :hook
+  (corfu-mode-hook . corfu-popupinfo-mode))
 
 (leaf company
   :ensure t
+  :disabled t
   :init
   (global-company-mode +1)
   :custom
@@ -46,6 +85,7 @@
 
 (leaf company-box
   :ensure t
+  :disabled t
   :after company
   :hook (company-mode . company-box-mode)
   :config
@@ -54,6 +94,7 @@
 
 (leaf company-quickhelp
   :ensure t
+  :disabled t
   :after company
   :config
   (company-quickhelp-mode))
