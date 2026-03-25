@@ -17,6 +17,7 @@ redrawが non-nilの場合は、Windowを再描画します。"
   (while (<= num 256)
     (setq tab-stop-list `(,@tab-stop-list ,num))
     (setq num (+ num tab-width)))
+  (setq js-indent-level num)
   (when redraw (redraw-display)) tab-width)
 
 ;; (set-aurora-tab-width (setq default-tab-width (setq-default tab-width 8)))
@@ -240,6 +241,7 @@ redrawが non-nilの場合は、Windowを再描画します。"
 ;;
 (leaf ibuffer
   :bind ("C-x C-b" . ibuffer)
+  :hook (ibuffer-mode-hook . ibuffer-auto-mode)
   :config
   (setq ibuffer-formats
         '((mark modified read-only " " (name 50 50) " "  (size 6 -1 :right) " " (mode 16 16 :right) " " filename)
