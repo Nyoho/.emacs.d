@@ -79,17 +79,17 @@
   (autoload 'projectile-project-root "projectile")
   (setq consult-project-root-function #'projectile-project-root)
 
-  (setq my-consult--source-project-buffer
-        (plist-put consult--source-project-buffer :hidden nil))
+  (setq my-consult-source-project-buffer
+        (plist-put consult-source-project-buffer :hidden nil))
 
-  (setq my-consult--source-project-file
-        (plist-put consult--source-project-recent-file :hidden nil))
+  (setq my-consult-source-project-file
+        (plist-put consult-source-project-recent-file :hidden nil))
 
   (defun my-consult-project ()
     "my `consult' command for project only"
     (interactive)
-    (when-let (buffer (consult--multi '(my-consult--source-project-buffer
-                                        my-consult--source-project-file)
+    (when-let (buffer (consult--multi '(my-consult-source-project-buffer
+                                        my-consult-source-project-file)
                                       :require-match
                                       t ;(confirm-nonexistent-file-or-buffer)
                                       :prompt "(in proj) Switch to: "
